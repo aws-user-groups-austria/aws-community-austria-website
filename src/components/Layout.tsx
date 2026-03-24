@@ -37,9 +37,9 @@ export function Layout() {
           }}
         >
           <img
-            src="/assets/logos/ug-vienna-small.png"
+            src={`${import.meta.env.BASE_URL}assets/logos/awscommunityaustria.png`}
             alt="AWS Community Austria"
-            style={{ height: "32px", borderRadius: "4px" }}
+            style={{ height: "36px" }}
           />
           <span
             style={{
