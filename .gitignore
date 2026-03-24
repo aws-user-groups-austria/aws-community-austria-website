@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build Output
+dist/
+
+# Artifacts
+*.tsbuildinfo
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+
+# Claude
+.claude
