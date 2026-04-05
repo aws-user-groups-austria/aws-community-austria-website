@@ -5,8 +5,8 @@ import { SponsorsCarousel } from "../components/SponsorsCarousel";
 import { UPCOMING_EVENTS, type MeetupEvent } from "../data/events";
 
 const COMMUNITY_DAYS = [
-  { name: "AWS Community Day Turkiye",  date: "May 9, 2026",         location: "Istanbul, Turkey", url: "https://aws.cloudturkey.io",     status: "Coming Soon" },
   { name: "AWS Community Day Athens",   date: "April 28, 2026",      location: "Athens, Greece",   url: "https://awscommunity.gr",        status: "Coming Soon" },
+  { name: "AWS Community Day Turkiye",  date: "May 9, 2026",         location: "Istanbul, Turkey", url: "https://aws.cloudturkey.io",     status: "Coming Soon" },
   { name: "AWS Community Day DACH",     date: "September 15, 2026",  location: "Berlin, Germany",  url: "https://aws-community-day.de",   status: "Coming Soon" },
 ];
 
