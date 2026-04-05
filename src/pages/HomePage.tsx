@@ -13,7 +13,7 @@ interface MeetupEvent {
 
 const SAVE_THE_DATES: MeetupEvent[] = [
   {
-    title: "AWS UG Vienna Meetup — hosted by bytesource",
+    title: "AWS UG Vienna Meetup - hosted by bytesource",
     date: "2026-04-22T18:00:00.000Z",
     venue: "bytesource, Vienna",
     group: "AWS UG Vienna",
@@ -22,13 +22,13 @@ const SAVE_THE_DATES: MeetupEvent[] = [
     saveTheDate: true,
   },
   {
-    title: "AWS Women's UG Vienna — Next Meetup",
+    title: "AWS Women's UG Vienna - Next Meetup",
     date: "",
     venue: "Vienna",
     group: "AWS WUG Vienna",
     groupUrl: "https://www.meetup.com/aws-womens-user-group-vienna/",
     link: "https://www.meetup.com/aws-womens-user-group-vienna/",
-    saveTheDate: true,
+    saveTheDate: false,
   },
 ];
 

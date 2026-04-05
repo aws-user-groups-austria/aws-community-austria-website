@@ -85,5 +85,5 @@ export const ORGANIZERS: Organizer[] = [
   { name: "Philipp Bergsmann", role: "Co-Organizer", email: "philipp.bergsmann@redhat.com", linkedin: "https://www.linkedin.com/in/phbergsmann/",                   photo: "/assets/organizers/Philipp.png" },
   { name: "Jakob Heinisch",    role: "Co-Organizer", email: "jakob.heinisch@pcg.io",        linkedin: "https://www.linkedin.com/in/jakob-heinisch-10028725a/",     photo: "/assets/organizers/Jakob.png" },
   { name: "Roman Jokel",       role: "Co-Organizer", email: "romek.jokel@gmail.com",        linkedin: "https://www.linkedin.com/in/roman-jokel-99b2b8128/",        photo: "/assets/organizers/Roman.png" },
-  { name: "Matthias",          role: "Co-Organizer", email: null,                           linkedin: null,                                                        photo: "/assets/organizers/Matthias.png" },
+  { name: "Matthias",          role: "Co-Organizer", email: null,                           linkedin: "https://www.linkedin.com/in/pichler-matthias/",             photo: "/assets/organizers/Matthias.png" },
 ];
