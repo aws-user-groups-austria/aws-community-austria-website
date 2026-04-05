@@ -1,0 +1,28 @@
+@import './theme.css';
+@import './components.css';
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; padding: 0; margin: 0; }
+button { font-family: inherit; cursor: pointer; }
+
+/* Sponsor carousel animation */
+@keyframes scroll-sponsors {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
