@@ -290,9 +290,9 @@ export function HomePage() {
         <div className="container">
           <div className="accent-bar" />
           <h2 className="section-title">Meet Our Organizers</h2>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "var(--space-6)", marginBottom: "var(--space-9)" }}>
+          <div className="organizer-grid" style={{ marginBottom: "var(--space-16)" }}>
             {ORGANIZERS.map(({ name, photo, focus, email, linkedin }) => (
-              <div key={name} className="organizer-card">
+              <div key={name} className="organizer-card" style={{ width: "auto" }}>
                 <img
                   src={`${import.meta.env.BASE_URL}${photo!.replace(/^\//, "")}`}
                   alt={name}
