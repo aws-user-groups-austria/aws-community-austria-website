@@ -165,7 +165,6 @@ export function SponsorsPage() {
                   { label: "Join Vienna", url: "https://www.meetup.com/amazon-web-services-aws-vienna/" },
                   { label: "Women's UG", url: "https://www.meetup.com/aws-womens-user-group-vienna/" },
                   { label: "Join Linz", url: "https://www.meetup.com/aws-user-group-linz/" },
-                  { label: "Join Slack", url: "https://join.slack.com/t/awscommunitydach" },
                 ].map(b => (
                   <a key={b.label} href={b.url} target="_blank" rel="noopener noreferrer" className="tag" style={{ textDecoration: "none", color: "var(--color-text-secondary)" }}>
                     {b.label}

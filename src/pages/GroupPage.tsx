@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { USER_GROUPS } from "../data/groups";
 import { UPCOMING_EVENTS } from "../data/events";
+import { SpeakerLine, SponsorWanted } from "../components/EventExtras";
 
 interface SessionizeSession {
   id: string;
@@ -98,7 +99,7 @@ export function GroupPage() {
                     <span className="label">
                       {nextEvent.date
                         ? new Date(nextEvent.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
-                        : "Date TBA"}
+                        : "Coming soon"}
                     </span>
                     <div style={{ fontSize: "var(--font-size-base)", fontWeight: 700, color: "var(--color-text)" }}>Next Meetup</div>
                   </div>
@@ -114,6 +115,8 @@ export function GroupPage() {
                       {nextEvent.venue}
                     </div>
                   )}
+                  <SpeakerLine label="With" speakers={nextEvent.speakers} />
+                  <SponsorWanted show={nextEvent.sponsorWanted} />
                 </div>
                 <div className="card-footer">
                   <a href={nextEvent.link} target="_blank" rel="noopener noreferrer"

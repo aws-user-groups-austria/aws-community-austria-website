@@ -2,13 +2,9 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { USER_GROUPS, ORGANIZERS, CLOUD_CLUBS } from "../data/groups";
 import { SponsorsCarousel } from "../components/SponsorsCarousel";
-import { UPCOMING_EVENTS, type MeetupEvent } from "../data/events";
+import { UPCOMING_EVENTS, COMMUNITY_DAYS, type MeetupEvent } from "../data/events";
+import { SpeakerLine, SponsorWanted } from "../components/EventExtras";
 
-const COMMUNITY_DAYS = [
-  { name: "AWS Community Day Athens",   date: "April 28, 2026",      location: "Athens, Greece",   url: "https://awscommunity.gr",        status: "Coming Soon" },
-  { name: "AWS Community Day Turkiye",  date: "May 9, 2026",         location: "Istanbul, Turkey", url: "https://aws.cloudturkey.io",     status: "Coming Soon" },
-  { name: "AWS Community Day DACH",     date: "September 15, 2026",  location: "Berlin, Germany",  url: "https://aws-community-day.de",   status: "Coming Soon" },
-];
 
 export function HomePage() {
   const [events, setEvents] = useState<MeetupEvent[]>([]);
@@ -40,8 +36,8 @@ export function HomePage() {
             <a href="https://sessionize.com/aws-community-austria" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-xl">
               Submit a Talk
             </a>
-            <a href="https://join.slack.com/t/awscommunitydach" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-xl">
-              Join Slack
+            <a href="https://www.meetup.com/pro/awsugaustria/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-xl">
+              Join on Meetup
             </a>
           </div>
         </div>
@@ -183,7 +179,7 @@ export function HomePage() {
                         <span className="label">
                           {e.date
                             ? new Date(e.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
-                            : "Date TBA"}
+                            : "Coming soon"}
                         </span>
                         <div style={{ fontSize: "var(--font-size-base)", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.3 }}>{e.title}</div>
                       </div>
@@ -205,6 +201,8 @@ export function HomePage() {
                         </svg>
                         {e.group}
                       </div>
+                      <SpeakerLine label="With" speakers={e.speakers} />
+                      <SponsorWanted show={e.sponsorWanted} />
                     </div>
                     {/* Button */}
                     <div className="card-footer">
@@ -247,8 +245,12 @@ export function HomePage() {
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                     </svg>
-                    <a href={c.url} target="_blank" rel="noopener noreferrer" className="text-link">{c.url.replace("https://", "")}</a>
+                    <a href={c.url} target="_blank" rel="noopener noreferrer" className="text-link">{c.url.replace(/^https:\/\/(www\.)?/, "").replace(/\/$/, "")}</a>
                   </div>
+                  <SpeakerLine
+                    label="Speaking from our community:"
+                    speakers={c.speakers?.map((name) => ({ name, url: ORGANIZERS.find((o) => o.name === name)?.linkedin ?? undefined }))}
+                  />
                 </div>
                 <div className="card-footer">
                   <a href={c.url} target="_blank" rel="noopener noreferrer" className="event-btn event-btn-outline">
@@ -339,17 +341,6 @@ export function HomePage() {
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", marginBottom: "4px" }}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                    </svg>
-                    <span style={{ fontSize: "var(--font-size-md)", fontWeight: 600, color: "var(--color-text)" }}>Join our Slack Channel!</span>
-                  </div>
-                  <a href="https://join.slack.com/t/awscommunitydach" target="_blank" rel="noopener noreferrer" className="text-link" style={{ fontSize: "var(--font-size-md)", paddingLeft: "24px" }}>
-                    AWS Community DACH Slack
-                  </a>
-                </div>
-                <div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", marginBottom: "4px" }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                     </svg>
                     <span style={{ fontSize: "var(--font-size-md)", fontWeight: 600, color: "var(--color-text)" }}>Organizers contact:</span>
@@ -400,11 +391,16 @@ export function HomePage() {
           <div className="accent-bar" />
           <h2 className="section-title" style={{ marginBottom: "var(--space-4)" }}>Stay Connected</h2>
           <p className="section-desc">
-            Join the AWS Community DACH Slack workspace to connect with other AWS enthusiasts, get notified about upcoming events, and share knowledge.
+            Join our user groups on Meetup to get notified about upcoming events, and follow the community on LinkedIn.
           </p>
-          <a href="https://join.slack.com/t/awscommunitydach" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-xl">
-            Join Slack
-          </a>
+          <div style={{ display: "flex", gap: "var(--space-4)", justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="https://www.meetup.com/pro/awsugaustria/" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-xl">
+              Join on Meetup
+            </a>
+            <a href="https://www.linkedin.com/groups/8995348/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-xl">
+              LinkedIn Group
+            </a>
+          </div>
         </div>
       </section>
     </>
