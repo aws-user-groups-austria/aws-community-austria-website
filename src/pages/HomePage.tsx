@@ -266,15 +266,18 @@ export function HomePage() {
           <div className="accent-bar" />
           <h2 className="section-title">Upcoming Community Days</h2>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "var(--space-6)" }}>
-            {upcomingCommunityDays().map((c) => {
+            {upcomingCommunityDays().map((c, _i, days) => {
               const pics = communityDayPictures(c);
+              // Only one coming: one wide card, the website on the left and the details on the right.
+              const wide = days.length === 1;
               return (
-              <div key={c.name} className="card-dark cd-card" style={{ width: "320px", display: "flex", flexDirection: "column" }}>
+              <div key={c.name} className={`card-dark cd-card${wide ? " cd-card-wide" : ""}`} style={wide ? undefined : { width: "320px", display: "flex", flexDirection: "column" }}>
                 {pics && (
                   <a href={c.url} target="_blank" rel="noopener noreferrer" className="cd-card-shot" aria-label={`${c.name}: website`}>
                     <img src={pics.screenshot} alt={`The website of ${c.name}`} loading="lazy" />
                   </a>
                 )}
+                <div className="cd-card-info">
                 <div className="card-header">
                   <div className="label">{c.date}</div>
                   <div style={{ fontSize: "var(--font-size-md)", fontWeight: 700, color: "var(--color-text)" }}>{c.name}</div>
@@ -303,6 +306,7 @@ export function HomePage() {
                       <img src={pics.qr} alt={`QR code to ${c.url}`} loading="lazy" />
                     </a>
                   )}
+                </div>
                 </div>
               </div>
               );

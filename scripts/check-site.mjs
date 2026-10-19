@@ -396,6 +396,7 @@ const DIALOG_STATE = `(() => {
     badges: [...(d?.querySelectorAll('.badge-grid img') ?? [])].filter((i) => i.complete && i.naturalWidth > 0).length,
     leaders: [...(d?.querySelectorAll('.leader-chip') ?? [])].map((c) => c.textContent),
     leaderPhotos: [...(d?.querySelectorAll('.leader-chip img') ?? [])].filter((i) => i.complete && i.naturalWidth > 0).length,
+    cards: [...(d?.querySelectorAll('.leader-card') ?? [])].map((c) => ({ name: c.querySelector('.leader-card-name')?.textContent, role: c.querySelector('.leader-card-role')?.textContent, photo: !!c.querySelector('img')?.naturalWidth })),
     pacman: !!d?.querySelector('.pacman-circle'),
     involved: !!d?.querySelector('.get-involved a[href^="https://sessionize.com/"]') && !!d?.querySelector('.get-involved a[href="/prep-guide/"]'),
     hash: location.hash,
@@ -413,7 +414,7 @@ for (const [w, h, isMobile, prefix] of [[1440, 900, false, "16-dialog"], [390, 8
       1: ["Our user groups", "AWS Student Builder Groups", "Our badges", "AWS Community Days"],
       3: ["The speakers"],
       4: ["Food for everyone", "Stand like Pac-Man"],
-      6: ["Thank you", "Next meetup"],
+      6: ["Thank you to our host", "Thank you", "Next meetup"],
     };
     // Opening and closing never move the page.
     await evaluate(`document.querySelector('.agenda-list').scrollIntoView({ block: 'center' })`);
@@ -431,7 +432,11 @@ for (const [w, h, isMobile, prefix] of [[1440, 900, false, "16-dialog"], [390, 8
       );
       if (i === 1) notes.push(expect(st.badges === 5, `${st.badges} badges shown`));
       // Wherever a dialog tells people to ask the leaders, they are shown: photo and first name.
-      if ([0, 1, 4, 6].includes(i)) notes.push(expect(st.leaders.length >= 6 && st.leaderPhotos === st.leaders.length && st.leaders.every((n) => !n.includes(" ")), `leaders shown: ${[...new Set(st.leaders)].join(", ")}`));
+      // The welcome introduces the leaders: a card each with photo, full name and role.
+      if (i === 1) notes.push(expect(st.cards.length >= 6 && st.cards.every((c) => c.name && c.role && c.photo), `leader cards: ${st.cards.map((c) => c.name).join(", ")}`));
+      if (i === 0) notes.push(expect(st.leaders.length >= 6 && st.leaders.length < 12, `the organizers once in the entry dialog (${st.leaders.length} chips)`));
+      if (i === 6) notes.push(expect(st.blocks.includes("Thank you to our host"), "the host thanked at the closing networking"));
+      if ([0, 4, 6].includes(i)) notes.push(expect(st.leaders.length >= 6 && st.leaderPhotos === st.leaders.length && st.leaders.every((n) => !n.includes(" ")), `leaders shown: ${[...new Set(st.leaders)].join(", ")}`));
       if ([0, 4].includes(i)) notes.push(expect(st.pacman, "the Pac-Man drawing"));
       if (i === 3) notes.push(expect(st.bios === 2 && st.links.filter((l) => l === "LinkedIn").length === 2, `${st.bios} bios, links ${st.links.join(", ")}`));
       if (i === 6) notes.push(expect(await evaluate(`!!document.querySelector('dialog.agenda-dialog a[href="${meetups.find((x) => x.id === EVENT).meetupUrl}"]')`), "feedback link to the Meetup event"));

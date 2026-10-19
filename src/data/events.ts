@@ -104,14 +104,6 @@ export const COMMUNITY_DAYS: CommunityDay[] = [
       { name: "Darko Mesaroš", photo: "/assets/speakers/darko-mesaros.png", url: "https://www.linkedin.com/in/darko-mesaros/", guest: true },
     ],
   },
-  {
-    name: "AWS Community Day Switzerland",
-    date: "October 29, 2026",
-    lastDay: "2026-10-29",
-    location: "Dietlikon (Zurich), Switzerland",
-    url: "https://www.awsug.ch/",
-    pictures: "switzerland",
-  },
 ];
 
 /** Community days not over yet, in Vienna's calendar. */
