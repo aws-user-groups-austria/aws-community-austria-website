@@ -271,3 +271,20 @@ Part of the AWS Community Austria project:
 ## License
 
 CC BY-NC-SA 4.0 - Free to use and adapt with attribution, non-commercial.
+
+## Part of the meetup tools
+
+One of the repositories behind the AWS User Groups Austria meetup evenings, in
+[aws-user-groups-austria](https://github.com/aws-user-groups-austria). Start with
+[`meetup-workspace`](https://github.com/aws-user-groups-austria/meetup-workspace): it clones all of them (`make
+clone`), installs them and runs the whole evening (`make start`); the contract
+between them is its `SPEC.md`.
+
+| Repository | What |
+|---|---|
+| [`meetup-workspace`](https://github.com/aws-user-groups-austria/meetup-workspace) | The Makefile, the spec and the guide |
+| [`meetup-sync`](https://github.com/aws-user-groups-austria/meetup-sync) | A Meetup page to `event.json` |
+| [`meetup-event-vienna`](https://github.com/aws-user-groups-austria/meetup-event-vienna) | One folder per meetup, shared photos and logos |
+| [`meetup-stream-templates`](https://github.com/aws-user-groups-austria/meetup-stream-templates) | The room screen: Remotion scenes and the web player |
+| [`meetup-deck`](https://github.com/aws-user-groups-austria/meetup-deck) | The slide deck, filled in |
+| **[`aws-community-austria-website`](https://github.com/aws-user-groups-austria/aws-community-austria-website)** | awscommunity.at |

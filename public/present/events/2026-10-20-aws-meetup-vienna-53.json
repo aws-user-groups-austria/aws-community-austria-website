@@ -3,7 +3,7 @@
   "id": "2026-10-20-aws-meetup-vienna-53",
   "source": {
     "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/316893745/",
-    "fetchedAt": "2026-10-19T17:40:15.937Z"
+    "fetchedAt": "2026-10-19T19:11:05.576Z"
   },
   "title": "AWS Meetup Vienna #53 - hosted by RBI",
   "tagline": "Autumn is arriving in Vienna - and so is our next AWS meetup!",
@@ -188,27 +188,32 @@
       {
         "name": "Linda Mohamed",
         "role": "AWS Hero · AWS Community DACH",
-        "photo": "people/linda-mohamed.png"
+        "photo": "people/linda-mohamed.png",
+        "email": "linda@awscommunity.at"
       },
       {
         "name": "Philipp Bergsmann",
         "role": "Open source contributor · UG Vienna veteran",
-        "photo": "people/philipp-bergsmann.png"
+        "photo": "people/philipp-bergsmann.png",
+        "email": "philipp@awscommunity.at"
       },
       {
         "name": "Dmytro Hlotenko",
         "role": "Photographer · AWS Community Day rep",
-        "photo": "people/dmytro-hlotenko.png"
+        "photo": "people/dmytro-hlotenko.png",
+        "email": "dima@awscommunity.at"
       },
       {
         "name": "Roman Jokel",
         "role": "Cloud architect · AWS Summit speaker",
-        "photo": "people/roman-jokel.png"
+        "photo": "people/roman-jokel.png",
+        "email": "roman@awscommunity.at"
       },
       {
         "name": "Jakob Heinisch",
         "role": "Organizational lead · UG Linz contact",
-        "photo": "people/jakob-heinisch.png"
+        "photo": "people/jakob-heinisch.png",
+        "email": "jakob@awscommunity.at"
       },
       {
         "name": "Matthias",

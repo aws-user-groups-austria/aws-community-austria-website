@@ -3,7 +3,7 @@
   "id": "2026-09-28-aws-meetup-vienna-52",
   "source": {
     "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/316357405/",
-    "fetchedAt": "2026-10-19T14:41:55.786Z"
+    "fetchedAt": "2026-10-19T19:16:27.413Z"
   },
   "title": "AWS Meetup Vienna #52 - hosted by Enspired",
   "tagline": "Autumn is arriving in Vienna - and so is our next AWS meetup!",
@@ -132,32 +132,37 @@
     "team": [
       {
         "name": "Linda Mohamed",
-        "role": "AWS Hero, chairwoman of Förderverein AWS Community DACH",
-        "photo": "people/linda-mohamed.png"
+        "role": "AWS Hero · AWS Community DACH",
+        "photo": "people/linda-mohamed.png",
+        "email": "linda@awscommunity.at"
       },
       {
         "name": "Philipp Bergsmann",
-        "role": "Open source contributor and AWS UG Vienna veteran",
-        "photo": "people/philipp-bergsmann.png"
+        "role": "Open source contributor · UG Vienna veteran",
+        "photo": "people/philipp-bergsmann.png",
+        "email": "philipp@awscommunity.at"
       },
       {
         "name": "Dmytro Hlotenko",
-        "role": "Community photographer and AWS Community Day representative",
-        "photo": "people/dmytro-hlotenko.png"
+        "role": "Photographer · AWS Community Day rep",
+        "photo": "people/dmytro-hlotenko.png",
+        "email": "dima@awscommunity.at"
       },
       {
         "name": "Roman Jokel",
-        "role": "Cloud architecture expert and AWS Summit speaker",
-        "photo": "people/roman-jokel.png"
+        "role": "Cloud architect · AWS Summit speaker",
+        "photo": "people/roman-jokel.png",
+        "email": "roman@awscommunity.at"
       },
       {
         "name": "Jakob Heinisch",
-        "role": "Organizational lead and contact for UG Linz",
-        "photo": "people/jakob-heinisch.png"
+        "role": "Organizational lead · UG Linz contact",
+        "photo": "people/jakob-heinisch.png",
+        "email": "jakob@awscommunity.at"
       },
       {
         "name": "Matthias",
-        "role": "Quiz master behind AWS PubQuiz Austria",
+        "role": "Quiz master · AWS PubQuiz Austria",
         "photo": "people/matthias.png"
       }
     ],

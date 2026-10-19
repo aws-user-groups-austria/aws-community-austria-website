@@ -55,8 +55,11 @@ export const PLANNED_GROUPS: { name: string; kind: "user group" | "student group
   { name: "Hochschule Burgenland", kind: "student group" },
 ];
 
-/** Who to write to for starting a new user group anywhere in Austria. */
-export const START_A_GROUP_EMAIL = "hello@awscommunity.at";
+/** The team mailbox: "Contact us", sponsoring, starting a user group anywhere in Austria. */
+export const TEAM_EMAIL = "hello@awscommunity.at";
+export const START_A_GROUP_EMAIL = TEAM_EMAIL;
+/** For a direct question to Linda. */
+export const DIRECT_EMAIL = "hello@lindamohamed.com";
 
 /** Members on Meetup: AWS User Group Vienna, and all our groups together (October 2026). */
 export const MEMBERS = { vienna: "2,200+", all: "2,600+" } as const;
@@ -130,7 +133,7 @@ export const ORGANIZERS: Organizer[] = [
     focus: "AWS Hero and chairwoman of Förderverein AWS Community DACH",
     bio: "Linda is an AWS Hero and the chairwoman of Förderverein AWS Community DACH e.V., the non-profit that organizes AWS Community Day DACH. She is deeply involved in voluntary community work across the DACH region and helps run all three Austrian user groups. Reach out for anything - she is always happy to help.",
     tags: ["AWS Hero", "AWS CD DACH", "Förderverein", "DACH Community"],
-    email: "linda.mohamed@icloud.com",
+    email: "linda@awscommunity.at",
     linkedin: "https://www.linkedin.com/in/linda-mohamed/",
     photo: "/assets/organizers/Linda.png",
   },
@@ -140,7 +143,7 @@ export const ORGANIZERS: Organizer[] = [
     focus: "Community photographer and AWS Community Day representative",
     bio: "Dima is the face behind our event photos and deeply involved in AWS Community Days all over Europe. He brings the community together beyond Austria, helps coordinate sponsorships, and is a key contact for companies interested in supporting the groups.",
     tags: ["Photography", "AWS Community Days", "Sponsorship", "Europe"],
-    email: "dmytro.hlotenko@apa.at",
+    email: "dima@awscommunity.at",
     linkedin: "https://www.linkedin.com/in/dmytro-hlotenko-7aa348151/",
     photo: "/assets/organizers/Dmytro.png",
   },
@@ -150,7 +153,7 @@ export const ORGANIZERS: Organizer[] = [
     focus: "Open source contributor and AWS UG Vienna veteran",
     bio: "Philipp has been part of AWS User Group Vienna for almost a decade - one of the longest-serving organizers. He works at Red Hat and regularly contributes to open source projects. His deep technical knowledge and long-standing community involvement make him an anchor of the group.",
     tags: ["Red Hat", "Open Source", "AWS UG Vienna", "10 years"],
-    email: "philipp.bergsmann@redhat.com",
+    email: "philipp@awscommunity.at",
     linkedin: "https://www.linkedin.com/in/phbergsmann/",
     photo: "/assets/organizers/Philipp.png",
   },
@@ -160,7 +163,7 @@ export const ORGANIZERS: Organizer[] = [
     focus: "Organizational lead and contact person for UG Linz",
     bio: "Jakob handles the organizational backbone of the community - coordination, planning, and logistics. He is the primary contact person for AWS User Group Linz and the go-to person for anything structural or administrative. Everyone else can help with questions too, but Jakob keeps things running.",
     tags: ["Coordination", "UG Linz", "Organizational Lead"],
-    email: "jakob.heinisch@pcg.io",
+    email: "jakob@awscommunity.at",
     linkedin: "https://www.linkedin.com/in/jakob-heinisch/",
     photo: "/assets/organizers/Jakob.png",
   },
@@ -170,7 +173,7 @@ export const ORGANIZERS: Organizer[] = [
     focus: "Cloud architecture expert and AWS Summit speaker",
     bio: "Roman works at one of our top host and sponsor companies and is deeply involved in modern cloud architectures. He is a regular speaker at AWS Summits, sharing real-world use cases and hands-on experience. His practical perspective adds a grounded, applied voice to the community.",
     tags: ["Cloud Architecture", "AWS Summit Speaker", "Real-world AWS"],
-    email: "romek.jokel@gmail.com",
+    email: "roman@awscommunity.at",
     linkedin: "https://www.linkedin.com/in/roman-jokel/",
     photo: "/assets/organizers/Roman.png",
   },
