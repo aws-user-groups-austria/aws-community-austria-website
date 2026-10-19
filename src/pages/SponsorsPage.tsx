@@ -7,7 +7,7 @@ const STEPS = [
   {
     number: "01",
     title: "Reach out",
-    description: "Send us an email at linda.mohamed@icloud.com expressing your interest in sponsoring. Tell us a bit about your company and what you're looking for.",
+    description: "Send us an email at hello@awscommunity.at expressing your interest in sponsoring. Tell us a bit about your company and what you're looking for.",
   },
   {
     number: "02",
@@ -102,7 +102,7 @@ export function SponsorsPage() {
           <p className="section-desc">
             Connect your brand with 2,600+ AWS professionals across Vienna, Linz, and Austria. Sponsorship means hosting a meetup - providing a venue, food, and drinks for the community.
           </p>
-          <a href="mailto:linda.mohamed@icloud.com" className="btn btn-primary btn-xl">
+          <a href="mailto:hello@awscommunity.at" className="btn btn-primary btn-xl">
             Get in touch
           </a>
         </div>
@@ -193,7 +193,7 @@ export function SponsorsPage() {
               </ul>
               <p className="text-muted" style={{ fontSize: "var(--font-size-sm)", marginTop: "var(--space-3)", fontStyle: "italic" }}>
                 Have office space in Linz?{" "}
-                <a href="mailto:linda.mohamed@icloud.com" className="text-link">Please reach out</a>
+                <a href="mailto:hello@awscommunity.at" className="text-link">Please reach out</a>
                 {" "}if you'd like to host a meetup!
               </p>
             </div>

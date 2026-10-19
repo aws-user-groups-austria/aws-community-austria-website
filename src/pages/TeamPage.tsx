@@ -1,4 +1,4 @@
-import { ORGANIZERS } from "../data/groups";
+import { DIRECT_EMAIL, ORGANIZERS, TEAM_EMAIL } from "../data/groups";
 
 export function TeamPage() {
   return (
@@ -72,11 +72,12 @@ export function TeamPage() {
           <div className="accent-bar" />
           <h2 className="section-title-left" style={{ textAlign: "center" }}>Any questions?</h2>
           <p className="text-secondary" style={{ fontSize: "var(--font-size-md)", lineHeight: 1.7, marginBottom: "var(--space-8)" }}>
-            All of us are happy to help. Drop us a message on LinkedIn or reach out via email - we'll get back to you.
+            All of us are happy to help. Write to our team mailbox, {TEAM_EMAIL}, or drop us a message on LinkedIn - we'll get back to you.
+            A direct question for Linda? <a href={`mailto:${DIRECT_EMAIL}`} className="text-link">{DIRECT_EMAIL}</a>
           </p>
           <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "var(--space-3)" }}>
-            <a href="mailto:linda.mohamed@icloud.com" className="btn btn-primary btn-lg">
-              Send us an email
+            <a href={`mailto:${TEAM_EMAIL}`} className="btn btn-primary btn-lg">
+              Contact us
             </a>
             <a href="https://www.meetup.com/amazon-web-services-aws-vienna/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">
               Join on Meetup

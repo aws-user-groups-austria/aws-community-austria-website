@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { USER_GROUPS, ORGANIZERS, CLOUD_CLUBS, MEMBERS, PLANNED_GROUPS, START_A_GROUP_EMAIL } from "../data/groups";
+import { USER_GROUPS, ORGANIZERS, CLOUD_CLUBS, MEMBERS, PLANNED_GROUPS, START_A_GROUP_EMAIL, TEAM_EMAIL, DIRECT_EMAIL } from "../data/groups";
 import { StudentIcon } from "../components/StudentIcon";
 import { SponsorsCarousel } from "../components/SponsorsCarousel";
 import { UPCOMING_EVENTS, communityDayPictures, upcomingCommunityDays, type MeetupEvent } from "../data/events";
@@ -391,11 +391,14 @@ export function HomePage() {
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                     </svg>
-                    <span style={{ fontSize: "var(--font-size-md)", fontWeight: 600, color: "var(--color-text)" }}>Organizers contact:</span>
+                    <span style={{ fontSize: "var(--font-size-md)", fontWeight: 600, color: "var(--color-text)" }}>Contact us:</span>
                   </div>
-                  <a href="mailto:linda.mohamed@icloud.com" className="text-link" style={{ fontSize: "var(--font-size-md)", paddingLeft: "24px" }}>
-                    linda.mohamed@icloud.com
+                  <a href={`mailto:${TEAM_EMAIL}`} className="text-link" style={{ fontSize: "var(--font-size-md)", paddingLeft: "24px" }}>
+                    {TEAM_EMAIL}
                   </a>
+                  <div className="text-muted" style={{ fontSize: "var(--font-size-sm)", paddingLeft: "24px", marginTop: "4px" }}>
+                    A direct question for Linda? <a href={`mailto:${DIRECT_EMAIL}`} className="text-link">{DIRECT_EMAIL}</a>
+                  </div>
                 </div>
               </div>
             </div>

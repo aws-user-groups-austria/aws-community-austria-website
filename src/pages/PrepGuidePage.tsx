@@ -17,7 +17,7 @@ const PDF_URL = "https://drive.google.com/file/d/1vT2p8i-1nj5cjHWILy1OYx4dWNCIeO
 const SESSIONIZE_URL = "https://sessionize.com/aws-community-austria";
 const LINKEDIN_URL = "https://www.linkedin.com/company/aws-user-group-vienna";
 const MEETUP_URL = "https://www.meetup.com/amazon-web-services-aws-vienna/";
-const CONTACT = "linda.mohamed@icloud.com";
+const CONTACT = "hello@awscommunity.at";
 const PAST_PROMOTIONS = [
   "https://www.linkedin.com/feed/update/urn:li:activity:6976139115750678528/",
   "https://www.linkedin.com/posts/ebcont-it_next-aws-user-group-meetup-22nd-june-5-activity-6943478179462344704-JNQy",
