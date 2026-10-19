@@ -1,0 +1,92 @@
+name: Update meetup pages
+
+# Every Monday and Friday, an hour after meetup-event-vienna's "Update
+# meetups": the meetup pages, the room screen (/present/) and the live
+# headers rebuilt from the latest meetup data and room-screen code, committed
+# and deployed when something changed.
+#
+# The slide decks in public/decks/ stay as they are: they are made with
+# `make deck` on an organizer's laptop (the deck template is private) and
+# published with npm run present:sync from there.
+
+on:
+  schedule:
+    - cron: "30 6 * * 1,5"   # Monday and Friday, 06:30 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-meetup-pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      # The workspace layout the scripts expect: the three repositories side by side.
+      - name: Checkout the website
+        uses: actions/checkout@v4
+        with:
+          path: aws-community-austria-website
+      - name: Checkout the meetups
+        uses: actions/checkout@v4
+        with:
+          repository: aws-user-groups-austria/meetup-event-vienna
+          path: meetup-event-vienna
+      - name: Checkout the room screen
+        uses: actions/checkout@v4
+        with:
+          repository: aws-user-groups-austria/meetup-stream-templates
+          path: meetup-stream-templates
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Build the room screen
+        working-directory: meetup-stream-templates
+        run: |
+          npm ci
+          npm ci --prefix web-player
+          # the newest meetup with an agenda; any event writes archive.json and the shared folders
+          latest=$(ls -1 ../meetup-event-vienna/events | sort | while read id; do [ -f "../meetup-event-vienna/events/$id/event.json" ] && echo "$id"; done | tail -1)
+          make player-event EVENT="$latest"
+          make player-build
+
+      - name: Sync and build the website
+        working-directory: aws-community-austria-website
+        run: |
+          npm ci
+          npm run present:sync
+          npm run build
+
+      - name: Commit what changed
+        id: commit
+        working-directory: aws-community-austria-website
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/present public/decks src/data/meetups.generated.json
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No change in the meetup pages"
+          else
+            git commit -m "chore: update meetup pages and the room screen [skip ci]"
+            git pull --rebase --quiet
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    uses: ./.github/workflows/deploy.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
