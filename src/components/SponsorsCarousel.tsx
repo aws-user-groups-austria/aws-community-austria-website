@@ -1,4 +1,4 @@
-import { SPONSORS } from "../data/sponsors";
+import { SPONSORS, logoSrc } from "../data/sponsors";
 
 export function SponsorsCarousel() {
   return (
@@ -20,8 +20,9 @@ export function SponsorsCarousel() {
             >
               <div className="sponsor-logo-wrap">
                 <img
-                  src={`${import.meta.env.BASE_URL}assets/sponsors/${s.logo}`}
+                  src={logoSrc(s)}
                   alt={s.name}
+                  className={s.dark ? "logo-on-dark" : undefined}
                   style={{ maxHeight: "72px", maxWidth: "160px", objectFit: "contain" }}
                 />
               </div>

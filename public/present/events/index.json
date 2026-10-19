@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "id": "2025-04-15-aws-meetup-45",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/307026109/",
+      "title": "AWS Meetup #45 - hosted by SQUER",
+      "doorsOpen": "2025-04-15T17:00:00+02:00"
+    },
+    {
+      "id": "2025-05-07-aws-meetup-46-workshop",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/307421627/",
+      "title": "AWS Meetup #46 & Workshop - hosted by ByteSource",
+      "doorsOpen": "2025-05-07T17:00:00+02:00"
+    },
+    {
+      "id": "2025-06-16-aws-meetup-x-java-user-group-47",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/307735341/",
+      "title": "AWS Meetup x Java User Group #47- hosted by TU Wien",
+      "doorsOpen": "2025-06-16T18:00:00+02:00"
+    },
+    {
+      "id": "2025-08-07-aws-stammtisch",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/308665758/",
+      "title": "AWS Stammtisch - sponsored by Labyrinth Labs",
+      "doorsOpen": "2025-08-07T18:00:00+02:00"
+    },
+    {
+      "id": "2026-03-17-aws-meetup-49",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/313466708/",
+      "title": "AWS Meetup #49 - AWS Community GameDay Europe 2026",
+      "doorsOpen": "2026-03-17T17:00:00+01:00"
+    },
+    {
+      "id": "2026-04-22-aws-meetup-50",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/314152267/",
+      "title": "AWS Meetup #50 - hosted by Bytesource",
+      "doorsOpen": "2026-04-22T17:00:00+02:00"
+    },
+    {
+      "id": "2026-06-02-aws-meetup-vienna-51",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/314914273/",
+      "title": "AWS Meetup Vienna #51 - hosted by Eversports",
+      "doorsOpen": "2026-06-02T17:00:00+02:00"
+    },
+    {
+      "id": "2026-08-25-aws-user-group-vienna-presents-agentic-football-cup-2026",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/315778998/",
+      "title": "AWS User Group Vienna presents: Agentic Football Cup 2026",
+      "doorsOpen": "2026-08-25T16:00:00+02:00"
+    },
+    {
+      "id": "2026-09-28-aws-meetup-vienna-52",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/316357405/",
+      "title": "AWS Meetup Vienna #52 - hosted by Enspired",
+      "doorsOpen": "2026-09-28T17:00:00+02:00"
+    },
+    {
+      "id": "2026-10-20-aws-meetup-vienna-53",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/316893745/",
+      "title": "AWS Meetup Vienna #53 - hosted by RBI",
+      "doorsOpen": "2026-10-20T17:00:00+02:00"
+    }
+  ]
+}

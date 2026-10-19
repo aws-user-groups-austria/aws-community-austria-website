@@ -1,0 +1,1725 @@
+{
+  "version": 1,
+  "meetups": [
+    {
+      "version": 1,
+      "id": "2026-10-20-aws-meetup-vienna-53",
+      "title": "AWS Meetup Vienna #53 - hosted by RBI",
+      "number": 53,
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/316893745/",
+      "start": "2026-10-20T17:00:00+02:00",
+      "end": "2026-10-20T22:00:00+02:00",
+      "group": {
+        "id": "aws-ug-vienna",
+        "name": "AWS User Group Vienna",
+        "url": "https://www.meetup.com/amazon-web-services-aws-vienna/"
+      },
+      "venue": {
+        "name": "Raiffeisen Bank International",
+        "address": "Mooslackengasse 12, 1190 Wien, Austria"
+      },
+      "hosts": [
+        {
+          "name": "RBI"
+        }
+      ],
+      "image": "https://secure.meetupstatic.com/photos/event/c/d/4/8/highres_536512552.jpeg",
+      "summary": "Autumn is arriving in Vienna - and so is our next AWS meetup!",
+      "description": "Autumn is arriving in Vienna - and so is our next AWS meetup!\n\nIn this October edition, we’ll explore what AI-assisted cloud operations looks like in practice: from using AWS DevOps Agent to investigate incidents, correlate signals, and support real DevOps workflows, to building safer and more trustworthy AI agents for production. Our speakers will share hands-on lessons, real-world examples, and practical patterns for rolling out AI agents responsibly in AWS environments.\n\nA big thank you to [Raiffeisen Bank International AG](https://www.rbinternational.com/de/raiffeisen.html) for supporting the community and making the meetup possible!\n\n***\n\n **Location**\nRaiffeisen Bank International\nMooslackengasse 12, 1190 Wien, Austria\n\n **When**\n**October 20nd 2026**\nDoors open at 17:00 for networking, food & drinks.\nTalks start at 18:00.\n\n***\n\n **Agenda**\n\n* **17:00 - 18:00:** Entry & Networking\n* **18:00 - 18:05:** Welcome and Introduction AWS Community Vienna\n* **18:05 - 18:10:** Welcome and Introduction to the sponsors (**Raiffeisen Bank International**)\n* **18:10 - 18:50:** **\"Teaching an AI to Debug Our Cloud: AWS DevOps Agent in Practice\"**\n* **18:50 - 19:20:** Networking break\n* **19:20 - 20:00:** **\"I don't trust my agents!\"**\n* **20:00 - Open End:** Networking\n\n**\"Teaching an AI to Debug Our Cloud: AWS DevOps Agent in Practice\"**\n*Speakers:*\n**[Roman Jokel](https://www.linkedin.com/in/roman-jokel/),** Cloud Architect (Raiffeisen Bank International)\n**[Mladen Trampic](https://www.linkedin.com/in/trampic/)**, Senior Technical Account Manager@AWS\n\n*About the talk:*\nAWS DevOps Agent is AWS's AI-powered teammate for operations - it investigates incidents, correlates logs/metrics/traces/deployments, proposes mitigations, and learns your environment over time through custom skills and memory. In this talk, we'll walk through what it can actually do, how we rolled it out across our AWS organization, the custom skills we built to teach it our environment (networking, IAM, account provisioning, firewall logs, and more), and the real incidents it has helped us resolve. We'll close with the honest lessons learned - what worked, what surprised us, and what we'd do differently - so you can walk away with a realistic picture of what AI-assisted operations looks like in practice, not just in theory.\n\n**\"I don't trust my agents!\"**\n*Speaker:* [Darko Mesaroš](https://www.linkedin.com/in/darko-mesaros/) Principal Technologist@AWS\n\n*About the talk:*\nYour AI agent works great in the demo. Then you deploy it and it hallucinates a refund policy, exposes customer data, or just loops endlessly burning tokens. This session walks through a layered approach to agent safety using tools like Amazon Bedrock AgentCore and the Strands Agents SDK: guardrails, observability, multi-agent safety patterns, and reference architectures you can adapt immediately.\n\n***\n\n **Sponsors:**\n\n* **RBI** - [Raiffeisen Bank International AG](https://www.rbinternational.com/de/raiffeisen.html)\n\n***\n\n **RSVP now** and invite your colleagues to celebrate, learn, and connect with the AWS community!\n\nBy RSVPing, you confirm that you agree to our [Code of Conduct](http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf).\n**By submitting your RSVP, you acknowledge that photos and videos may be taken during the event. If you prefer not to appear in such recordings, please let the organizer know before the event. Please note that we cannot guarantee the retrospective removal, blurring, or editing of individual attendees in group photos or event footage. Any publication of identifiable individual portraits will be subject to separate consent where required.**",
+      "talks": [
+        {
+          "title": "Teaching an AI to Debug Our Cloud: AWS DevOps Agent in Practice",
+          "speakers": [
+            {
+              "name": "Roman Jokel",
+              "role": "Cloud Architect",
+              "company": "Raiffeisen Bank International"
+            },
+            {
+              "name": "Mladen Trampic",
+              "role": "Senior Technical Account Manager",
+              "company": "AWS"
+            }
+          ]
+        },
+        {
+          "title": "I don't trust my agents!",
+          "speakers": [
+            {
+              "name": "Darko Mesaroš",
+              "role": "Principal Technologist",
+              "company": "AWS"
+            }
+          ]
+        }
+      ],
+      "stream": true,
+      "evening": {
+        "doorsOpen": "2026-10-20T17:00:00+02:00",
+        "end": "2026-10-20T22:00:00+02:00",
+        "agenda": [
+          {
+            "id": "doors",
+            "kind": "networking",
+            "start": "2026-10-20T17:00:00+02:00",
+            "end": "2026-10-20T18:00:00+02:00",
+            "title": "Entry & Networking"
+          },
+          {
+            "id": "welcome",
+            "kind": "welcome",
+            "start": "2026-10-20T18:00:00+02:00",
+            "end": "2026-10-20T18:05:00+02:00",
+            "title": "Welcome and Introduction AWS Community Vienna"
+          },
+          {
+            "id": "sponsor",
+            "kind": "sponsor",
+            "start": "2026-10-20T18:05:00+02:00",
+            "end": "2026-10-20T18:10:00+02:00",
+            "title": "Welcome and Introduction to the sponsors (Raiffeisen Bank International)"
+          },
+          {
+            "id": "talk-1",
+            "kind": "talk",
+            "start": "2026-10-20T18:10:00+02:00",
+            "end": "2026-10-20T18:50:00+02:00",
+            "title": "Teaching an AI to Debug Our Cloud: AWS DevOps Agent in Practice",
+            "talk": {
+              "title": "Teaching an AI to Debug Our Cloud: AWS DevOps Agent in Practice",
+              "abstract": "AWS DevOps Agent is AWS's AI-powered teammate for operations - it investigates incidents, correlates logs/metrics/traces/deployments, proposes mitigations, and learns your environment over time through custom skills and memory. In this talk, we'll walk through what it can actually do, how we rolled it out across our AWS organization, the custom skills we built to teach it our environment (networking, IAM, account provisioning, firewall logs, and more), and the real incidents it has helped us resolve. We'll close with the honest lessons learned - what worked, what surprised us, and what we'd do differently - so you can walk away with a realistic picture of what AI-assisted operations looks like in practice, not just in theory.",
+              "speakers": [
+                {
+                  "name": "Roman Jokel",
+                  "role": "Cloud Architect",
+                  "company": "Raiffeisen Bank International",
+                  "photo": "/present/events/2026-10-20-aws-meetup-vienna-53/assets/roman-jokel.png",
+                  "bio": "Roman Jokel is a Cloud Architect at Raiffeisen Bank International (RBI) in Vienna, where he works on the bank's AWS cloud foundation, including automating landing zone operations with AWS Step Functions in RBI's Cloud Center of Excellence. He has presented RBI's cloud work at AWS Summit Zurich 2024 and AWS Summit Hamburg 2025, holds the AWS Solutions Architect - Professional, Advanced Networking - Specialty and Security - Specialty certifications, and is a co-organizer of the AWS User Group Vienna.",
+                  "links": [
+                    {
+                      "title": "LinkedIn",
+                      "url": "https://www.linkedin.com/in/roman-jokel/"
+                    }
+                  ]
+                },
+                {
+                  "name": "Mladen Trampic",
+                  "role": "Senior Technical Account Manager",
+                  "company": "AWS",
+                  "photo": "/present/events/2026-10-20-aws-meetup-vienna-53/assets/mladen-trampic.png",
+                  "bio": "Mladen Trampic is a Senior Technical Account Manager for AWS Enterprise Support EMEA in Vienna, where he helps customers architect for reliability and cost efficiency. Before AWS he was a Data Lake Solution Architect at Raiffeisen Bank International. He has co-authored AWS blog posts on Session Manager logging guardrails in a multi-account environment and on how Flo Health optimized Amazon DynamoDB, and he writes about Kiro CLI, MCP and AI-assisted development on his blog.",
+                  "links": [
+                    {
+                      "title": "LinkedIn",
+                      "url": "https://www.linkedin.com/in/trampic/"
+                    },
+                    {
+                      "title": "Blog",
+                      "url": "https://mladen.trampic.info/"
+                    },
+                    {
+                      "title": "GitHub",
+                      "url": "https://github.com/mtrampic"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "break-1",
+            "kind": "break",
+            "start": "2026-10-20T18:50:00+02:00",
+            "end": "2026-10-20T19:20:00+02:00",
+            "title": "Networking break"
+          },
+          {
+            "id": "talk-2",
+            "kind": "talk",
+            "start": "2026-10-20T19:20:00+02:00",
+            "end": "2026-10-20T20:00:00+02:00",
+            "title": "I don't trust my agents!",
+            "talk": {
+              "title": "I don't trust my agents!",
+              "abstract": "Your AI agent works great in the demo. Then you deploy it and it hallucinates a refund policy, exposes customer data, or just loops endlessly burning tokens. This session walks through a layered approach to agent safety using tools like Amazon Bedrock AgentCore and the Strands Agents SDK: guardrails, observability, multi-agent safety patterns, and reference architectures you can adapt immediately.",
+              "speakers": [
+                {
+                  "name": "Darko Mesaroš",
+                  "role": "Principal Technologist",
+                  "company": "AWS",
+                  "photo": "/present/events/2026-10-20-aws-meetup-vienna-53/assets/darko-mesaros.png",
+                  "bio": "I am a computer person who writes Rust, breaks things on AWS, and collects computers older than most of my audience. By title I'm a Principal Developer Advocate, by practice I'm live-coding on Twitch or convincing a 1974 minicomputer to do something useful. I build CLI tools nobody asked for but everyone ends up using, blog about Rust and cloud development right here, and firmly believe the terminal is the best UI ever made. I'm happiest when a demo works on the first try, which almost never happens.\n\nI also care deeply about developer productivity and coding assistants. I spend an unreasonable amount of time teaching AI agents to be better coding companions, building MCP servers, and automating everything that stands still long enough. If there's a way to make developers faster and happier, I'm probably already tinkering with it.",
+                  "links": [
+                    {
+                      "title": "LinkedIn",
+                      "url": "https://www.linkedin.com/in/darko-mesaros/"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "closing",
+            "kind": "closing",
+            "start": "2026-10-20T20:00:00+02:00",
+            "end": "2026-10-20T22:00:00+02:00",
+            "title": "Networking"
+          }
+        ],
+        "notices": [
+          "By submitting your RSVP, you acknowledge that photos and videos may be taken during the event. If you prefer not to appear in such recordings, please let the organizer know before the event. Please note that we cannot guarantee the retrospective removal, blurring, or editing of individual attendees in group photos or event footage. Any publication of identifiable individual portraits will be subject to separate consent where required."
+        ],
+        "codeOfConduct": "http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf",
+        "conduct": {
+          "title": "Growing Together",
+          "subtitle": "One Respectful Interaction at a Time",
+          "lines": [
+            "No matter your background or interests, you're part of the AWS family here.",
+            "\"But, it's just a joke!\": If you have to say it, it probably wasn't. Aim for laughs, not cringes.",
+            "If you encounter a red signal, our organizers are here to navigate."
+          ]
+        },
+        "badges": [
+          {
+            "name": "Leader",
+            "title": "Event Organizer",
+            "text": "Reach out for questions, suggestions, or if you feel unsafe.",
+            "image": "/present/badges/leader.png"
+          },
+          {
+            "name": "Host",
+            "title": "Location & Food Sponsor",
+            "text": "Curious about what we do? Let's chat!",
+            "image": "/present/badges/host.png"
+          },
+          {
+            "name": "Speaker",
+            "title": "Today's Speaker",
+            "text": "Curious about the topic? Let's discuss!",
+            "image": "/present/badges/speaker.png"
+          },
+          {
+            "name": "First-Timer",
+            "title": "New to the Meetup",
+            "text": "Introduce yourself, and let's connect!",
+            "image": "/present/badges/first-timer.png"
+          },
+          {
+            "name": "All-Timer",
+            "title": "Regular Member",
+            "text": "Welcome back! Say hi to the new faces.",
+            "image": "/present/badges/all-timer.png"
+          }
+        ],
+        "sponsors": [
+          {
+            "name": "Raiffeisen Bank International AG",
+            "url": "https://www.rbinternational.com/de/raiffeisen.html",
+            "logo": "/present/events/2026-10-20-aws-meetup-vienna-53/assets/rbi.svg"
+          }
+        ]
+      },
+      "deck": "/decks/2026-10-20-aws-meetup-vienna-53.pdf",
+      "deckCover": "/decks/2026-10-20-aws-meetup-vienna-53.png"
+    },
+    {
+      "version": 1,
+      "id": "2026-09-28-aws-meetup-vienna-52",
+      "title": "AWS Meetup Vienna #52 - hosted by Enspired",
+      "number": 52,
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/316357405/",
+      "start": "2026-09-28T17:00:00+02:00",
+      "end": "2026-09-28T21:00:00+02:00",
+      "group": {
+        "id": "aws-ug-vienna",
+        "name": "AWS User Group Vienna",
+        "url": "https://www.meetup.com/amazon-web-services-aws-vienna/"
+      },
+      "venue": {
+        "name": "Enspired GmbH",
+        "address": "enspired GmbH Wagenseilgasse 3/4, 1120 Wien"
+      },
+      "hosts": [
+        {
+          "name": "Enspired"
+        }
+      ],
+      "image": "https://secure.meetupstatic.com/photos/event/3/5/2/7/highres_535933607.jpeg",
+      "summary": "Autumn is arriving in Vienna - and so is our next AWS meetup!",
+      "description": "Autumn is arriving in Vienna - and so is our next AWS meetup!\n\nIf you’ve ever run `terraform init`, chances are high you’ve already used his code. **Anton Babenko - AWS Community Hero**, creator of the **Terraform AWS modules** (provisioned over 2 billion times worldwide), **author** of the Terraform Best Practices ebook, and the voice behind the Your Weekly Dose of Terraform YouTube channel - is joining us live in **Vienna**.\n\nHe’ll show how to close the trust gap between AI-generated Terraform and production reality. No slides-only theory: real modules, real contracts, real guardrails, live on stage. Plus: a second speaker and topic to be announced soon - stay tuned!\nA big thank you to **enspired GmbH** for hosting us and keeping the community alive!\n\n***\n\n Location\nenspired GmbH **Wagenseilgasse 3/4, 1120 Wien**\n\n When\nMonday, September 28, 2026 Doors open at 17:00 for networking, food & drinks. Talks start at 18:00.\n\n***\n\n Agenda\n17:00 - 18:00: Entry & Networking\n18:00 - 18:05: Welcome and Introduction AWS Community Vienna 18:05 - 18:10: Welcome and Introduction to the sponsors (enspired) 18:10 - 18:50: \"The Terraform Trust Gap: Engineering the Space Between Prompts and Production\" 18:50 - 19:20: Networking break 19:20 - 20:00: \"enspired by CDK\" 20:00 - Open End: Networking\n\n***\n\n**\"The Terraform Trust Gap: Engineering the Space Between Prompts and Production\"**\n\n**Speaker: Anton Babenko - AWS Community Hero** / Terraform influencer / compliance.tf\n\nAbout the talk:\nAgents can already write Terraform. That was never the hard part. The hard part is that the context going in is stale and the apply coming out is too easy to hand over, so you get code that looks right, passes your linters, even `terraform plan` passed, but still it quietly does the wrong thing in production. This talk runs one module everyone knows, `terraform-aws-modules/s3-bucket`, through the whole chain live. First I give the agent a real contract instead of a README and watch the hallucinated config disappear. Then I take one of the module's own examples and turn it into a fixture that fails the moment it drifts from the module. Then I let the agent plan changes but not apply them. A human has to approve the plan first, and apply only runs on the approved one. On stage the agent tries to apply by itself and you watch it get blocked. You leave with three things to do on Monday, every pattern working with open tooling, and an honest feedback of where the chain still breaks. No vendor account, no prompt magic.\n\n***\n\n**\"enspired by CDK\"**\nSpeakers: [Andreas Werschlan](https://www.linkedin.com/in/andreas-werschlan-08b4462b0/), [Michal Sedlak](https://www.linkedin.com/in/michal-sedlak-137105183/) and Orlin Filev\n\nAbout the talk:\nDiscover how we evolved our Infrastructure as Code journey with AWS CDK - from fast early implementations to standardised, reusable, production-ready patterns and secure, universal deployments. We will share the decisions, best practices, lessons learned, and hard-earned insights that helped us understand not only how to use CDK effectively, but also when not to use it.\n\n***\n\n Sponsors: **enspired GmbH** - [https://www.enspired-trading.com/](https://www.enspired-trading.com/)\nFounded in 2020 to solve the biggest challenges in the energy industry, enspired has been pushing the boundaries of innovation since day one. Driven by the belief that technology will make the energy transition a reality, we developed a state-of-the-art optimization platform in the early days of algo trading to integrate the flexibility we need for an efficient and sustainable energy system.\n\n***\n\n RSVP now and invite your colleagues to celebrate, learn, and connect with the AWS community!\n\n A friendly survival tip from us: To complete your RSVP, click the pink \"Continue with free plan\" hyperlink at the top. Yes, the pink one. Reading is a superpower - use it before reaching out to sponsors **By RSVPing, you confirm that you agree to our Code of Conduct.**\n\nBy submitting your RSVP, you acknowledge that photos and videos may be taken during the event. If you prefer not to appear in such recordings, please let the organizer know before the event. Please note that we cannot guarantee the retrospective removal, blurring, or editing of individual attendees in group photos or event footage. Any publication of identifiable individual portraits will be subject to separate consent where required.",
+      "talks": [
+        {
+          "title": "The Terraform Trust Gap: Engineering the Space Between Prompts and Production",
+          "speakers": [
+            {
+              "name": "Anton Babenko",
+              "role": "AWS Community Hero / Terraform influencer / compliance.tf"
+            }
+          ]
+        },
+        {
+          "title": "enspired by CDK",
+          "speakers": [
+            {
+              "name": "Andreas Werschlan"
+            },
+            {
+              "name": "Michal Sedlak"
+            },
+            {
+              "name": "Orlin Filev"
+            }
+          ]
+        }
+      ],
+      "stream": true,
+      "evening": {
+        "doorsOpen": "2026-09-28T17:00:00+02:00",
+        "end": "2026-09-28T21:00:00+02:00",
+        "agenda": [
+          {
+            "id": "doors",
+            "kind": "networking",
+            "start": "2026-09-28T17:00:00+02:00",
+            "end": "2026-09-28T18:00:00+02:00",
+            "title": "Entry & Networking"
+          },
+          {
+            "id": "welcome",
+            "kind": "welcome",
+            "start": "2026-09-28T18:00:00+02:00",
+            "end": "2026-09-28T18:05:00+02:00",
+            "title": "Welcome and Introduction AWS Community Vienna"
+          },
+          {
+            "id": "sponsor",
+            "kind": "sponsor",
+            "start": "2026-09-28T18:05:00+02:00",
+            "end": "2026-09-28T18:10:00+02:00",
+            "title": "Welcome and Introduction to the sponsors (enspired)"
+          },
+          {
+            "id": "talk-1",
+            "kind": "talk",
+            "start": "2026-09-28T18:10:00+02:00",
+            "end": "2026-09-28T18:50:00+02:00",
+            "title": "The Terraform Trust Gap: Engineering the Space Between Prompts and Production",
+            "talk": {
+              "title": "The Terraform Trust Gap: Engineering the Space Between Prompts and Production",
+              "abstract": "Agents can already write Terraform. That was never the hard part. The hard part is that the context going in is stale and the apply coming out is too easy to hand over, so you get code that looks right, passes your linters, even terraform plan passed, but still it quietly does the wrong thing in production. This talk runs one module everyone knows, terraform-aws-modules/s3-bucket, through the whole chain live. First I give the agent a real contract instead of a README and watch the hallucinated config disappear. Then I take one of the module's own examples and turn it into a fixture that fails the moment it drifts from the module. Then I let the agent plan changes but not apply them. A human has to approve the plan first, and apply only runs on the approved one. On stage the agent tries to apply by itself and you watch it get blocked. You leave with three things to do on Monday, every pattern working with open tooling, and an honest feedback of where the chain still breaks. No vendor account, no prompt magic.",
+              "speakers": [
+                {
+                  "name": "Anton Babenko",
+                  "role": "AWS Community Hero / Terraform influencer / compliance.tf",
+                  "photo": "https://cdn.sessionize.com/image/c485-200o200o2-MDhyUfHwzH2pvNZpk3rbWH.png",
+                  "bio": "Anton is an AWS Community Hero and helps companies around the globe build solutions using AWS, specializing in infrastructure-as-code, DevOps, and reusable infrastructure components.\n\nHe spends much of his time as an open-source contributor on various Terraform and AWS projects: Terraform AWS modules (downloaded more than 2 billion times), the Terraform best practices ebook (www.terraform-best-practices.com), serverless with Terraform (serverless.tf), Terraform Weekly (weekly.tf), and Your Weekly Dose of Terraform (http://bit.ly/terraform-youtube). He runs compliance.tf, which delivers compliance-ready Terraform AWS modules, and maintains terraform-skill (1.8K stars on GitHub), an open agent skill for writing and reviewing Terraform safely."
+                }
+              ]
+            }
+          },
+          {
+            "id": "break-1",
+            "kind": "break",
+            "start": "2026-09-28T18:50:00+02:00",
+            "end": "2026-09-28T19:20:00+02:00",
+            "title": "Networking break"
+          },
+          {
+            "id": "talk-2",
+            "kind": "talk",
+            "start": "2026-09-28T19:20:00+02:00",
+            "end": "2026-09-28T20:00:00+02:00",
+            "title": "enspired by CDK",
+            "talk": {
+              "title": "enspired by CDK",
+              "abstract": "Discover how we evolved our Infrastructure as Code journey with AWS CDK - from fast early implementations to standardised, reusable, production-ready patterns and secure, universal deployments. We will share the decisions, best practices, lessons learned, and hard-earned insights that helped us understand not only how to use CDK effectively, but also when not to use it.",
+              "speakers": [
+                {
+                  "name": "Andreas Werschlan",
+                  "links": [
+                    {
+                      "title": "LinkedIn",
+                      "url": "https://www.linkedin.com/in/andreas-werschlan-08b4462b0/"
+                    }
+                  ]
+                },
+                {
+                  "name": "Michal Sedlak",
+                  "links": [
+                    {
+                      "title": "LinkedIn",
+                      "url": "https://www.linkedin.com/in/michal-sedlak-137105183/"
+                    }
+                  ]
+                },
+                {
+                  "name": "Orlin Filev"
+                }
+              ]
+            }
+          },
+          {
+            "id": "closing",
+            "kind": "closing",
+            "start": "2026-09-28T20:00:00+02:00",
+            "end": "2026-09-28T21:00:00+02:00",
+            "title": "Networking"
+          }
+        ],
+        "notices": [
+          "By submitting your RSVP, you acknowledge that photos and videos may be taken during the event. If you prefer not to appear in such recordings, please let the organizer know before the event. Please note that we cannot guarantee the retrospective removal, blurring, or editing of individual attendees in group photos or event footage. Any publication of identifiable individual portraits will be subject to separate consent where required."
+        ],
+        "conduct": {
+          "title": "Growing Together",
+          "subtitle": "One Respectful Interaction at a Time",
+          "lines": [
+            "No matter your background or interests, you're part of the AWS family here.",
+            "\"But, it's just a joke!\": If you have to say it, it probably wasn't. Aim for laughs, not cringes.",
+            "If you encounter a red signal, our organizers are here to navigate."
+          ]
+        },
+        "badges": [
+          {
+            "name": "Leader",
+            "title": "Event Organizer",
+            "text": "Reach out for questions, suggestions, or if you feel unsafe.",
+            "image": "/present/badges/leader.png"
+          },
+          {
+            "name": "Host",
+            "title": "Location & Food Sponsor",
+            "text": "Curious about what we do? Let's chat!",
+            "image": "/present/badges/host.png"
+          },
+          {
+            "name": "Speaker",
+            "title": "Today's Speaker",
+            "text": "Curious about the topic? Let's discuss!",
+            "image": "/present/badges/speaker.png"
+          },
+          {
+            "name": "First-Timer",
+            "title": "New to the Meetup",
+            "text": "Introduce yourself, and let's connect!",
+            "image": "/present/badges/first-timer.png"
+          },
+          {
+            "name": "All-Timer",
+            "title": "Regular Member",
+            "text": "Welcome back! Say hi to the new faces.",
+            "image": "/present/badges/all-timer.png"
+          }
+        ],
+        "sponsors": [
+          {
+            "name": "enspired GmbH",
+            "logo": "/present/logos/enspired.png"
+          }
+        ]
+      },
+      "deck": "/decks/2026-09-28-aws-meetup-vienna-52.pdf",
+      "deckCover": "/decks/2026-09-28-aws-meetup-vienna-52.png"
+    },
+    {
+      "version": 1,
+      "id": "2026-08-25-aws-user-group-vienna-presents-agentic-football-cup-2026",
+      "title": "AWS User Group Vienna presents: Agentic Football Cup 2026",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/315778998/",
+      "start": "2026-08-25T16:00:00+02:00",
+      "end": "2026-08-25T21:00:00+02:00",
+      "group": {
+        "id": "aws-ug-vienna",
+        "name": "AWS User Group Vienna",
+        "url": "https://www.meetup.com/amazon-web-services-aws-vienna/"
+      },
+      "venue": {
+        "name": "Generali Arena",
+        "address": "Horrplatz 1, 1100 Wien"
+      },
+      "hosts": [
+        {
+          "name": "DoIT"
+        }
+      ],
+      "image": "https://secure.meetupstatic.com/photos/event/b/c/f/2/highres_535308370.jpeg",
+      "summary": "The football summer may be over, but the next tournament is just kicking off - and this time, the teams are powered by AI.",
+      "description": "**The football summer may be over, but the next tournament is just kicking off - and this time, the teams are powered by AI.**\n\nJoin **AWS User Group Vienna** for a special **Agentic Football Cup** edition hosted by us at the real football **Generali Arena** stadion: a hands-on workshop where you will build a team of autonomous AI agents, send them onto a virtual football pitch, and compete against other teams.\n\nStrategy, teamwork, rapid decisions and the pressure of match day are not just football concepts.\nThey are also the foundations of effective multi-agent systems. Build your squad, refine its tactics, deploy it to AWS, and see whether your agents have what it takes to lift the cup. This is a great opportunity to develop a better understanding of the agents on AWS via exciting football sessions!\n\nA huge thank you to **DoIT** for sponsoring and hosting this special event at the Generali Arena!\n\n***\n\n **Location**\nGenerali Arena\nHorrplatz 1, 1100 Wien\n\n **When**\n**Tuesday, 25 August 2026**\nDoors open at **16:00** for registration, food and networking.\nWorkshop starts at **16:30**.\n\n***\n\n## Agenda\n\n16:00 - 16:30: Entry, registration & team forming\n16:30 - 16:35: Welcome and introduction - AWS User Group Vienna\n16:35 - 16:40: Welcome from our sponsor, DoIT\n16:40 - 17:00: Kick-off: Agentic Football Cup Introduction & Workshop Setup\n17:00 - 17:40: Workshop - build and deploy your Agentic Football Team\n17:40 - 18:40: Fine tune your agents & Practice Matches\n18:40 - 19:25: Tournament\n19:25 - 20:00: Winners Ceremony, networking, food & drinks\n\n***\n\n## Agentic Football Cup\n\nThe [Agentic Football Cup](https://www.linkedin.com/posts/pjphorn_im-really-pleased-to-announce-that-the-aws-activity-7465345891458011136-MQ9u) is a free, hands-on AWS workshop where you build a five-agent football team, deploy it on AWS, and watch it compete in live 5v5 matches. Each agent receives the live game state, makes an independent decision, and acts on the pitch alongside its teammates.\n\nBehind the football theme are real-world patterns for building agentic applications: multi-agent orchestration, structured outputs, tool use, latency management, observability and repeatable evaluation. The agents run on Amazon Bedrock AgentCore and use foundation models to decide their [next moves during the game](https://www.linkedin.com/posts/pjphorn_im-really-pleased-to-announce-that-the-aws-activity-7465345891458011136-MQ9u).\n\n## What to expect\n\n* Build a team of autonomous AI football agents\n* Define tactics, team roles and agent behavior\n* Learn how multi-agent systems coordinate in a fast-moving environment\n* Deploy and iterate on AWS\n* Watch your team compete live against other participants\n* Meet fellow cloud and AI builders from the Vienna community\n\nNo football or AI experience is required - just curiosity, a laptop and the desire to build something that competes.\n\n***\n\n **Sponsor & Host**\n\n**DoIT** - thank you for supporting the AWS community and making this event possible at the Generali Arena.\n\n***\n\n **RSVP now** and invite your colleagues to experience the 2026 football season from a different perspective: not from the stands, but from the AI touchline.\nBy RSVPing, you confirm that you agree to our [Code of Conduct](http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf).\nBy submitting your RSVP, you acknowledge that photos and videos may be taken during the event. If you prefer not to appear in such recordings, please let the organizer know before the event. Please note that we cannot guarantee the retrospective removal, blurring, or editing of individual attendees in group photos or event footage. Any publication of identifiable individual portraits will be subject to separate consent where required.",
+      "talks": [
+        {
+          "title": "Workshop - build and deploy your Agentic Football Team",
+          "speakers": []
+        },
+        {
+          "title": "Fine tune your agents & Practice Matches",
+          "speakers": []
+        },
+        {
+          "title": "Tournament",
+          "speakers": []
+        }
+      ],
+      "stream": true,
+      "evening": {
+        "doorsOpen": "2026-08-25T16:00:00+02:00",
+        "end": "2026-08-25T21:00:00+02:00",
+        "agenda": [
+          {
+            "id": "doors",
+            "kind": "networking",
+            "start": "2026-08-25T16:00:00+02:00",
+            "end": "2026-08-25T16:30:00+02:00",
+            "title": "Entry, registration & team forming"
+          },
+          {
+            "id": "welcome",
+            "kind": "welcome",
+            "start": "2026-08-25T16:30:00+02:00",
+            "end": "2026-08-25T16:35:00+02:00",
+            "title": "Welcome and introduction - AWS User Group Vienna"
+          },
+          {
+            "id": "sponsor",
+            "kind": "sponsor",
+            "start": "2026-08-25T16:35:00+02:00",
+            "end": "2026-08-25T16:40:00+02:00",
+            "title": "Welcome from our sponsor, DoIT"
+          },
+          {
+            "id": "welcome-2",
+            "kind": "welcome",
+            "start": "2026-08-25T16:40:00+02:00",
+            "end": "2026-08-25T17:00:00+02:00",
+            "title": "Kick-off: Agentic Football Cup Introduction & Workshop Setup"
+          },
+          {
+            "id": "talk-1",
+            "kind": "talk",
+            "start": "2026-08-25T17:00:00+02:00",
+            "end": "2026-08-25T17:40:00+02:00",
+            "title": "Workshop - build and deploy your Agentic Football Team",
+            "talk": {
+              "title": "Workshop - build and deploy your Agentic Football Team",
+              "speakers": []
+            }
+          },
+          {
+            "id": "talk-2",
+            "kind": "talk",
+            "start": "2026-08-25T17:40:00+02:00",
+            "end": "2026-08-25T18:40:00+02:00",
+            "title": "Fine tune your agents & Practice Matches",
+            "talk": {
+              "title": "Fine tune your agents & Practice Matches",
+              "speakers": []
+            }
+          },
+          {
+            "id": "talk-3",
+            "kind": "talk",
+            "start": "2026-08-25T18:40:00+02:00",
+            "end": "2026-08-25T19:25:00+02:00",
+            "title": "Tournament",
+            "talk": {
+              "title": "Tournament",
+              "speakers": []
+            }
+          },
+          {
+            "id": "closing",
+            "kind": "closing",
+            "start": "2026-08-25T19:25:00+02:00",
+            "end": "2026-08-25T20:00:00+02:00",
+            "title": "Winners Ceremony, networking, food & drinks"
+          }
+        ],
+        "notices": [
+          "By submitting your RSVP, you acknowledge that photos and videos may be taken during the event. If you prefer not to appear in such recordings, please let the organizer know before the event. Please note that we cannot guarantee the retrospective removal, blurring, or editing of individual attendees in group photos or event footage. Any publication of identifiable individual portraits will be subject to separate consent where required."
+        ],
+        "codeOfConduct": "http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf",
+        "conduct": {
+          "title": "Growing Together",
+          "subtitle": "One Respectful Interaction at a Time",
+          "lines": [
+            "No matter your background or interests, you're part of the AWS family here.",
+            "\"But, it's just a joke!\": If you have to say it, it probably wasn't. Aim for laughs, not cringes.",
+            "If you encounter a red signal, our organizers are here to navigate."
+          ]
+        },
+        "badges": [
+          {
+            "name": "Leader",
+            "title": "Event Organizer",
+            "text": "Reach out for questions, suggestions, or if you feel unsafe.",
+            "image": "/present/badges/leader.png"
+          },
+          {
+            "name": "Host",
+            "title": "Location & Food Sponsor",
+            "text": "Curious about what we do? Let's chat!",
+            "image": "/present/badges/host.png"
+          },
+          {
+            "name": "Speaker",
+            "title": "Today's Speaker",
+            "text": "Curious about the topic? Let's discuss!",
+            "image": "/present/badges/speaker.png"
+          },
+          {
+            "name": "First-Timer",
+            "title": "New to the Meetup",
+            "text": "Introduce yourself, and let's connect!",
+            "image": "/present/badges/first-timer.png"
+          },
+          {
+            "name": "All-Timer",
+            "title": "Regular Member",
+            "text": "Welcome back! Say hi to the new faces.",
+            "image": "/present/badges/all-timer.png"
+          }
+        ],
+        "sponsors": [
+          {
+            "name": "DoIT",
+            "logo": "/present/logos/doit.png"
+          }
+        ]
+      },
+      "deck": "/decks/2026-08-25-aws-user-group-vienna-presents-agentic-football-cup-2026.pdf",
+      "deckCover": "/decks/2026-08-25-aws-user-group-vienna-presents-agentic-football-cup-2026.png"
+    },
+    {
+      "version": 1,
+      "id": "2026-06-02-aws-meetup-vienna-51",
+      "title": "AWS Meetup Vienna #51 - hosted by Eversports",
+      "number": 51,
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/314914273/",
+      "start": "2026-06-02T17:00:00+02:00",
+      "end": "2026-06-02T21:00:00+02:00",
+      "group": {
+        "id": "aws-ug-vienna",
+        "name": "AWS User Group Vienna",
+        "url": "https://www.meetup.com/amazon-web-services-aws-vienna/"
+      },
+      "venue": {
+        "name": "Eversport GmbH",
+        "address": "Jakov-Lind-Straße 13 H/5. OG, 1020 Wien"
+      },
+      "hosts": [
+        {
+          "name": "Eversports"
+        }
+      ],
+      "image": "https://secure.meetupstatic.com/photos/event/d/d/6/8/highres_534356680.jpeg",
+      "summary": "Summer is arriving in Vienna - and so is our next AWS meetup!",
+      "description": "Summer is arriving in Vienna - and so is our next AWS meetup!\n\nFor our June edition, we’re going back to building: serverless architectures, modern cloud workflows, and a touch of AI to explore how these worlds increasingly connect in real projects.\n\nA big thank you to **Eversports** for supporting the community and making the meetup possible!\n\n***\n\n **Location**\nEversport GmbH\nJakov-Lind-Straße 13 H/5. OG, 1020 Wien\n\n **When**\n**June 2nd 2026**\nDoors open at 17:00 for networking, food & drinks.\nTalks start at 18:00.\n\n***\n\n **Agenda**\n\n* **17:00 - 18:00:** Entry & Networking\n* **18:00 - 18:05:** Welcome and Introduction AWS Community Vienna\n* **18:05 - 18:10:** Welcome and Introduction to the sponsors (**Eversports**)\n* **18:10 - 18:50:** **\"How RBI is automating its cloud foundation with AWS Step Functions\"**\n* **18:50 - 19:20:** Networking break\n* **19:20 - 20:00:** **\"Building Conversational Agents in Code with AWS Lambda Durable Functions\"**\n* **20:00 - Open End:** Networking\n\n**\"Building Conversational Agents in Code with AWS Lambda Durable Functions\"**\n\n*Speaker:* **[Gunnar Grosch](https://www.linkedin.com/in/gunnargrosch/)**\\, Developer Advocate at Sinch \\| ex\\-AWS \\| AWS Serverless Hero\n\n*About the talk:*\nBuilding agentic AI workflows typically requires Step Functions or complex database state machines to handle human delays. AWS Lambda Durable Functions change that. You write sequential code in a single Lambda function that can suspend for days and resume instantly, and you only pay for active compute time. In this session, we will orchestrate Amazon Bedrock conversational agents using the Sinch Conversation API to handle inbound interactions. You will learn how to dispatch AI specialists, use simple callbacks to wait for asynchronous human input, and replace heavy infrastructure boilerplate with native durable execution.\n\n**\"How RBI is automating its cloud foundation with AWS Step Functions\"**\n*Speaker:* **[Roman Jokel](https://www.linkedin.com/in/roman-jokel/),** Cloud Architect (Raiffeisen Informatik)\n**/ [Florian Ettinger](https://www.linkedin.com/in/florian-ettinger/),** Solution Architect (AWS)\n\n*About the talk:*\nHow can AWS Step Functions transform daily cloud operations? Join us to explore how RBI is using workflow orchestration to automate its cloud foundation. We’ll share practical insights from our Cloud Center of Excellence, demonstrating how Step Functions power landing zone operations, simplify automation, speed up deployments and enable scalable cloud governance across the organization.\n\n***\n\n **Sponsors:**\n\n* **Eversports** - [eversports.at](https://www.eversports.at/)\n\n***\n\n **RSVP now** and invite your colleagues to celebrate, learn, and connect with the AWS community!\n\nBy RSVPing, you confirm that you agree to our [Code of Conduct](http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf).\n**By submitting your RSVP, you acknowledge that photos and videos may be taken during the event. If you prefer not to appear in such recordings, please let the organizer know before the event. Please note that we cannot guarantee the retrospective removal, blurring, or editing of individual attendees in group photos or event footage. Any publication of identifiable individual portraits will be subject to separate consent where required.**",
+      "talks": [
+        {
+          "title": "Building Conversational Agents in Code with AWS Lambda Durable Functions",
+          "speakers": [
+            {
+              "name": "Gunnar Grosch",
+              "role": "Developer Advocate",
+              "company": "Sinch | ex-AWS | AWS Serverless Hero"
+            }
+          ]
+        },
+        {
+          "title": "How RBI is automating its cloud foundation with AWS Step Functions",
+          "speakers": [
+            {
+              "name": "Roman Jokel",
+              "role": "Cloud Architect",
+              "company": "Raiffeisen Informatik"
+            },
+            {
+              "name": "Florian Ettinger",
+              "role": "Solution Architect",
+              "company": "AWS"
+            }
+          ]
+        }
+      ],
+      "stream": true,
+      "evening": {
+        "doorsOpen": "2026-06-02T17:00:00+02:00",
+        "end": "2026-06-02T21:00:00+02:00",
+        "agenda": [
+          {
+            "id": "doors",
+            "kind": "networking",
+            "start": "2026-06-02T17:00:00+02:00",
+            "end": "2026-06-02T18:00:00+02:00",
+            "title": "Entry & Networking"
+          },
+          {
+            "id": "welcome",
+            "kind": "welcome",
+            "start": "2026-06-02T18:00:00+02:00",
+            "end": "2026-06-02T18:05:00+02:00",
+            "title": "Welcome and Introduction AWS Community Vienna"
+          },
+          {
+            "id": "sponsor",
+            "kind": "sponsor",
+            "start": "2026-06-02T18:05:00+02:00",
+            "end": "2026-06-02T18:10:00+02:00",
+            "title": "Welcome and Introduction to the sponsors (Eversports)"
+          },
+          {
+            "id": "talk-1",
+            "kind": "talk",
+            "start": "2026-06-02T18:10:00+02:00",
+            "end": "2026-06-02T18:50:00+02:00",
+            "title": "How RBI is automating its cloud foundation with AWS Step Functions",
+            "talk": {
+              "title": "How RBI is automating its cloud foundation with AWS Step Functions",
+              "abstract": "How can AWS Step Functions transform daily cloud operations? Join us to explore how RBI is using workflow orchestration to automate its cloud foundation. We’ll share practical insights from our Cloud Center of Excellence, demonstrating how Step Functions power landing zone operations, simplify automation, speed up deployments and enable scalable cloud governance across the organization.",
+              "speakers": [
+                {
+                  "name": "Roman Jokel",
+                  "role": "Cloud Architect",
+                  "company": "Raiffeisen Informatik",
+                  "photo": "/present/people/roman-jokel.png",
+                  "bio": "Roman Jokel is a Cloud Architect at Raiffeisen Bank International (RBI) in Vienna, where he works on the bank's AWS cloud foundation, including automating landing zone operations with AWS Step Functions in RBI's Cloud Center of Excellence. He has presented RBI's cloud work at AWS Summit Zurich 2024 and AWS Summit Hamburg 2025, holds the AWS Solutions Architect - Professional, Advanced Networking - Specialty and Security - Specialty certifications, and is a co-organizer of the AWS User Group Vienna.",
+                  "links": [
+                    {
+                      "title": "LinkedIn",
+                      "url": "https://www.linkedin.com/in/roman-jokel/"
+                    }
+                  ]
+                },
+                {
+                  "name": "Florian Ettinger",
+                  "role": "Solution Architect",
+                  "company": "AWS",
+                  "photo": "/present/people/florian-ettinger.png",
+                  "links": [
+                    {
+                      "title": "LinkedIn",
+                      "url": "https://www.linkedin.com/in/florian-ettinger/"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "break-1",
+            "kind": "break",
+            "start": "2026-06-02T18:50:00+02:00",
+            "end": "2026-06-02T19:20:00+02:00",
+            "title": "Networking break"
+          },
+          {
+            "id": "talk-2",
+            "kind": "talk",
+            "start": "2026-06-02T19:20:00+02:00",
+            "end": "2026-06-02T20:00:00+02:00",
+            "title": "Building Conversational Agents in Code with AWS Lambda Durable Functions",
+            "talk": {
+              "title": "Building Conversational Agents in Code with AWS Lambda Durable Functions",
+              "abstract": "Building agentic AI workflows typically requires Step Functions or complex database state machines to handle human delays. AWS Lambda Durable Functions change that. You write sequential code in a single Lambda function that can suspend for days and resume instantly, and you only pay for active compute time. In this session, we will orchestrate Amazon Bedrock conversational agents using the Sinch Conversation API to handle inbound interactions. You will learn how to dispatch AI specialists, use simple callbacks to wait for asynchronous human input, and replace heavy infrastructure boilerplate with native durable execution.",
+              "speakers": [
+                {
+                  "name": "Gunnar Grosch",
+                  "role": "Developer Advocate",
+                  "company": "Sinch | ex-AWS | AWS Serverless Hero",
+                  "photo": "/present/people/gunnar-grosch.png",
+                  "links": [
+                    {
+                      "title": "LinkedIn",
+                      "url": "https://www.linkedin.com/in/gunnargrosch/"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "closing",
+            "kind": "closing",
+            "start": "2026-06-02T20:00:00+02:00",
+            "end": "2026-06-02T21:00:00+02:00",
+            "title": "Networking"
+          }
+        ],
+        "notices": [
+          "By submitting your RSVP, you acknowledge that photos and videos may be taken during the event. If you prefer not to appear in such recordings, please let the organizer know before the event. Please note that we cannot guarantee the retrospective removal, blurring, or editing of individual attendees in group photos or event footage. Any publication of identifiable individual portraits will be subject to separate consent where required."
+        ],
+        "codeOfConduct": "http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf",
+        "conduct": {
+          "title": "Growing Together",
+          "subtitle": "One Respectful Interaction at a Time",
+          "lines": [
+            "No matter your background or interests, you're part of the AWS family here.",
+            "\"But, it's just a joke!\": If you have to say it, it probably wasn't. Aim for laughs, not cringes.",
+            "If you encounter a red signal, our organizers are here to navigate."
+          ]
+        },
+        "badges": [
+          {
+            "name": "Leader",
+            "title": "Event Organizer",
+            "text": "Reach out for questions, suggestions, or if you feel unsafe.",
+            "image": "/present/badges/leader.png"
+          },
+          {
+            "name": "Host",
+            "title": "Location & Food Sponsor",
+            "text": "Curious about what we do? Let's chat!",
+            "image": "/present/badges/host.png"
+          },
+          {
+            "name": "Speaker",
+            "title": "Today's Speaker",
+            "text": "Curious about the topic? Let's discuss!",
+            "image": "/present/badges/speaker.png"
+          },
+          {
+            "name": "First-Timer",
+            "title": "New to the Meetup",
+            "text": "Introduce yourself, and let's connect!",
+            "image": "/present/badges/first-timer.png"
+          },
+          {
+            "name": "All-Timer",
+            "title": "Regular Member",
+            "text": "Welcome back! Say hi to the new faces.",
+            "image": "/present/badges/all-timer.png"
+          }
+        ],
+        "sponsors": [
+          {
+            "name": "Eversports",
+            "url": "https://www.eversports.at/",
+            "logo": "/present/logos/eversports.svg"
+          }
+        ]
+      },
+      "deck": "/decks/2026-06-02-aws-meetup-vienna-51.pdf",
+      "deckCover": "/decks/2026-06-02-aws-meetup-vienna-51.png"
+    },
+    {
+      "version": 1,
+      "id": "2026-04-22-aws-meetup-50",
+      "title": "AWS Meetup #50 - hosted by Bytesource",
+      "number": 50,
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/314152267/",
+      "start": "2026-04-22T17:00:00+02:00",
+      "end": "2026-04-22T21:00:00+02:00",
+      "group": {
+        "id": "aws-ug-vienna",
+        "name": "AWS User Group Vienna",
+        "url": "https://www.meetup.com/amazon-web-services-aws-vienna/"
+      },
+      "venue": {
+        "name": "The Atelier",
+        "address": "Impact Hub Vienna, Lindengasse 56, 1070 Wien"
+      },
+      "hosts": [
+        {
+          "name": "Bytesource"
+        }
+      ],
+      "image": "https://secure.meetupstatic.com/photos/event/1/4/8/a/highres_533585258.jpeg",
+      "summary": "After \"winter is coming\" we finally can say \"spring is coming\" to Vienna!",
+      "description": "After **\"winter is coming\"** we finally can say **\"spring is coming\"** to Vienna!\n\nAs we had the AWSome GameDay Europe in March, we're now coming back to our **regular agenda**!\n\nWe're visiting The Atelier at **Impact Hub Vienna** this time, thankfully to the sponsor **Bytesource**!\n\n***\n\n **Location**\nThe Atelier\nImpact Hub Vienna\n[Lindengasse 56, 1070 Wien](https://www.google.com/maps/place//data=!4m2!3m1!1s0x476d078cbc5cf79b:0x3e9197850789a772?sa=X&ved=1t:8290&ictx=111)\n\n **When**\n**April 22th 2026**\nDoors open at 17:00 for networking, food & drinks.\nTalks start at 18:00.\n\n***\n\n **Agenda**\n\n* **17:00 - 18:00:** Entry & Networking\n* **18:00 - 18:05:** Welcome and Introduction AWS Community Vienna\n* **18:05 - 18:10:** Welcome and Introduction to the sponsors (**Bytesource**)\n* **18:10 - 19:00:** **\"Sales Copilot: Turn complex technical inquiries into clear, accurate offers in minutes, not hours!\"**\n* **19:00 - 19:20:** Networking break\n* **19:20 - 20:00:** **\"Beyond Vibe Coding\"**\n* **20:00 - Open End:** Networking\n\n**\"Sales Copilot: Turn complex technical inquiries into clear, accurate offers in minutes, not hours!\"**\n\n*Speaker:* **Alexander Matev**, CISO at Bytesource\n\n*About the talk:*\nSales CoPilot as a solution that helps teams turn complex technical customer inquiries into clear, accurate quotations much faster, reducing turnaround from hours to minutes.\n\nThe business problem: technical sales requests are slow, difficult, and error-prone when handled manually.\n\nThe Solution: Our Sales CoPilot interprets complex requirements, works with documentation and technical data, and supports offer preparation.\n\nTechnology foundation: strong emphasis on AWS as the enabler, plus AI/LLM-driven processing.\nArchitecture choice: a set of core AWS services to deliver both the user-facing application and the AI-powered data processing pipeline. Amazon S3 stores uploaded product datasheets and hosts the frontend assets, while Amazon CloudFront accelerates and securely delivers the web interface to users.\nIncoming application traffic is routed through an Application Load Balancer (ALB) to containerized services running on Amazon ECS, which handle both backend business logic and document ingestion tasks.\nFor AI capabilities, Amazon Bedrock is used in two places: to extract and transform structured information from PDF datasheets, and to power the agentic logic behind the application.\nPersistent structured data is stored in Amazon Aurora PostgreSQL, which supports read/write operations from the backend.\nTogether, these AWS services provide a scalable, cloud-native architecture for hosting, processing, AI enrichment, and application delivery.\n\n###\n\n**\"Beyond Vibe Coding\"**\n\n*Speaker:* **Sergio Lopez-Gehler**, Solutions Architect @ AWS\n\nAI agents are changing how engineers write, test, and ship code. This talk explores what agentic coding looks like in practice - the workflow, the tradeoffs, and the tools that make it work.\n\nWe'll cover how to collaborate effectively with AI agents: prompting, reviewing, iterating, and knowing when to take over. We'll look at what changes when development gets significantly faster - testing strategies, CI/CD pipelines, and team coordination all need to keep up. Then we'll introduce Kiro, an agentic IDE that uses spec-driven development, steering rules, and hooks to let engineers define how the agent operates within their codebase. We'll also look at AWS DevOps Agent - an autonomous operations teammate that correlates metrics, logs, and deployment history to investigate incidents and identify root causes before you even open your laptop.\n\n***\n\n **Sponsors:**\n\n* **Bytesource** - [https://bytesource.net/de/](https://bytesource.net/de/)\n\n***\n\n **RSVP now** and invite your colleagues to celebrate, learn, and connect with the AWS community at **Impact Hub Vienna**!\n\nBy RSVPing, you confirm that you agree to our [Code of Conduct](http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf).\n**By submitting your RSVP, you acknowledge that photos and videos may be taken during the event. If you prefer not to appear in such recordings, please let the organizer know before the event. Please note that we cannot guarantee the retrospective removal, blurring, or editing of individual attendees in group photos or event footage. Any publication of identifiable individual portraits will be subject to separate consent where required.**",
+      "talks": [
+        {
+          "title": "Sales Copilot: Turn complex technical inquiries into clear, accurate offers in minutes, not hours!",
+          "speakers": [
+            {
+              "name": "Alexander Matev",
+              "role": "CISO",
+              "company": "Bytesource"
+            }
+          ]
+        },
+        {
+          "title": "Beyond Vibe Coding",
+          "speakers": [
+            {
+              "name": "Sergio Lopez-Gehler",
+              "role": "Solutions Architect",
+              "company": "AWS"
+            }
+          ]
+        }
+      ],
+      "stream": true,
+      "evening": {
+        "doorsOpen": "2026-04-22T17:00:00+02:00",
+        "end": "2026-04-22T21:00:00+02:00",
+        "agenda": [
+          {
+            "id": "doors",
+            "kind": "networking",
+            "start": "2026-04-22T17:00:00+02:00",
+            "end": "2026-04-22T18:00:00+02:00",
+            "title": "Entry & Networking"
+          },
+          {
+            "id": "welcome",
+            "kind": "welcome",
+            "start": "2026-04-22T18:00:00+02:00",
+            "end": "2026-04-22T18:05:00+02:00",
+            "title": "Welcome and Introduction AWS Community Vienna"
+          },
+          {
+            "id": "sponsor",
+            "kind": "sponsor",
+            "start": "2026-04-22T18:05:00+02:00",
+            "end": "2026-04-22T18:10:00+02:00",
+            "title": "Welcome and Introduction to the sponsors (Bytesource)"
+          },
+          {
+            "id": "talk-1",
+            "kind": "talk",
+            "start": "2026-04-22T18:10:00+02:00",
+            "end": "2026-04-22T19:00:00+02:00",
+            "title": "Sales Copilot: Turn complex technical inquiries into clear, accurate offers in minutes, not hours!",
+            "talk": {
+              "title": "Sales Copilot: Turn complex technical inquiries into clear, accurate offers in minutes, not hours!",
+              "abstract": "Sales CoPilot as a solution that helps teams turn complex technical customer inquiries into clear, accurate quotations much faster, reducing turnaround from hours to minutes.\n\nThe business problem: technical sales requests are slow, difficult, and error-prone when handled manually.\n\nThe Solution: Our Sales CoPilot interprets complex requirements, works with documentation and technical data, and supports offer preparation.\n\nTechnology foundation: strong emphasis on AWS as the enabler, plus AI/LLM-driven processing. Architecture choice: a set of core AWS services to deliver both the user-facing application and the AI-powered data processing pipeline. Amazon S3 stores uploaded product datasheets and hosts the frontend assets, while Amazon CloudFront accelerates and securely delivers the web interface to users. Incoming application traffic is routed through an Application Load Balancer (ALB) to containerized services running on Amazon ECS, which handle both backend business logic and document ingestion tasks. For AI capabilities, Amazon Bedrock is used in two places: to extract and transform structured information from PDF datasheets, and to power the agentic logic behind the application. Persistent structured data is stored in Amazon Aurora PostgreSQL, which supports read/write operations from the backend. Together, these AWS services provide a scalable, cloud-native architecture for hosting, processing, AI enrichment, and application delivery.\n\n###",
+              "speakers": [
+                {
+                  "name": "Alexander Matev",
+                  "role": "CISO",
+                  "company": "Bytesource",
+                  "photo": "https://cdn.sessionize.com/image/f3dd-200o200o2-B8FopGW8bQtmBm34J4A5BV.jpg",
+                  "bio": "- CISO at ByteSoruce - Part of the development team for AI products @ByteSource"
+                }
+              ]
+            }
+          },
+          {
+            "id": "break-1",
+            "kind": "break",
+            "start": "2026-04-22T19:00:00+02:00",
+            "end": "2026-04-22T19:20:00+02:00",
+            "title": "Networking break"
+          },
+          {
+            "id": "talk-2",
+            "kind": "talk",
+            "start": "2026-04-22T19:20:00+02:00",
+            "end": "2026-04-22T20:00:00+02:00",
+            "title": "Beyond Vibe Coding",
+            "talk": {
+              "title": "Beyond Vibe Coding",
+              "abstract": "AI agents are changing how engineers write, test, and ship code. This talk explores what agentic coding looks like in practice - the workflow, the tradeoffs, and the tools that make it work.\n\nWe'll cover how to collaborate effectively with AI agents: prompting, reviewing, iterating, and knowing when to take over. We'll look at what changes when development gets significantly faster - testing strategies, CI/CD pipelines, and team coordination all need to keep up. Then we'll introduce Kiro, an agentic IDE that uses spec-driven development, steering rules, and hooks to let engineers define how the agent operates within their codebase. We'll also look at AWS DevOps Agent - an autonomous operations teammate that correlates metrics, logs, and deployment history to investigate incidents and identify root causes before you even open your laptop.",
+              "speakers": [
+                {
+                  "name": "Sergio Lopez-Gehler",
+                  "role": "Solutions Architect",
+                  "company": "AWS",
+                  "photo": "https://cdn.sessionize.com/image/a5fd-200o200o2-3b78bNhNqef8SG7ApVKnJx.jpg",
+                  "bio": "Sergio is a Solutions Architect at AWS, based in Vienna, Austria. He brings a strong background in Data Engineering, Data Science, and Machine Learning. Since the emergence of LLMs, he has been deep in the trenches building applications that leverage this technology — from RAG pipelines to agentic flows and everything in between. Before making the jump to tech, he spent years in academia as a physicist, working across Astronomy and Particle Physics."
+                }
+              ]
+            }
+          },
+          {
+            "id": "closing",
+            "kind": "closing",
+            "start": "2026-04-22T20:00:00+02:00",
+            "end": "2026-04-22T21:00:00+02:00",
+            "title": "Networking"
+          }
+        ],
+        "notices": [
+          "By submitting your RSVP, you acknowledge that photos and videos may be taken during the event. If you prefer not to appear in such recordings, please let the organizer know before the event. Please note that we cannot guarantee the retrospective removal, blurring, or editing of individual attendees in group photos or event footage. Any publication of identifiable individual portraits will be subject to separate consent where required."
+        ],
+        "codeOfConduct": "http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf",
+        "conduct": {
+          "title": "Growing Together",
+          "subtitle": "One Respectful Interaction at a Time",
+          "lines": [
+            "No matter your background or interests, you're part of the AWS family here.",
+            "\"But, it's just a joke!\": If you have to say it, it probably wasn't. Aim for laughs, not cringes.",
+            "If you encounter a red signal, our organizers are here to navigate."
+          ]
+        },
+        "badges": [
+          {
+            "name": "Leader",
+            "title": "Event Organizer",
+            "text": "Reach out for questions, suggestions, or if you feel unsafe.",
+            "image": "/present/badges/leader.png"
+          },
+          {
+            "name": "Host",
+            "title": "Location & Food Sponsor",
+            "text": "Curious about what we do? Let's chat!",
+            "image": "/present/badges/host.png"
+          },
+          {
+            "name": "Speaker",
+            "title": "Today's Speaker",
+            "text": "Curious about the topic? Let's discuss!",
+            "image": "/present/badges/speaker.png"
+          },
+          {
+            "name": "First-Timer",
+            "title": "New to the Meetup",
+            "text": "Introduce yourself, and let's connect!",
+            "image": "/present/badges/first-timer.png"
+          },
+          {
+            "name": "All-Timer",
+            "title": "Regular Member",
+            "text": "Welcome back! Say hi to the new faces.",
+            "image": "/present/badges/all-timer.png"
+          }
+        ],
+        "sponsors": [
+          {
+            "name": "Bytesource",
+            "url": "https://bytesource.net/de/",
+            "logo": "/present/logos/bytesource.svg"
+          }
+        ]
+      },
+      "deck": "/decks/2026-04-22-aws-meetup-50.pdf",
+      "deckCover": "/decks/2026-04-22-aws-meetup-50.png"
+    },
+    {
+      "version": 1,
+      "id": "2026-03-17-aws-meetup-49",
+      "title": "AWS Meetup #49 - AWS Community GameDay Europe 2026",
+      "number": 49,
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/313466708/",
+      "start": "2026-03-17T17:00:00+01:00",
+      "end": "2026-03-17T22:00:00+01:00",
+      "group": {
+        "id": "aws-ug-vienna",
+        "name": "AWS User Group Vienna",
+        "url": "https://www.meetup.com/amazon-web-services-aws-vienna/"
+      },
+      "venue": {
+        "name": "Raiffeisen Informatik GmbH & Co KG",
+        "address": "Hollandstraße 11+13"
+      },
+      "hosts": [
+        {
+          "name": "Raiffeisen Informatik"
+        }
+      ],
+      "image": "https://secure.meetupstatic.com/photos/event/b/6/4/7/highres_532846663.jpeg",
+      "summary": "AWS Community GameDay Europe is coming to Vienna! We will join \\~56 User Groups across Europe for a unique event: an international, synchronized AWS Community GameDay, powered by the European AWS community.",
+      "description": "Welcome to our next **on site** meetup!\n\n**AWS Community GameDay Europe is coming to Vienna!**\nWe will join \\~56 User Groups across Europe for a unique event: an international, synchronized AWS Community GameDay, powered by the European AWS community.\n\nJoin us for an intense evening combining learning, collaboration, and competition - get hands-on with AI, security and cloud-native challenges - no slides, no tutorials.\n\nThis large-scale, synchronized event is a unique opportunity to test your AWS skills in a fun, engaging, and hands-on environment.\nCome with a friend, a team, or solo - we'll form teams of 2 to 4 people on site.\n\n**What is an AWS GameDay?** A gamified learning event where participants are challenged to use AWS solutions to solve real-world technical problems as a team. Unlike traditional workshops, GameDays are open-ended and non-prescriptive, giving participants the freedom to explore and think outside the box.\n\n** Practical information**\n\n* Teams: 2 to 4 players - come with your team or we'll form one on site\n* Equipment: Your trusty laptop (internet connection provided)\n* Food & drinks: Snacks, beverages, and pizza\n* AWS account: Provided on site, no personal account required\n* Game duration: Around 2 hours of competition between local and international teams\n* Timing: This is a synchronized international event connected via a shared live stream across all participating locations. To ensure a smooth experience, the GameDay will start on time.\n\n** Who is this for?** The event is open to anyone with a general knowledge of AWS - no expert level required!\n\n** Agenda**\n\n* 17:00 - 17:30: Arrival & Doors Open\n\n* 17:30 - 18:00: Team formation\n* 18:00 - 18:20: GameDay introduction on the stream\n* 18:20 - 20:30: Game play\n* 20:30 - 20:45: European closing ceremony - prizes for the top teams\n* 20:45: Local closing - Open End\n\nCheck all participating User Groups here: [https://www.awsgameday.eu/](https://www.awsgameday.eu/)\n\n** Join the community** Follow us on LinkedIn: [https://www.linkedin.com/company/aws-user-group-vienna/](https://www.linkedin.com/company/aws-user-group-vienna/)\n\n** Sponsorship** We're thrilled to be hosted and sponsored by **[Raiffeisen Informatik GmbH & Co KG](https://www.raiffeiseninformatik.at/)**\n\n** Photo & video recordings** Photos and recordings taken during the event may be used for future promotional purposes.\nWe look forward to seeing many of you there!\n\n*Your AWS Community Vienna team*\nLinda, Philipp, Roman, Jakob and Dmytro\n\n***\n\n**With your RSVP you confirm, that you agree to our [code of conduct](http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf)**",
+      "talks": [
+        {
+          "title": "Game play",
+          "speakers": []
+        }
+      ],
+      "stream": true,
+      "evening": {
+        "doorsOpen": "2026-03-17T17:00:00+01:00",
+        "end": "2026-03-17T22:00:00+01:00",
+        "agenda": [
+          {
+            "id": "doors",
+            "kind": "networking",
+            "start": "2026-03-17T17:00:00+01:00",
+            "end": "2026-03-17T17:30:00+01:00",
+            "title": "Arrival & Doors Open"
+          },
+          {
+            "id": "networking-2",
+            "kind": "networking",
+            "start": "2026-03-17T17:30:00+01:00",
+            "end": "2026-03-17T18:00:00+01:00",
+            "title": "Team formation"
+          },
+          {
+            "id": "welcome",
+            "kind": "welcome",
+            "start": "2026-03-17T18:00:00+01:00",
+            "end": "2026-03-17T18:20:00+01:00",
+            "title": "GameDay introduction on the stream"
+          },
+          {
+            "id": "talk-1",
+            "kind": "talk",
+            "start": "2026-03-17T18:20:00+01:00",
+            "end": "2026-03-17T20:30:00+01:00",
+            "title": "Game play",
+            "talk": {
+              "title": "Game play",
+              "speakers": []
+            }
+          },
+          {
+            "id": "closing",
+            "kind": "closing",
+            "start": "2026-03-17T20:30:00+01:00",
+            "end": "2026-03-17T20:45:00+01:00",
+            "title": "European closing ceremony - prizes for the top teams"
+          }
+        ],
+        "notices": [
+          "Photo & video recordings Photos and recordings taken during the event may be used for future promotional purposes."
+        ],
+        "codeOfConduct": "http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf",
+        "conduct": {
+          "title": "Growing Together",
+          "subtitle": "One Respectful Interaction at a Time",
+          "lines": [
+            "No matter your background or interests, you're part of the AWS family here.",
+            "\"But, it's just a joke!\": If you have to say it, it probably wasn't. Aim for laughs, not cringes.",
+            "If you encounter a red signal, our organizers are here to navigate."
+          ]
+        },
+        "badges": [
+          {
+            "name": "Leader",
+            "title": "Event Organizer",
+            "text": "Reach out for questions, suggestions, or if you feel unsafe.",
+            "image": "/present/badges/leader.png"
+          },
+          {
+            "name": "Host",
+            "title": "Location & Food Sponsor",
+            "text": "Curious about what we do? Let's chat!",
+            "image": "/present/badges/host.png"
+          },
+          {
+            "name": "Speaker",
+            "title": "Today's Speaker",
+            "text": "Curious about the topic? Let's discuss!",
+            "image": "/present/badges/speaker.png"
+          },
+          {
+            "name": "First-Timer",
+            "title": "New to the Meetup",
+            "text": "Introduce yourself, and let's connect!",
+            "image": "/present/badges/first-timer.png"
+          },
+          {
+            "name": "All-Timer",
+            "title": "Regular Member",
+            "text": "Welcome back! Say hi to the new faces.",
+            "image": "/present/badges/all-timer.png"
+          }
+        ],
+        "sponsors": [
+          {
+            "name": "Raiffeisen Informatik",
+            "logo": "/present/logos/raiffeisen-informatik.svg"
+          }
+        ]
+      },
+      "deck": "/decks/2026-03-17-aws-meetup-49.pdf",
+      "deckCover": "/decks/2026-03-17-aws-meetup-49.png"
+    },
+    {
+      "version": 1,
+      "id": "2025-11-05-10-years-aws-user-group-vienna",
+      "title": "10 Years AWS User Group Vienna - hosted by ByteSource",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/311535778/",
+      "start": "2025-11-05T17:00:00+01:00",
+      "end": "2025-11-05T19:00:00+01:00",
+      "group": {
+        "id": "aws-ug-vienna",
+        "name": "AWS User Group Vienna",
+        "url": "https://www.meetup.com/amazon-web-services-aws-vienna/"
+      },
+      "venue": {
+        "name": "ÖBB Open Innovation Factory",
+        "address": "Lassallestraße 5, Foyer 1, 1020 Wien"
+      },
+      "hosts": [
+        {
+          "name": "ByteSource"
+        }
+      ],
+      "image": "https://secure.meetupstatic.com/photos/event/8/c/a/d/highres_530736013.jpeg",
+      "summary": "Celebrate 10 Years of Cloud Innovation in Vienna!",
+      "description": "**Celebrate 10 Years of Cloud Innovation in Vienna!**\n\nJoin us for a **special AWS User Group Vienna Meetup** celebrating a decade of cloud innovation and community building!\n\n **Location**\nÖBB Open Innovation Factory\nLassallestraße 5, Foyer 1\n1020 Wien\n\n **When**\n**Wednesday, November 5th, 2025**\nDoors open at **17:00** for networking, food & drinks.\nTalks start at **18:00**.\n\n** Event Highlights**\n\n* Meet the **AWS Heroes of Austria**, including **Nana Janashia** from *TechWorld with Nana*\n* Connect with **AWS Community Builders** from Vienna and across Austria\n* Celebrate **outstanding community members** with special awards\n* Network with fellow **cloud enthusiasts and builders**\n\n** Agenda**\n**17:00 - 18:00**: Entry & Networking\n**18:00 - 18:05**: Welcome and Introduction AWS Community Vienna\n**18:05 - 18:15**: Welcome and Introduction to the sponsors\n**18:15 - 18:30**: Past 10 Years in DevOps - Nana Janashia\n**18:30 - 18:45**: Networking Break\n**18:45 - 19:15**: Elevating Event Photography Workflow with AWS - Case Study from AWS Community Day DACH - Dmytro Hlotenko\n**19:15 - 19:20**: Intro to the Community Builder Program - Dmytro Hlotenko\n**19:20 - 19:35**: AWS Community DACH Overview and How to Contribute - Linda Mohamed\n**19:35 - 20:00**: Networking Break\n**20:00 - 20:05**: Sebastian Eckler, AWS\n**20:05 - 20:30**: AWS User Group Vienna Recap\n**20:30 - 21:00**: Awards Ceremony\n**21:00 - Open End**: Networking\n\n***\n\nDon’t miss this milestone event - **RSVP now** and invite your colleagues to celebrate, learn, and connect with the AWS community!\nBy RSVPing, you confirm that you agree to our **[Code of Conduct](http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf)**.\n\n***\n\n** Sponsored by:** ByteSource",
+      "talks": [],
+      "stream": false
+    },
+    {
+      "version": 1,
+      "id": "2025-08-07-aws-stammtisch",
+      "title": "AWS Stammtisch - sponsored by Labyrinth Labs",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/308665758/",
+      "start": "2025-08-07T18:00:00+02:00",
+      "end": "2025-08-07T21:00:00+02:00",
+      "group": {
+        "id": "aws-ug-vienna",
+        "name": "AWS User Group Vienna",
+        "url": "https://www.meetup.com/amazon-web-services-aws-vienna/"
+      },
+      "venue": {
+        "name": "Flanagans",
+        "address": "Schwarzenbergstr. 1-3"
+      },
+      "hosts": [
+        {
+          "name": "Labyrinth Labs"
+        }
+      ],
+      "image": "https://secure.meetupstatic.com/photos/event/8/e/9/0/highres_528756496.jpeg",
+      "summary": "Date: August 7, 2025 Time: Starting from 18:00 Location: Flanagans Irish Pub, Schwarzenbergstraße 1/3, 1010 Vienna",
+      "description": "Join us for a **Special Summer Meetup**!\n\nDate: August 7, 2025\nTime: Starting from 18:00\nLocation: Flanagans Irish Pub, Schwarzenbergstraße 1/3, 1010 Vienna\n\nWe're excited to invite you to a unique summer gathering, a collaborative event hosted by the AWS User Group Vienna and the AWS User Group Bratislava. This event breaks away from our usual format to offer an evening of fun, discussions, and friendly competition.\n\n**Event Highlights:**\n\n* **18:00 onwards:** Arrival and networking. Enjoy drinks courtesy of our sponsor, [Labyrinth Labs](https://lablabs.io).\n* **19:00 - 20:00:** Pub Quiz! Test your AWS knowledge and compete for amazing prizes. The top three teams will win AWS credits: 1st Place: $75, 2nd Place: $50, 3rd Place: $25\n\n**Please note:** This meetup will not feature any formal talks. Instead, it's a relaxed evening designed to foster connections and engage in informal discussions about all things AWS.\n\nMark your calendars and get ready for an evening of networking, fun, and a chance to win some great prizes!\n\\-\\-\\-\n**Agenda:**\n\n* **18:00:** Doors open, drinks and networking\n* **18:50 - 19:00:** Community intro and introduction to the sponsor\n* **19:00 - 20:00:** Pub Quiz\n* **20:00 - Open End:** More networking and discussions\n\n\\-\\-\\-\nWith your RSVP, you confirm that you agree to our [code of conduct](http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf).\nLooking forward to seeing you there!\n\n**Event Sponsor:**\n[Labyrinth Labs](https://lablabs.io) \\- Proudly sponsoring the drinks for the evening\\.",
+      "talks": [
+        {
+          "title": "Pub Quiz",
+          "speakers": []
+        }
+      ],
+      "stream": true,
+      "evening": {
+        "doorsOpen": "2025-08-07T18:00:00+02:00",
+        "end": "2025-08-07T21:00:00+02:00",
+        "agenda": [
+          {
+            "id": "sponsor",
+            "kind": "sponsor",
+            "start": "2025-08-07T18:50:00+02:00",
+            "end": "2025-08-07T19:00:00+02:00",
+            "title": "Community intro and introduction to the sponsor"
+          },
+          {
+            "id": "talk-1",
+            "kind": "talk",
+            "start": "2025-08-07T19:00:00+02:00",
+            "end": "2025-08-07T20:00:00+02:00",
+            "title": "Pub Quiz",
+            "talk": {
+              "title": "Pub Quiz",
+              "speakers": []
+            }
+          },
+          {
+            "id": "closing",
+            "kind": "closing",
+            "start": "2025-08-07T20:00:00+02:00",
+            "end": "2025-08-07T21:00:00+02:00",
+            "title": "More networking and discussions"
+          }
+        ],
+        "notices": [],
+        "codeOfConduct": "http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf",
+        "conduct": {
+          "title": "Growing Together",
+          "subtitle": "One Respectful Interaction at a Time",
+          "lines": [
+            "No matter your background or interests, you're part of the AWS family here.",
+            "\"But, it's just a joke!\": If you have to say it, it probably wasn't. Aim for laughs, not cringes.",
+            "If you encounter a red signal, our organizers are here to navigate."
+          ]
+        },
+        "badges": [
+          {
+            "name": "Leader",
+            "title": "Event Organizer",
+            "text": "Reach out for questions, suggestions, or if you feel unsafe.",
+            "image": "/present/badges/leader.png"
+          },
+          {
+            "name": "Host",
+            "title": "Location & Food Sponsor",
+            "text": "Curious about what we do? Let's chat!",
+            "image": "/present/badges/host.png"
+          },
+          {
+            "name": "Speaker",
+            "title": "Today's Speaker",
+            "text": "Curious about the topic? Let's discuss!",
+            "image": "/present/badges/speaker.png"
+          },
+          {
+            "name": "First-Timer",
+            "title": "New to the Meetup",
+            "text": "Introduce yourself, and let's connect!",
+            "image": "/present/badges/first-timer.png"
+          },
+          {
+            "name": "All-Timer",
+            "title": "Regular Member",
+            "text": "Welcome back! Say hi to the new faces.",
+            "image": "/present/badges/all-timer.png"
+          }
+        ],
+        "sponsors": [
+          {
+            "name": "Labyrinth Labs",
+            "logo": "/present/logos/labyrinth-labs.svg"
+          }
+        ]
+      },
+      "deck": "/decks/2025-08-07-aws-stammtisch.pdf",
+      "deckCover": "/decks/2025-08-07-aws-stammtisch.png"
+    },
+    {
+      "version": 1,
+      "id": "2025-06-16-aws-meetup-x-java-user-group-47",
+      "title": "AWS Meetup x Java User Group #47- hosted by TU Wien",
+      "number": 47,
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/307735341/",
+      "start": "2025-06-16T18:00:00+02:00",
+      "end": "2025-06-16T22:00:00+02:00",
+      "group": {
+        "id": "aws-ug-vienna",
+        "name": "AWS User Group Vienna",
+        "url": "https://www.meetup.com/amazon-web-services-aws-vienna/"
+      },
+      "venue": {
+        "name": "TU FH HS1",
+        "address": "Wiedner Hauptstraße 8, 1040"
+      },
+      "hosts": [
+        {
+          "name": "TU Wien"
+        }
+      ],
+      "image": "https://secure.meetupstatic.com/photos/event/6/7/a/1/highres_527846529.jpeg",
+      "summary": "This special joint meetup between AWS Community Vienna and Java User Group Vienna brings together two powerful technology ecosystems through the expertise of Vadym Kazulkin.",
+      "description": "**THE ULTIMATE JAVA + AWS EXPERIENCE!**\n\n**Entry: 18:00**\n**Start: 18:30**\n\nThis special joint meetup between AWS Community Vienna and [Java User Group Vienna ](https://www.meetup.com/java-vienna/events/305897281/)brings together two powerful technology ecosystems through the expertise of [Vadym Kazulkin](https://www.linkedin.com/in/ACoAAAZiPSIBlSWq5_scBw9BNnemeT6DIVISHCg/). As an AWS Hero Vadym expertly bridges these worlds with practical insights gained from implementing serverless architectures at enterprise scale.\n\n**IMPORTANT!** Please RSVP only at one event on meetup (here or at the Java UG)!\n\nDoors open at 18:00 for networking and the AWS Workshop, food and drinks, and we start our talks at 18:30.\n\n**1\\. High performance Serverless Java on AWS**\nby **[Vadym Kazulkin](https://sessionize.com/app/organizer/speaker/12910/6035e87f-e3a8-41ed-8b88-597c41f8330d)**, Head of Development at ip.labs\n**What is the session about?**\n\n* Java is for many years one of the most popular programming languages, but it used to have hard times in the Serverless community. Java is known for its high cold start times and high memory footprint, comparing to other programming languages like Node and Python. In this talk I'll look at the general best practices and techniques we can use to decrease memory consumption and cold start times for Java Serverless applications on AWS Lambda including GraalVM (Native Image) and AWS own offering SnapStart based on Firecracker microVM snapshot and restore and CRaC (Coordinated Restore at Checkpoint) runtime hooks. We'll also look into the SnapStart priming techniques which help us increase the Lambda performance and explore how AWS Lambda Profiler for Java can help us identify this potential. We'll also explore the impact of the SnapStart snapshot tiered low-latency cache on the cold start times.\n\n**2\\. How to develop\\, run and optimize Spring Boot 3 application on AWS Lambda**\nby **[Vadym Kazulkin](https://sessionize.com/app/organizer/speaker/12910/6035e87f-e3a8-41ed-8b88-597c41f8330d)**, Head of Development at ip.labs\n**What is the session about?**\n\n* This technical deep-dive explores multiple approaches for deploying Spring Boot 3 applications on AWS Lambda, comparing AWS Serverless Java Container, Lambda Web Adapter, Spring Cloud Function, and custom Docker images. The session examines critical cold start optimization techniques through GraalVM Native Image, AWS SnapStart with Firecracker microVM snapshots, and CRaC runtime hooks. You'll learn practical priming strategies for further reducing initialization times, understand the benefits of snapshot tiered caching, and gain insights into optimizing both cold and warm execution performance for production-ready Spring Boot Lambda functions.\n\n**Who will present?**\n\n* Vadym Kazulkin is Head of Development at ip.labs GmbH, a 100% subsidiary of the FUJIFILM Group, based in Bonn. ip.labs is the world's leading white label e-commerce software imaging company. Vadym has been involved with the Java ecosystem for over twenty years. His focus and interests currently include the design and implementation of highly scalable and available applications, Serverless and AWS Cloud. Vadym is the co-organizer of the Java User Group Bonn meetup and AWS Community Builder in the Serverless category and a frequent speaker at various Meetups and conferences.\n\n**Agenda**\n\n**18:00 - 18:30:** Entry & Networking\n**18:30 - 18:35:** Welcome and Introduction\n**18:35 - 19:15:** Making sense of AWS Serverless operations\n**19:15 - 19:30:** Networking Break\n**19:30 - 20:10:** Event-driven architecture patterns in highly scalable image storage solution\n**20:10 - 20:15:** Thank you & Closing\n**20:15 - Open End:** Networking\n\n**With your RSVP you confirm, that you agree to our [code of conduct](http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf)**\n\n\\-\\-\\- SPONSORING \\-\\-\\-\nThis event is supported by TU Wien and donors of Java User Group Vienna",
+      "talks": [
+        {
+          "title": "Making sense of AWS Serverless operations",
+          "speakers": [
+            {
+              "name": "Vadym Kazulkin",
+              "role": "Head of Development at ip.labs in Bonn, Germany"
+            }
+          ]
+        },
+        {
+          "title": "Event-driven architecture patterns in highly scalable image storage solution",
+          "speakers": [
+            {
+              "name": "Vadym Kazulkin",
+              "role": "Head of Development at ip.labs in Bonn, Germany"
+            }
+          ]
+        }
+      ],
+      "stream": true,
+      "evening": {
+        "doorsOpen": "2025-06-16T18:00:00+02:00",
+        "end": "2025-06-16T22:00:00+02:00",
+        "agenda": [
+          {
+            "id": "doors",
+            "kind": "networking",
+            "start": "2025-06-16T18:00:00+02:00",
+            "end": "2025-06-16T18:30:00+02:00",
+            "title": "Entry & Networking"
+          },
+          {
+            "id": "welcome",
+            "kind": "welcome",
+            "start": "2025-06-16T18:30:00+02:00",
+            "end": "2025-06-16T18:35:00+02:00",
+            "title": "Welcome and Introduction"
+          },
+          {
+            "id": "talk-1",
+            "kind": "talk",
+            "start": "2025-06-16T18:35:00+02:00",
+            "end": "2025-06-16T19:15:00+02:00",
+            "title": "Making sense of AWS Serverless operations",
+            "talk": {
+              "title": "Making sense of AWS Serverless operations",
+              "speakers": [
+                {
+                  "name": "Vadym Kazulkin",
+                  "role": "Head of Development at ip.labs in Bonn, Germany",
+                  "photo": "https://cdn.sessionize.com/image/8af5-200o200o2-7f-e3a8-41ed-8b88-597c41f8330d.f6cfc763-005b-4e08-9d7a-99f5204fae4a.jpg",
+                  "bio": "Vadym Kazulkin is Head of Development at ip.labs GmbH, a 100% subsidiary of the FUJIFILM Group, based in Bonn. ip.labs is the world's leading white label e-commerce software imaging company. Vadym has been involved with the Java ecosystem for over twenty years. His focus and interests currently include the design and implementation of highly scalable and available applications, Serverless and AWS Cloud. Vadym is the co-organizer of the Java User Group Bonn meetup and AWS Community Builder in the Serverless category and a frequent speaker at various Meetups and conferences."
+                }
+              ]
+            }
+          },
+          {
+            "id": "break-1",
+            "kind": "break",
+            "start": "2025-06-16T19:15:00+02:00",
+            "end": "2025-06-16T19:30:00+02:00",
+            "title": "Networking Break"
+          },
+          {
+            "id": "talk-2",
+            "kind": "talk",
+            "start": "2025-06-16T19:30:00+02:00",
+            "end": "2025-06-16T20:10:00+02:00",
+            "title": "Event-driven architecture patterns in highly scalable image storage solution",
+            "talk": {
+              "title": "Event-driven architecture patterns in highly scalable image storage solution",
+              "speakers": [
+                {
+                  "name": "Vadym Kazulkin",
+                  "role": "Head of Development at ip.labs in Bonn, Germany",
+                  "photo": "https://cdn.sessionize.com/image/8af5-200o200o2-7f-e3a8-41ed-8b88-597c41f8330d.f6cfc763-005b-4e08-9d7a-99f5204fae4a.jpg",
+                  "bio": "Vadym Kazulkin is Head of Development at ip.labs GmbH, a 100% subsidiary of the FUJIFILM Group, based in Bonn. ip.labs is the world's leading white label e-commerce software imaging company. Vadym has been involved with the Java ecosystem for over twenty years. His focus and interests currently include the design and implementation of highly scalable and available applications, Serverless and AWS Cloud. Vadym is the co-organizer of the Java User Group Bonn meetup and AWS Community Builder in the Serverless category and a frequent speaker at various Meetups and conferences."
+                }
+              ]
+            }
+          },
+          {
+            "id": "closing",
+            "kind": "closing",
+            "start": "2025-06-16T20:10:00+02:00",
+            "end": "2025-06-16T20:15:00+02:00",
+            "title": "Thank you & Closing"
+          },
+          {
+            "id": "closing-2",
+            "kind": "closing",
+            "start": "2025-06-16T20:15:00+02:00",
+            "end": "2025-06-16T22:00:00+02:00",
+            "title": "Networking"
+          }
+        ],
+        "notices": [],
+        "codeOfConduct": "http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf",
+        "conduct": {
+          "title": "Growing Together",
+          "subtitle": "One Respectful Interaction at a Time",
+          "lines": [
+            "No matter your background or interests, you're part of the AWS family here.",
+            "\"But, it's just a joke!\": If you have to say it, it probably wasn't. Aim for laughs, not cringes.",
+            "If you encounter a red signal, our organizers are here to navigate."
+          ]
+        },
+        "badges": [
+          {
+            "name": "Leader",
+            "title": "Event Organizer",
+            "text": "Reach out for questions, suggestions, or if you feel unsafe.",
+            "image": "/present/badges/leader.png"
+          },
+          {
+            "name": "Host",
+            "title": "Location & Food Sponsor",
+            "text": "Curious about what we do? Let's chat!",
+            "image": "/present/badges/host.png"
+          },
+          {
+            "name": "Speaker",
+            "title": "Today's Speaker",
+            "text": "Curious about the topic? Let's discuss!",
+            "image": "/present/badges/speaker.png"
+          },
+          {
+            "name": "First-Timer",
+            "title": "New to the Meetup",
+            "text": "Introduce yourself, and let's connect!",
+            "image": "/present/badges/first-timer.png"
+          },
+          {
+            "name": "All-Timer",
+            "title": "Regular Member",
+            "text": "Welcome back! Say hi to the new faces.",
+            "image": "/present/badges/all-timer.png"
+          }
+        ],
+        "sponsors": [
+          {
+            "name": "TU Wien",
+            "logo": "/present/logos/tu-wien.svg"
+          }
+        ]
+      },
+      "deck": "/decks/2025-06-16-aws-meetup-x-java-user-group-47.pdf",
+      "deckCover": "/decks/2025-06-16-aws-meetup-x-java-user-group-47.png"
+    },
+    {
+      "version": 1,
+      "id": "2025-05-07-aws-meetup-46-workshop",
+      "title": "AWS Meetup #46 & Workshop - hosted by ByteSource",
+      "number": 46,
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/307421627/",
+      "start": "2025-05-07T17:00:00+02:00",
+      "end": "2025-05-07T19:00:00+02:00",
+      "group": {
+        "id": "aws-ug-vienna",
+        "name": "AWS User Group Vienna",
+        "url": "https://www.meetup.com/amazon-web-services-aws-vienna/"
+      },
+      "venue": {
+        "name": "Barocke Suiten, MuseumsQuartier",
+        "address": "Museumsplatz 1"
+      },
+      "hosts": [
+        {
+          "name": "ByteSource"
+        }
+      ],
+      "image": "https://secure.meetupstatic.com/photos/event/6/a/3/highres_527521699.jpeg",
+      "summary": "Welcome to our next AWS User Group Vienna meetup!",
+      "description": "Welcome to our next **AWS User Group Vienna** meetup!\n\n**Entry AWS Workshop: 15:00 (Fully booked, no more registrations possible)**\n\n**Entry AWS Meetup: 17:00**\n**Start Meetup: 18:00**\n\nDoors open at 15:00 for networking and the AWS Workshop, food and drinks, and we start our talks at 18:00.\n\n**1\\. Workshop: Build near real\\-time LLM\\-powered features for monolithic applications \\(Fully booked\\, no more registrations possible\\)**\nby Franz Stefan, Robert Hanuschke, Viktor Vedmich, Florian Ettinger, Wolfgang Fuker and Manmohit Pal Singh from AWS\n\n**What is the session about?**\n\n* Ever needed to build new event-driven features for an existing black box or COTS application without access to the source code? In this workshop session, learn how to setup a data streaming pipeline with AWS DMS and AWS OpenSearch Serverless to build new event-driven features for existing applications using change data capture. Using this event stream and Amazon Bedrock, build a new feature to generate embeddings in near real time and store them in a Retrieval Augmented Generation knowledge base. Then, leveraging Amazon Bedrock and AWS Lambda, build an Al-powered chatbot that can respond with insights about live events in the legacy application.\n\n**IMPORTANT: You must bring your laptop to participate.**\n\nServices: Amazon Bedrock, Amazon OpenSearch Serverless, AWS Database Migration Service (AWS DMS)\n\n\\*\\*\\*\n\n**2\\. Beyond Basics: Advanced RAG Techniques with Amazon Bedrock**\nby Manuel Lindner, Senior Consultant at ByteSource\n\n**What is the session about?**\n\n* Retrieval-Augmented Generation (RAG) is a powerful paradigm for building intelligent, context-aware AI applications. In this session, we’ll dive into advanced RAG architectures and best practices using Amazon Bedrock. Learn how to combine foundation models with vector databases, hybrid search strategies, and multi-step retrieval chains to build highly accurate and reliable GenAI solutions. Whether you’re designing internal copilots, customer-facing chatbots, or domain-specific search assistants, this talk will provide deep technical insights and real-world implementation patterns that go beyond the basics.\n\n**Who will present?**\n\n* Manuel is Senior Consultant at ByteSource with over 10 years of hands-on experience in designing and implementing robust cloud solutions. Over the past 1.5 years, I’ve been diving deep into the world of Generative AI, focusing on how to apply these emerging technologies in real-world and cloud-native environments. I’m passionate about building scalable, secure solutions and enjoy sharing insights that bridge innovation and practical implementation.\n\n\\*\\*\\*\n\n**3\\. Building AI Agents on AWS with Model Context Protocol \\(MCP\\): Foundations\\, Use Cases**\nby Viktor Vedmich, Senior Developer Advocate at AWS\n\n**What is the session about?**\n\n* TBD\n\n**Who will present?**\n\n* During his career, Viktor managed to work as a developer, a systems engineer and as Systems Architect. For a long time, he worked combining the two roles of a system architect and engineer on projects based on Kubernetes. Always shares knowledge, when possible, through speeches, audio and video podcasts\n\n\\*\\*\\*\n\n**Agenda**\n\\-\\-\\- AWS Workshop \\-\\-\\-\n**15:00 - 15:30** Entry for AWS Workshop\n**15:30 - 17:30** AWS Workshop\n\n\\-\\-\\- AWS Meetup \\-\\-\\-\n**17:00 - 18:00:** Entry & Networking\n**18:00 - 18:05:** Welcome and Introduction AWS Community Vienna\n**18:05 - 18:10:** Welcome and Introduction to the sponsors\n**18:10 - 18:50:** Beyond Basics: Advanced RAG Techniques with Amazon Bedrock\n**18:50 - 19:10:** Networking Break\n**19:10 - 19:50:** Building AI Agents on AWS with Model Context Protocol (MCP): Foundations, Use Cases\n**19:50 - 20:00:** Thank you & Closing\n**20:00 - Open End:** Networking\n\n\\*\\*\\*\n\n**With your RSVP you confirm, that you agree to our [code of conduct](http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf)**\n\n\\-\\-\\- SPONSORING \\-\\-\\-\nThis event is sponsored by ByteSource",
+      "talks": [
+        {
+          "title": "AWS Workshop",
+          "speakers": []
+        }
+      ],
+      "stream": true,
+      "evening": {
+        "doorsOpen": "2025-05-07T17:00:00+02:00",
+        "end": "2025-05-07T19:00:00+02:00",
+        "agenda": [
+          {
+            "id": "doors",
+            "kind": "networking",
+            "start": "2025-05-07T15:00:00+02:00",
+            "end": "2025-05-07T15:30:00+02:00",
+            "title": "Entry for AWS Workshop"
+          },
+          {
+            "id": "talk-1",
+            "kind": "talk",
+            "start": "2025-05-07T15:30:00+02:00",
+            "end": "2025-05-07T17:30:00+02:00",
+            "title": "AWS Workshop",
+            "talk": {
+              "title": "AWS Workshop",
+              "speakers": []
+            }
+          }
+        ],
+        "notices": [],
+        "codeOfConduct": "http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf",
+        "conduct": {
+          "title": "Growing Together",
+          "subtitle": "One Respectful Interaction at a Time",
+          "lines": [
+            "No matter your background or interests, you're part of the AWS family here.",
+            "\"But, it's just a joke!\": If you have to say it, it probably wasn't. Aim for laughs, not cringes.",
+            "If you encounter a red signal, our organizers are here to navigate."
+          ]
+        },
+        "badges": [
+          {
+            "name": "Leader",
+            "title": "Event Organizer",
+            "text": "Reach out for questions, suggestions, or if you feel unsafe.",
+            "image": "/present/badges/leader.png"
+          },
+          {
+            "name": "Host",
+            "title": "Location & Food Sponsor",
+            "text": "Curious about what we do? Let's chat!",
+            "image": "/present/badges/host.png"
+          },
+          {
+            "name": "Speaker",
+            "title": "Today's Speaker",
+            "text": "Curious about the topic? Let's discuss!",
+            "image": "/present/badges/speaker.png"
+          },
+          {
+            "name": "First-Timer",
+            "title": "New to the Meetup",
+            "text": "Introduce yourself, and let's connect!",
+            "image": "/present/badges/first-timer.png"
+          },
+          {
+            "name": "All-Timer",
+            "title": "Regular Member",
+            "text": "Welcome back! Say hi to the new faces.",
+            "image": "/present/badges/all-timer.png"
+          }
+        ],
+        "sponsors": [
+          {
+            "name": "ByteSource",
+            "logo": "/present/logos/bytesource.svg"
+          }
+        ]
+      },
+      "deck": "/decks/2025-05-07-aws-meetup-46-workshop.pdf",
+      "deckCover": "/decks/2025-05-07-aws-meetup-46-workshop.png"
+    },
+    {
+      "version": 1,
+      "id": "2025-04-15-aws-meetup-45",
+      "title": "AWS Meetup #45 - hosted by SQUER",
+      "number": 45,
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/307026109/",
+      "start": "2025-04-15T17:00:00+02:00",
+      "end": "2025-04-15T22:00:00+02:00",
+      "group": {
+        "id": "aws-ug-vienna",
+        "name": "AWS User Group Vienna",
+        "url": "https://www.meetup.com/amazon-web-services-aws-vienna/"
+      },
+      "venue": {
+        "name": "SQUER",
+        "address": "Althanstraße 4/3/63, 1090 Vienna, 6th floor"
+      },
+      "hosts": [
+        {
+          "name": "SQUER"
+        }
+      ],
+      "image": "https://secure.meetupstatic.com/photos/event/7/6/f/highres_527101903.jpeg",
+      "summary": "Welcome to our next AWS User Group Vienna meetup!",
+      "description": "Welcome to our next **AWS User Group Vienna** meetup!\n\n**Entry: 17:00**\n**Start: 18:00**\n\nDoors open at 17:00 for networking, food and drinks, and we start our talks at 18:00.\n\n\\*\\*\\*\n**Sandbox Management & Kubernetes Deployments**\n\\*\\*\\*\n\n**1\\. Managing AWS Sandboxes in your organisation with a breeze**\nby Angjelo Thoma, Cloud Engineer at SQUER\n\n**What is the session about?**\n\n* In the dynamic world of cloud environments, managing sandbox accounts effectively is key to balancing innovation with governance. This talk will explore strategies for setting up and securing AWS sandbox accounts while enforcing policies and cost controls. Dive into the power of AWS Control Tower to set sandbox limits, ensuring a controlled yet flexible space for experimentation and development.\n\n**Who will present?**\n\n* Angjelo is a Cloud engineer with a strong background in DevOps operations within the Insurtech sector. Passionate about Kubernetes, he specializes in designing creative, scalable, and secure solutions for modern infrastructure challenges.\nFurthermore, he hosts the Vienna Devops Meetup, as he enjoys sharing his learning with like-minded people. In his free time he snowboards and takes Maira (his dog) for walks!\n\n\\*\\*\\*\n\n**2\\. Zero\\-Downtime Kubernetes Deployments on AWS with EKS**\nby Philip Miglinci, Co-Founder at Glasskube\n\n**What is the session about?**\n\n* If you have ever hosted a web-application on EKS, Amazon's managed Kubernetes offering, you are most-likely familiar with the AWS Load Balancer Controller project (formerly AWS ALB Ingress Controller). If you have also upgraded that application, you might also be familiar with some requests failing to connect to your backend just when the roll out happens.\nIn this session we want to take a look at Kubernetes Networking, Pod Readiness Gates, Graceful Application Shutdown and Termination Delay with sidecars.\n\n**Who will present?**\n\n* Philip holds a Bachelor's degree in computer science and economics from the Vienna University of Technology and a Master's degree in Biomedical Engineering.\nIn 2024 Philip co founded Glasskube, an Open Source Developer Tooling company that maintains among other projects an Open Source Package Manager for Kubernetes with over 3.000 stars.\nBefore working on Glasskube, Philip helped build up the alerting infrastructure for firefighting organizations in Austria and Germany as CTO.\n\n\\*\\*\\*\n\n**Agenda**\n**17:00 - 18:00:** Entry & Networking\n**18:00 - 18:05:** Welcome and Introduction AWS Community Vienna\n**18:05 - 18:10:** Welcome and Introduction to the sponsors\n**18:10 - 18:50:** Managing AWS Sandboxes in your organisation with a breeze\n**18:50 - 19:10:** Networking Break\n**19:10 - 19:50:** Zero-Downtime Kubernetes Deployments on AWS with EKS\n**19:50 - 20:00:** Thank you & Closing\n**20:00 - Open End:** Networking\n\n\\*\\*\\*\n\n**With your RSVP you confirm, that you agree to our [code of conduct](http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf)**\n\n\\-\\-\\- SPONSORING \\-\\-\\-\nThis event is sponsored by SQUER",
+      "talks": [
+        {
+          "title": "Managing AWS Sandboxes in your organisation with a breeze",
+          "speakers": [
+            {
+              "name": "Angjelo Thoma",
+              "role": "SQUER"
+            }
+          ]
+        },
+        {
+          "title": "Zero-Downtime Kubernetes Deployments on AWS with EKS",
+          "speakers": [
+            {
+              "name": "Philip Miglinci",
+              "role": "Co-Founder Glasskube"
+            }
+          ]
+        }
+      ],
+      "stream": true,
+      "evening": {
+        "doorsOpen": "2025-04-15T17:00:00+02:00",
+        "end": "2025-04-15T22:00:00+02:00",
+        "agenda": [
+          {
+            "id": "doors",
+            "kind": "networking",
+            "start": "2025-04-15T17:00:00+02:00",
+            "end": "2025-04-15T18:00:00+02:00",
+            "title": "Entry & Networking"
+          },
+          {
+            "id": "welcome",
+            "kind": "welcome",
+            "start": "2025-04-15T18:00:00+02:00",
+            "end": "2025-04-15T18:05:00+02:00",
+            "title": "Welcome and Introduction AWS Community Vienna"
+          },
+          {
+            "id": "sponsor",
+            "kind": "sponsor",
+            "start": "2025-04-15T18:05:00+02:00",
+            "end": "2025-04-15T18:10:00+02:00",
+            "title": "Welcome and Introduction to the sponsors"
+          },
+          {
+            "id": "talk-1",
+            "kind": "talk",
+            "start": "2025-04-15T18:10:00+02:00",
+            "end": "2025-04-15T18:50:00+02:00",
+            "title": "Managing AWS Sandboxes in your organisation with a breeze",
+            "talk": {
+              "title": "Managing AWS Sandboxes in your organisation with a breeze",
+              "speakers": [
+                {
+                  "name": "Angjelo Thoma",
+                  "role": "SQUER",
+                  "photo": "https://cdn.sessionize.com/image/6c24-200o200o2-4uerPacVdT222xdHDPPra4.jpg",
+                  "bio": "Angjelo is a Cloud engineer with a strong background in DevOps operations within the Insurtech sector. Passionate about Kubernetes, he specializes in designing creative, scalable, and secure solutions for modern infrastructure challenges.\n\nFurthermore, he hosts the Vienna Devops Meetup, as he enjoys sharing his learning with like-minded people. In his free time he snowboards and takes Maira (his dog) for walks!"
+                }
+              ]
+            }
+          },
+          {
+            "id": "break-1",
+            "kind": "break",
+            "start": "2025-04-15T18:50:00+02:00",
+            "end": "2025-04-15T19:10:00+02:00",
+            "title": "Networking Break"
+          },
+          {
+            "id": "talk-2",
+            "kind": "talk",
+            "start": "2025-04-15T19:10:00+02:00",
+            "end": "2025-04-15T19:50:00+02:00",
+            "title": "Zero-Downtime Kubernetes Deployments on AWS with EKS",
+            "talk": {
+              "title": "Zero-Downtime Kubernetes Deployments on AWS with EKS",
+              "speakers": [
+                {
+                  "name": "Philip Miglinci",
+                  "role": "Co-Founder Glasskube",
+                  "photo": "https://cdn.sessionize.com/image/b6f5-200o200o2-4JoiJ6Scs9zxEt8qJ7pKeK.jpg",
+                  "bio": "Philip holds a Bachelor's degree in computer science and economics from the Vienna University of Technology and a Master's degree in Biomedical Engineering. In 2024 Philip co founded Glasskube, an Open Source Developer Tooling company that maintains among other projects an Open Source Package Manager for Kubernetes with over 3.000 stars. Before working on Glasskube, Philip helped build up the alerting infrastructure for firefighting organizations in Austria and Germany as CTO."
+                }
+              ]
+            }
+          },
+          {
+            "id": "closing",
+            "kind": "closing",
+            "start": "2025-04-15T19:50:00+02:00",
+            "end": "2025-04-15T20:00:00+02:00",
+            "title": "Thank you & Closing"
+          },
+          {
+            "id": "closing-2",
+            "kind": "closing",
+            "start": "2025-04-15T20:00:00+02:00",
+            "end": "2025-04-15T22:00:00+02:00",
+            "title": "Networking"
+          }
+        ],
+        "notices": [],
+        "codeOfConduct": "http://aws-meetup-vie.s3-website.eu-central-1.amazonaws.com/AWS_Meetup_Vienna-Code_Of_Conduct.pdf",
+        "conduct": {
+          "title": "Growing Together",
+          "subtitle": "One Respectful Interaction at a Time",
+          "lines": [
+            "No matter your background or interests, you're part of the AWS family here.",
+            "\"But, it's just a joke!\": If you have to say it, it probably wasn't. Aim for laughs, not cringes.",
+            "If you encounter a red signal, our organizers are here to navigate."
+          ]
+        },
+        "badges": [
+          {
+            "name": "Leader",
+            "title": "Event Organizer",
+            "text": "Reach out for questions, suggestions, or if you feel unsafe.",
+            "image": "/present/badges/leader.png"
+          },
+          {
+            "name": "Host",
+            "title": "Location & Food Sponsor",
+            "text": "Curious about what we do? Let's chat!",
+            "image": "/present/badges/host.png"
+          },
+          {
+            "name": "Speaker",
+            "title": "Today's Speaker",
+            "text": "Curious about the topic? Let's discuss!",
+            "image": "/present/badges/speaker.png"
+          },
+          {
+            "name": "First-Timer",
+            "title": "New to the Meetup",
+            "text": "Introduce yourself, and let's connect!",
+            "image": "/present/badges/first-timer.png"
+          },
+          {
+            "name": "All-Timer",
+            "title": "Regular Member",
+            "text": "Welcome back! Say hi to the new faces.",
+            "image": "/present/badges/all-timer.png"
+          }
+        ],
+        "sponsors": [
+          {
+            "name": "SQUER",
+            "logo": "/present/logos/squer.svg"
+          }
+        ]
+      },
+      "deck": "/decks/2025-04-15-aws-meetup-45.pdf",
+      "deckCover": "/decks/2025-04-15-aws-meetup-45.png"
+    }
+  ]
+}

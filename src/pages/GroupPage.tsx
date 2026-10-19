@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { USER_GROUPS } from "../data/groups";
-import { UPCOMING_EVENTS } from "../data/events";
+import { UPCOMING_EVENTS, type MeetupEvent } from "../data/events";
 import { SpeakerLine, SponsorWanted } from "../components/EventExtras";
+import { HostLine } from "../components/HostLogo";
+import { MEETUPS, meetupForEvent } from "../data/meetups";
+import { longDate, meetupPath, shortDate, timeRange } from "../lib/meetupFormat.js";
 
-interface SessionizeSession {
-  id: string;
-  title: string;
-  description: string;
-  startsAt: string;
-  endsAt: string;
-  speakers: { id: string; name: string }[];
-}
+/** One event from public/data/meetups.json (written every day by scripts/fetch-meetups.mjs from Meetup). */
+type LiveEvent = { title: string; link: string; date: string; venue?: string; group: string; groupUrl: string };
+type LiveData = { events: LiveEvent[]; last?: LiveEvent[] };
+
+const groupKey = (url: string) => url.replace(/^https?:\/\/(www\.)?meetup\.com\/(\w\w-\w\w\/)?/i, "").replace(/\/.*$/, "").toLowerCase();
 
 const AGENDA = [
   { time: "17:00 - 18:00", label: "Entry & networking" },
   { time: "18:00 - 18:10", label: "Welcome & introduction" },
   { time: "18:10 - 18:20", label: "Sponsor introduction", highlight: true },
   { time: "18:20 - 19:00", label: "Talk 1" },
+  { time: "19:00 - 19:20", label: "Break: food, drinks and networking" },
   { time: "19:20 - 20:00", label: "Talk 2" },
   { time: "20:00+",        label: "Networking" },
 ];
@@ -25,25 +26,15 @@ const AGENDA = [
 export function GroupPage() {
   const { groupId } = useParams<{ groupId: string }>();
   const group = USER_GROUPS.find((g) => g.id === groupId);
-  const nextEvent = UPCOMING_EVENTS.find((e) => e.groupId === groupId);
-  const [sessions, setSessions] = useState<SessionizeSession[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [live, setLive] = useState<LiveData | null>(null);
 
+  // The next meetup, and the last one, from Meetup: the site fetches them every day (public/data/meetups.json).
   useEffect(() => {
-    if (!group?.sessionizeApiId) return;
-    setLoading(true);
-    fetch(`https://sessionize.com/api/v2/${group.sessionizeApiId}/view/Sessions`)
-      .then((res) => res.json())
-      .then((data) => {
-        const all: SessionizeSession[] = [];
-        for (const section of data) {
-          if (section.sessions) all.push(...section.sessions);
-        }
-        setSessions(all);
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, [group?.sessionizeApiId]);
+    fetch(`${import.meta.env.BASE_URL}data/meetups.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => setLive(d))
+      .catch(() => setLive(null));
+  }, []);
 
   if (!group) {
     return (
@@ -65,7 +56,7 @@ export function GroupPage() {
         <div className="container">
           <Link to="/" className="back-link">&larr; Back to all groups</Link>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "40px", alignItems: "start" }}>
+          <div>
             <div>
               <img
                 src={group.logoWide}
@@ -91,46 +82,11 @@ export function GroupPage() {
               </div>
             </div>
 
-            {/* Next event card */}
-            {nextEvent && (
-              <div className={`card-dark${nextEvent.saveTheDate ? " event-card-highlight" : ""}`} style={{ minWidth: "260px", flexShrink: 0 }}>
-                <div className="card-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "var(--space-2)" }}>
-                  <div>
-                    <span className="label">
-                      {nextEvent.date
-                        ? new Date(nextEvent.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
-                        : "Coming soon"}
-                    </span>
-                    <div style={{ fontSize: "var(--font-size-base)", fontWeight: 700, color: "var(--color-text)" }}>Next Meetup</div>
-                  </div>
-                  {nextEvent.saveTheDate && <span className="badge">SAVE THE DATE</span>}
-                </div>
-                <div className="card-body-flex">
-                  <div className="text-secondary" style={{ fontSize: "var(--font-size-sm)" }}>{nextEvent.title}</div>
-                  {nextEvent.venue && (
-                    <div style={{ display: "flex", alignItems: "center", gap: "var(--space-1)", fontSize: "var(--font-size-sm)" }} className="text-muted">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-                      </svg>
-                      {nextEvent.venue}
-                    </div>
-                  )}
-                  <SpeakerLine label="With" speakers={nextEvent.speakers} />
-                  <SponsorWanted show={nextEvent.sponsorWanted} />
-                </div>
-                <div className="card-footer">
-                  <a href={nextEvent.link} target="_blank" rel="noopener noreferrer"
-                    className={`event-btn ${!nextEvent.date ? "event-btn-outline" : nextEvent.saveTheDate ? "event-btn-filled" : "event-btn-outline"}`}>
-                    {!nextEvent.date ? "Join our Meetup group" : nextEvent.saveTheDate ? "Coming Soon on Meetup" : "RSVP on Meetup"}
-                  </a>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </section>
 
-      {/* Typical Agenda + Sessions */}
+      {/* Typical agenda and the next (or last) meetup */}
       <section className="section-sm">
         <div className="container" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "48px", alignItems: "start" }}>
 
@@ -154,41 +110,8 @@ export function GroupPage() {
             </div>
           </div>
 
-          {/* Sessions */}
-          <div>
-            <div className="accent-bar-sm" />
-            <h2 className="subsection-title">Upcoming Sessions</h2>
-
-            {loading && (
-              <p className="section-center text-secondary" style={{ padding: "40px var(--space-5)" }}>
-                Loading sessions...
-              </p>
-            )}
-
-            {!loading && sessions.length === 0 && (
-              <div className="card" style={{ padding: "40px var(--space-6)", textAlign: "center", borderRadius: "var(--radius-lg)" }}>
-                <p className="text-muted" style={{ fontSize: "var(--font-size-base)" }}>
-                  {group.sessionizeApiId
-                    ? "No upcoming sessions found."
-                    : "Sessionize integration will be connected soon. Check back for upcoming sessions!"}
-                </p>
-              </div>
-            )}
-
-            {sessions.map((session) => (
-              <div key={session.id} className="card" style={{ padding: "var(--space-5) var(--space-6)", marginBottom: "var(--space-3)", borderRadius: "var(--radius-lg)" }}>
-                <div style={{ fontSize: "var(--font-size-md)", fontWeight: 700, color: "var(--color-text)", marginBottom: "var(--space-1)" }}>{session.title}</div>
-                <div className="text-accent" style={{ fontSize: "var(--font-size-sm)", fontWeight: 600, marginBottom: "var(--space-2)" }}>
-                  {session.speakers.map((s) => s.name).join(", ")}
-                </div>
-                {session.description && (
-                  <div className="text-secondary" style={{ fontSize: "var(--font-size-sm)", lineHeight: 1.6 }}>
-                    {session.description.slice(0, 200)}{session.description.length > 200 ? "..." : ""}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          {/* The next meetup from Meetup, or the last one when no new one is planned yet */}
+          <NextOrLastMeetup group={group} live={live} />
         </div>
       </section>
 
@@ -206,5 +129,63 @@ export function GroupPage() {
         </div>
       </section>
     </>
+  );
+}
+
+/** The group's next meetup on Meetup; when none is planned yet, its last one. */
+function NextOrLastMeetup({ group, live }: { group: (typeof USER_GROUPS)[number]; live: LiveData | null }) {
+  const key = groupKey(group.meetupUrl);
+  const now = Date.now();
+  const mine = (e: { groupUrl: string }) => groupKey(e.groupUrl) === key;
+  const staticNext = UPCOMING_EVENTS.find((e) => e.groupId === group.id && e.date && Date.parse(e.date) > now);
+  const next: (LiveEvent | MeetupEvent) | undefined = live?.events.filter(mine).find((e) => Date.parse(e.date) > now) ?? staticNext;
+  // The last one: from Meetup, else from the meetup pages on this site.
+  const archived = MEETUPS.filter((m) => groupKey(m.group.url) === key && Date.parse(m.start) < now)[0];
+  const last: LiveEvent | undefined =
+    live?.last?.find(mine) ?? (archived ? { title: archived.title, link: archived.meetupUrl, date: archived.start, venue: archived.venue?.name, group: group.shortName, groupUrl: group.meetupUrl } : undefined);
+  const shown = next ?? last;
+  const page = shown ? meetupForEvent(shown.link, undefined) : undefined;
+  const isNext = Boolean(next);
+  // The site's own card for the same event knows its speakers and whether a sponsor is wanted.
+  const extra = isNext && staticNext && shown && shown.link.replace(/\/$/, "") === staticNext.link.replace(/\/$/, "") ? staticNext : undefined;
+  return (
+    <div>
+      <div className="accent-bar-sm" />
+      <h2 className="subsection-title">{isNext ? "Next meetup" : shown ? "Last meetup" : "Meetups"}</h2>
+      {shown ? (
+        <article className={`card-dark next-meetup-card${isNext ? " next-meetup-card-next" : ""}`}>
+          <div className="card-header">
+            <span className="label">{isNext ? "Coming up" : "No new date yet"} &middot; {shortDate(shown.date)}</span>
+            <div className="next-meetup-card-title">
+              {page ? <Link to={meetupPath(page.id)} className="card-title-link">{shown.title}</Link> : shown.title}
+            </div>
+          </div>
+          <div className="card-body-flex">
+            <div className="text-secondary">{longDate(shown.date)}{page?.end ? `, ${timeRange(page.start, page.end)}` : ""}</div>
+            {shown.venue && <div className="text-muted">{shown.venue}</div>}
+            {page && page.hosts.length > 0 && <HostLine hosts={page.hosts.map((h) => h.name)} height={30} />}
+            {extra && <SpeakerLine label="With" speakers={extra.speakers} />}
+            {extra && <SponsorWanted show={extra.sponsorWanted} />}
+            {!isNext && <p className="text-muted next-meetup-card-note">The next one is not on Meetup yet. Join the group to hear about it first.</p>}
+          </div>
+          <div className="card-footer next-meetup-card-actions">
+            <a href={isNext ? shown.link : group.meetupUrl} target="_blank" rel="noopener noreferrer" className="event-btn event-btn-filled">
+              {isNext ? "RSVP on Meetup" : "Join the group on Meetup"}
+            </a>
+            {page ? (
+              <Link to={meetupPath(page.id)} className="event-btn event-btn-outline">Meetup details</Link>
+            ) : (
+              !isNext && <a href={shown.link} target="_blank" rel="noopener noreferrer" className="event-btn event-btn-outline">See it on Meetup</a>
+            )}
+          </div>
+        </article>
+      ) : (
+        <div className="card" style={{ padding: "40px var(--space-6)", textAlign: "center", borderRadius: "var(--radius-lg)" }}>
+          <p className="text-muted">
+            See all meetups of the group on <a href={group.meetupUrl} target="_blank" rel="noopener noreferrer" className="text-link">Meetup</a>.
+          </p>
+        </div>
+      )}
+    </div>
   );
 }
