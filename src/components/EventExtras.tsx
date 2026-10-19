@@ -37,3 +37,36 @@ export function SponsorWanted({ show }: { show?: boolean }) {
     </div>
   );
 }
+
+/** Speakers with their photos, for the community day cards; initials when there is no photo. */
+export function SpeakerAvatars({ label, speakers }: { label: string; speakers?: { name: string; photo?: string; url?: string }[] }) {
+  if (!speakers?.length) return null;
+  return (
+    <div className="speaker-avatars">
+      <div style={row} className="text-secondary">
+        <svg {...icon}><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+        <span>{label}</span>
+      </div>
+      <ul className="speaker-avatars-list">
+        {speakers.map((s) => {
+          const face = s.photo ? (
+            <img src={`${import.meta.env.BASE_URL}${s.photo.replace(/^\//, "")}`} alt="" className="speaker-avatar" />
+          ) : (
+            <span className="speaker-avatar speaker-avatar-initials" aria-hidden="true">
+              {s.name.split(/\s+/).map((p) => p[0]).slice(0, 2).join("")}
+            </span>
+          );
+          return (
+            <li key={s.name}>
+              {s.url ? (
+                <a href={s.url} target="_blank" rel="noopener noreferrer" className="speaker-avatar-item">{face}<span>{s.name}</span></a>
+              ) : (
+                <span className="speaker-avatar-item">{face}<span>{s.name}</span></span>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}

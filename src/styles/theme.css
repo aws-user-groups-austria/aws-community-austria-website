@@ -1,5 +1,5 @@
 /* ============================================================
-   Design tokens — change here to update the whole site
+   Design tokens - change here to update the whole site
    ============================================================ */
 :root {
   /* Colors */
@@ -18,7 +18,8 @@
   --color-danger:      #ef4444;
 
   /* Typography */
-  --font-family: 'Inter', 'Calibri', 'Arial', sans-serif;
+  /* Amazon Ember when it is installed on the device (its files are never served from this site), else Inter */
+  --font-family: 'Amazon Ember', 'AmazonEmber', 'Inter', 'Calibri', 'Arial', sans-serif;
   --font-size-xs:   11px;
   --font-size-sm:   13px;
   --font-size-base: 15px;

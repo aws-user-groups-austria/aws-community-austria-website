@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { SponsorsCarousel } from "../components/SponsorsCarousel";
-import { SPONSORS } from "../data/sponsors";
+import { SPONSORS, logoSrc } from "../data/sponsors";
 import { ORGANIZERS } from "../data/groups";
 
 const STEPS = [
@@ -76,7 +76,7 @@ const PERKS = [
       </svg>
     ),
     title: "Community announcements",
-    description: "Pre-event announcement to 2000+ community members on Meetup, LinkedIn, and the AWS Community DACH Slack.",
+    description: "Pre-event announcement to 2,600+ community members on Meetup, LinkedIn, and the AWS Community DACH Slack.",
   },
   {
     icon: (
@@ -100,7 +100,7 @@ export function SponsorsPage() {
             Sponsor AWS Community <span className="text-accent">Austria</span>
           </h1>
           <p className="section-desc">
-            Connect your brand with 2000+ AWS professionals across Vienna, Linz, and Austria. Sponsorship means hosting a meetup - providing a venue, food, and drinks for the community.
+            Connect your brand with 2,600+ AWS professionals across Vienna, Linz, and Austria. Sponsorship means hosting a meetup - providing a venue, food, and drinks for the community.
           </p>
           <a href="mailto:linda.mohamed@icloud.com" className="btn btn-primary btn-xl">
             Get in touch
@@ -306,7 +306,7 @@ export function SponsorsPage() {
             {SPONSORS.map(s => (
               <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" className="card-on-light"
                 style={{ minWidth: "160px", height: "100px", gap: "var(--space-2)" }}>
-                <img src={`${import.meta.env.BASE_URL}assets/sponsors/${s.logo}`} alt={s.name} style={{ maxHeight: "48px", maxWidth: "120px", objectFit: "contain" }} />
+                <img src={logoSrc(s)} alt={s.name} className={s.dark ? "logo-on-dark" : undefined} style={{ maxHeight: "48px", maxWidth: "120px", objectFit: "contain" }} />
                 <span style={{ fontSize: "var(--font-size-xs)", color: "#555", fontWeight: 500 }}>{s.name}</span>
               </a>
             ))}

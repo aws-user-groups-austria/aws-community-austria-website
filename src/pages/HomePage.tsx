@@ -1,9 +1,21 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { USER_GROUPS, ORGANIZERS, CLOUD_CLUBS } from "../data/groups";
+import { USER_GROUPS, ORGANIZERS, CLOUD_CLUBS, MEMBERS, PLANNED_GROUPS, START_A_GROUP_EMAIL } from "../data/groups";
+import { StudentIcon } from "../components/StudentIcon";
 import { SponsorsCarousel } from "../components/SponsorsCarousel";
-import { UPCOMING_EVENTS, COMMUNITY_DAYS, type MeetupEvent } from "../data/events";
-import { SpeakerLine, SponsorWanted } from "../components/EventExtras";
+import { UPCOMING_EVENTS, communityDayPictures, upcomingCommunityDays, type MeetupEvent } from "../data/events";
+import { SpeakerLine, SponsorWanted, SpeakerAvatars } from "../components/EventExtras";
+import { HostLine } from "../components/HostLogo";
+import { meetupForEvent } from "../data/meetups";
+import { meetupPath, shortDate } from "../lib/meetupFormat.js";
+import type { CommunityDaySpeaker } from "../data/events";
+
+/** An organizer by name (photo and LinkedIn from ORGANIZERS), or a guest as given. */
+function communityDaySpeaker(s: CommunityDaySpeaker): { name: string; photo?: string; url?: string } {
+  if (typeof s !== "string") return { name: s.name, photo: s.photo, url: s.url };
+  const o = ORGANIZERS.find((x) => x.name === s);
+  return { name: s, photo: o?.photo ?? undefined, url: o?.linkedin ?? undefined };
+}
 
 
 export function HomePage() {
@@ -36,7 +48,7 @@ export function HomePage() {
             <a href="https://sessionize.com/aws-community-austria" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-xl">
               Submit a Talk
             </a>
-            <a href="https://www.meetup.com/pro/awsugaustria/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-xl">
+            <a href="https://www.meetup.com/amazon-web-services-aws-vienna/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-xl">
               Join on Meetup
             </a>
           </div>
@@ -47,10 +59,10 @@ export function HomePage() {
       <section className="stats-bar">
         <div className="container stats-grid">
           {[
-            { n: "3",     l: "User Groups" },
-            { n: "47+",   l: "Meetups Hosted" },
-            { n: "2000+", l: "Community Members" },
-            { n: "100+",  l: "Speakers" },
+            { n: "3",          l: "User Groups" },
+            { n: "50+",        l: "Meetups Hosted" },
+            { n: MEMBERS.all,  l: "Community Members" },
+            { n: "100+",       l: "Speakers" },
           ].map((s) => (
             <div key={s.l}>
               <div className="stat-number">{s.n}</div>
@@ -77,7 +89,7 @@ export function HomePage() {
                   {group.shortName}
                 </div>
                 <div className="text-accent" style={{ fontSize: "var(--font-size-base)", fontWeight: 600, marginBottom: "var(--space-3)" }}>
-                  {group.city}, Austria
+                  {group.city}, Austria{group.id === "aws-ug-vienna" ? ` \u00b7 ${MEMBERS.vienna} members` : ""}
                 </div>
                 <div className="text-secondary" style={{ fontSize: "var(--font-size-md)", lineHeight: 1.6, marginBottom: "var(--space-4)" }}>
                   {group.description}
@@ -91,7 +103,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ── User Groups vs Cloud Clubs ── */}
+      {/* ── User Groups and student communities ── */}
       <section className="section bg-surface">
         <div className="container">
           <div className="accent-bar" />
@@ -127,7 +139,7 @@ export function HomePage() {
               </div>
             </div>
 
-            {/* Cloud Clubs */}
+            {/* AWS Student Builder Groups */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", marginBottom: "var(--space-4)" }}>
                 <div style={{ width: "40px", height: "40px", borderRadius: "var(--radius-md)", background: "var(--color-accent-dim)", border: "var(--border-accent)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -135,19 +147,17 @@ export function HomePage() {
                     <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
                   </svg>
                 </div>
-                <h3 style={{ fontSize: "var(--font-size-xl)", fontWeight: 700, color: "var(--color-text)" }}>AWS Cloud Clubs</h3>
+                <h3 style={{ fontSize: "var(--font-size-xl)", fontWeight: 700, color: "var(--color-text)" }}>AWS Student Builder Groups</h3>
               </div>
               <p className="text-secondary" style={{ fontSize: "var(--font-size-base)", lineHeight: 1.7, marginBottom: "var(--space-5)" }}>
-                AWS Cloud Clubs are student-led communities at universities and colleges. They are part of the official AWS Educate program and focus on helping students build cloud skills through hands-on learning, workshops, and peer-to-peer knowledge sharing. Cloud Clubs are campus communities - User Groups are open to everyone in the professional world.
+                AWS Student Builder Groups, the former AWS Cloud Clubs, are student-led communities at universities and colleges. They help students build cloud skills through hands-on learning, workshops and peer-to-peer knowledge sharing. They are campus communities - User Groups are open to everyone.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-3)" }}>
                 {CLOUD_CLUBS.map(c => (
                   <a key={c.id} href={c.meetupUrl} target="_blank" rel="noopener noreferrer"
                     style={{ display: "flex", alignItems: "center", gap: "var(--space-3)", textDecoration: "none" }}
                     className="footer-link">
-                    <svg width="16" height="16" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" style={{ flexShrink: 0 }}>
-                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
-                    </svg>
+                    <StudentIcon size={16} />
                     <span style={{ color: "var(--color-text-secondary)", fontSize: "var(--font-size-base)", fontWeight: 500 }}>{c.name}</span>
                     <span className="text-muted" style={{ fontSize: "var(--font-size-sm)" }}>{c.city}</span>
                   </a>
@@ -155,6 +165,19 @@ export function HomePage() {
               </div>
             </div>
 
+          </div>
+
+          <div className="community-next">
+            <div>
+              <span className="label">Coming soon</span>
+              <ul className="community-planned">
+                {PLANNED_GROUPS.map((g) => <li key={g.name}>{g.kind === "student group" ? `${g.name} (Student Builder Group)` : g.name}</li>)}
+              </ul>
+            </div>
+            <p>
+              Want to start a user group somewhere in Austria? Reach out to us at{" "}
+              <a href={`mailto:${START_A_GROUP_EMAIL}`} className="text-link">{START_A_GROUP_EMAIL}</a> - we help you get going.
+            </p>
           </div>
         </div>
       </section>
@@ -171,17 +194,20 @@ export function HomePage() {
             ].filter((e, i, arr) => arr.findIndex(x => x.title === e.title) === i);
             return (
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "var(--space-5)", marginBottom: "var(--space-8)" }}>
-                {allEvents.map((e) => (
+                {allEvents.map((e) => {
+                  const page = meetupForEvent(e.link, e.meetupId);
+                  const hosts = page?.hosts.map((h) => h.name) ?? e.hosts;
+                  return (
                   <div key={e.title} className={`event-card${e.saveTheDate ? " event-card-highlight" : ""}`}>
                     {/* Card header */}
                     <div className="card-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "var(--space-2)" }}>
                       <div>
                         <span className="label">
-                          {e.date
-                            ? new Date(e.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
-                            : "Coming soon"}
+                          {e.date ? `${shortDate(e.date)}${e.time ? `, ${e.time}` : ""}` : "Coming soon"}
                         </span>
-                        <div style={{ fontSize: "var(--font-size-base)", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.3 }}>{e.title}</div>
+                        <div style={{ fontSize: "var(--font-size-base)", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.3 }}>
+                          {page ? <Link to={meetupPath(page.id)} className="card-title-link">{e.title}</Link> : e.title}
+                        </div>
                       </div>
                       {e.saveTheDate && <span className="badge">SAVE THE DATE</span>}
                     </div>
@@ -203,22 +229,34 @@ export function HomePage() {
                       </div>
                       <SpeakerLine label="With" speakers={e.speakers} />
                       <SponsorWanted show={e.sponsorWanted} />
+                      <HostLine hosts={hosts} height={30} />
                     </div>
                     {/* Button */}
-                    <div className="card-footer">
+                    <div className="card-footer" style={{ display: "flex", flexDirection: "column", gap: "var(--space-2)" }}>
                       <a href={e.link} target="_blank" rel="noopener noreferrer"
                         className={`event-btn ${!e.date ? "event-btn-outline" : e.saveTheDate ? "event-btn-filled" : "event-btn-outline"}`}>
                         {!e.date ? "Join our Meetup group" : e.saveTheDate ? "Coming Soon on Meetup" : "RSVP on Meetup"}
                       </a>
+                      {page && (
+                        <Link to={meetupPath(page.id)} className="event-btn event-btn-outline">
+                          Meetup details
+                        </Link>
+                      )}
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             );
           })()}
-          <a href="https://www.meetup.com/pro/awsugaustria/" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
-            View All Events on Meetup
-          </a>
+          <div style={{ display: "flex", gap: "var(--space-4)", justifyContent: "center", flexWrap: "wrap" }}>
+            <Link to="/meetups/" className="btn btn-primary btn-lg">
+              All meetups
+            </Link>
+            <a href="https://www.meetup.com/amazon-web-services-aws-vienna/events/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">
+              View All Events on Meetup
+            </a>
+          </div>
         </div>
       </section>
 
@@ -228,8 +266,15 @@ export function HomePage() {
           <div className="accent-bar" />
           <h2 className="section-title">Upcoming Community Days</h2>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "var(--space-6)" }}>
-            {COMMUNITY_DAYS.map((c) => (
-              <div key={c.name} className="card-dark" style={{ width: "320px", display: "flex", flexDirection: "column" }}>
+            {upcomingCommunityDays().map((c) => {
+              const pics = communityDayPictures(c);
+              return (
+              <div key={c.name} className="card-dark cd-card" style={{ width: "320px", display: "flex", flexDirection: "column" }}>
+                {pics && (
+                  <a href={c.url} target="_blank" rel="noopener noreferrer" className="cd-card-shot" aria-label={`${c.name}: website`}>
+                    <img src={pics.screenshot} alt={`The website of ${c.name}`} loading="lazy" />
+                  </a>
+                )}
                 <div className="card-header">
                   <div className="label">{c.date}</div>
                   <div style={{ fontSize: "var(--font-size-md)", fontWeight: 700, color: "var(--color-text)" }}>{c.name}</div>
@@ -247,18 +292,21 @@ export function HomePage() {
                     </svg>
                     <a href={c.url} target="_blank" rel="noopener noreferrer" className="text-link">{c.url.replace(/^https:\/\/(www\.)?/, "").replace(/\/$/, "")}</a>
                   </div>
-                  <SpeakerLine
-                    label="Speaking from our community:"
-                    speakers={c.speakers?.map((name) => ({ name, url: ORGANIZERS.find((o) => o.name === name)?.linkedin ?? undefined }))}
-                  />
+                  <SpeakerAvatars label="Speaking there:" speakers={c.speakers?.map(communityDaySpeaker)} />
                 </div>
-                <div className="card-footer">
+                <div className="card-footer cd-card-footer">
                   <a href={c.url} target="_blank" rel="noopener noreferrer" className="event-btn event-btn-outline">
                     Community Event
                   </a>
+                  {pics && (
+                    <a href={c.url} target="_blank" rel="noopener noreferrer" className="cd-card-qr" title={`QR code: ${c.url}`}>
+                      <img src={pics.qr} alt={`QR code to ${c.url}`} loading="lazy" />
+                    </a>
+                  )}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -394,10 +442,10 @@ export function HomePage() {
             Join our user groups on Meetup to get notified about upcoming events, and follow the community on LinkedIn.
           </p>
           <div style={{ display: "flex", gap: "var(--space-4)", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://www.meetup.com/pro/awsugaustria/" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-xl">
+            <a href="https://www.meetup.com/amazon-web-services-aws-vienna/" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-xl">
               Join on Meetup
             </a>
-            <a href="https://www.linkedin.com/groups/8995348/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-xl">
+            <a href="https://www.linkedin.com/company/aws-user-group-vienna" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-xl">
               LinkedIn Group
             </a>
           </div>

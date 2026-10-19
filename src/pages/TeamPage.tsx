@@ -78,7 +78,7 @@ export function TeamPage() {
             <a href="mailto:linda.mohamed@icloud.com" className="btn btn-primary btn-lg">
               Send us an email
             </a>
-            <a href="https://www.meetup.com/pro/awsugaustria/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">
+            <a href="https://www.meetup.com/amazon-web-services-aws-vienna/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg">
               Join on Meetup
             </a>
           </div>
