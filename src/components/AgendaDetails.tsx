@@ -419,11 +419,34 @@ function Leaders() {
   );
 }
 
+/** The leaders introduced at the welcome: a bigger photo, the name and their role, each linked to LinkedIn. */
+function LeaderCards() {
+  return (
+    <ul className="leader-cards">
+      {ORGANIZERS.map((o) => {
+        const body = (
+          <>
+            {o.photo && <img src={asset(o.photo)} alt="" loading="lazy" />}
+            <span className="leader-card-text">
+              <span className="leader-card-name">{o.name}</span>
+              <span className="leader-card-role">{o.short}</span>
+            </span>
+          </>
+        );
+        return (
+          <li key={o.name}>
+            {o.linkedin ? <a href={o.linkedin} target="_blank" rel="noopener noreferrer" className="leader-card">{body}</a> : <span className="leader-card">{body}</span>}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 function Organizers() {
   return (
     <Block title="The organizers">
       <p>Questions, ideas, or something feels wrong? Talk to any of us - look for the Leader badge.</p>
-      <Leaders />
       <Link to="/team/" className="text-link">Meet the team &rarr;</Link>
     </Block>
   );
@@ -464,6 +487,24 @@ function BreakDetails({ m, a }: { m: Meetup; a: AgendaItem }) {
   );
 }
 
+/** "Thank you to <host> for the location and the food tonight", with the host's logo. */
+function HostThanks({ m }: { m: Meetup }) {
+  const names = m.evening?.sponsors?.length ? m.evening.sponsors.map((s) => s.name) : m.hosts.map((h) => h.name);
+  if (!names.length) return null;
+  const shown = names.map((n) => findCompany(n)?.name ?? n.replace(/\s+(AG|GmbH)$/, ""));
+  return (
+    <Block title="Thank you to our host">
+      <p>
+        Thank you to {shown.join(" and ")} for the location and the food and drinks tonight - and for supporting the
+        AWS community.
+      </p>
+      <div className="host-thanks-logos">
+        {names.map((n) => <HostLogo key={n} name={n} height={36} link />)}
+      </div>
+    </Block>
+  );
+}
+
 /** The next meetup after this one, any group: from the meetup pages. */
 function nextMeetup(m: Meetup): Meetup | undefined {
   return [...MEETUPS].filter((x) => Date.parse(x.start) > Date.parse(m.start)).sort((x, y) => Date.parse(x.start) - Date.parse(y.start))[0];
@@ -475,6 +516,7 @@ function ClosingDetails({ m, a }: { m: Meetup; a: AgendaItem }) {
   return (
     <>
       <p className="agenda-dialog-lead">Stay, talk and connect until {time(a.end)}.</p>
+      <HostThanks m={m} />
       <Block title="Thank you">
         <p>
           Thank you for coming, from all of us who organize the user group! Please give us feedback in the Meetup app,
@@ -537,7 +579,7 @@ function WelcomeDetails({ m }: { m: Meetup }) {
       </p>
       <div className="agenda-dialog-leaders">
         <span className="label">Your user group leaders</span>
-        <Leaders />
+        <LeaderCards />
       </div>
       <Block title="Our user groups">
         <ul className="group-tiles">
