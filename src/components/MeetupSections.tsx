@@ -4,7 +4,7 @@
  * data and renders nothing when the data is not there: no placeholders, no
  * empty sections.
  */
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import type { AgendaItem, Meetup, MeetupSpeaker, Talk } from "../data/meetups";
 import { clockAt, dateParts, headerPath, isComing, longDate, mapsUrl, presentPath, time, timeRange } from "../lib/meetupFormat.js";
@@ -97,15 +97,48 @@ export function RsvpButton({ m, className = "btn btn-primary btn-md" }: { m: Mee
  * image; nothing when there is neither.
  */
 export function HeaderImage({ m, className }: { m: Meetup; className: string }) {
-  if (m.stream) {
-    return (
-      <div className={`${className} live-header`}>
-        <iframe src={headerPath(m.id)} title={`${m.title}: the evening, live`} allow="fullscreen" />
-      </div>
-    );
-  }
+  if (m.stream) return <LiveHeader m={m} className={className} />;
   if (!m.image) return null;
   return <img src={m.image} alt="" className={className} referrerPolicy="no-referrer" />;
+}
+
+/**
+ * The live header and its fullscreen button. Fullscreen is the header itself
+ * (the loop, letterboxed to 16:9); where a browser cannot show a part of a page
+ * fullscreen (iPhone Safari), the button opens the loop on its own in a new tab.
+ */
+function LiveHeader({ m, className }: { m: Meetup; className: string }) {
+  const box = useRef<HTMLDivElement>(null);
+  const [full, setFull] = useState(false);
+  useEffect(() => {
+    const on = () => setFull(document.fullscreenElement === box.current);
+    document.addEventListener("fullscreenchange", on);
+    return () => document.removeEventListener("fullscreenchange", on);
+  }, []);
+  const toggle = () => {
+    const el = box.current;
+    if (!el) return;
+    if (document.fullscreenElement) {
+      void document.exitFullscreen();
+    } else if (el.requestFullscreen) {
+      el.requestFullscreen().catch(() => window.open(headerPath(m.id), "_blank", "noopener"));
+    } else {
+      window.open(headerPath(m.id), "_blank", "noopener");
+    }
+  };
+  return (
+    <div ref={box} className={`${className} live-header${full ? " live-header-full" : ""}`}>
+      <iframe src={headerPath(m.id)} title={`${m.title}: the evening, live`} allow="fullscreen" />
+      <button type="button" className="live-header-full-button" onClick={toggle} aria-label={full ? "Exit fullscreen" : "Show the loop fullscreen"} title={full ? "Exit fullscreen (Esc)" : "Fullscreen"}>
+        {full ? (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M9 3v6H3M15 3v6h6M9 21v-6H3M15 21v-6h6" /></svg>
+        ) : (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 9V3h6M21 9V3h-6M3 15v6h6M21 15v6h-6" /></svg>
+        )}
+        <span>{full ? "Exit" : "Fullscreen"}</span>
+      </button>
+    </div>
+  );
 }
 
 /** RSVP (or the event on Meetup, once it is over) as a small link, not a big button: the page is about the evening. */

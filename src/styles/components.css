@@ -1338,3 +1338,18 @@ a.leader-card:hover, a.leader-card:focus-visible { border-color: var(--color-acc
   .cd-card-wide { grid-template-columns: 1fr; }
   .cd-card-wide .cd-card-shot { aspect-ratio: 16 / 9; min-height: 0; border-right: 0; border-bottom: var(--border); }
 }
+
+/* The live header's fullscreen button, bottom right, above the loop's own bar */
+.live-header-full-button {
+  position: absolute; right: 10px; bottom: 12%; z-index: 2;
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-full);
+  background: rgba(10, 14, 22, 0.72); color: var(--color-text); font: inherit; font-size: var(--font-size-xs); font-weight: 600;
+  cursor: pointer; opacity: 0.75; transition: opacity 0.15s, border-color 0.15s; backdrop-filter: blur(4px);
+}
+.live-header:hover .live-header-full-button, .live-header-full-button:focus-visible { opacity: 1; }
+.live-header-full-button:hover, .live-header-full-button:focus-visible { border-color: var(--color-accent); outline: none; }
+/* Fullscreen: the loop on black, as large as fits */
+.live-header-full { border: 0; border-radius: 0; background: #000; aspect-ratio: auto; width: 100vw; height: 100vh; }
+.live-header-full .live-header-full-button { bottom: 16px; right: 16px; opacity: 0.4; }
+.live-header-full:hover .live-header-full-button { opacity: 1; }
