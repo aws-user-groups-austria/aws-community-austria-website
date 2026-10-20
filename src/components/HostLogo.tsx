@@ -12,7 +12,7 @@ export function HostLogo({ name, height = 32, link = false }: { name: string; he
   }
   const plate = (
     <span className={company.dark ? "host-logo host-logo--dark" : "host-logo"} title={company.name} style={{ height: height + 12 }}>
-      <img src={logoSrc(company)} alt={company.name} style={{ maxHeight: height }} loading="lazy" />
+      <img src={logoSrc(company)} alt={company.name} style={{ maxHeight: height }} />
     </span>
   );
   return link ? (

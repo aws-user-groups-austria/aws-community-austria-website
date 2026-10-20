@@ -405,7 +405,7 @@ function Leaders() {
       {ORGANIZERS.map((o) => {
         const face = (
           <>
-            {o.photo && <img src={asset(o.photo)} alt="" loading="lazy" />}
+            {o.photo && <img src={asset(o.photo)} alt="" />}
             <span>{o.name.split(" ")[0]}</span>
           </>
         );
@@ -426,7 +426,7 @@ function LeaderCards() {
       {ORGANIZERS.map((o) => {
         const body = (
           <>
-            {o.photo && <img src={asset(o.photo)} alt="" loading="lazy" />}
+            {o.photo && <img src={asset(o.photo)} alt="" />}
             <span className="leader-card-text">
               <span className="leader-card-name">{o.name}</span>
               <span className="leader-card-role">{o.short}</span>
@@ -559,7 +559,7 @@ function CommunityDaySpeakers({ c }: { c: CommunityDay }) {
         const photo = typeof s === "string" ? ORGANIZERS.find((o) => o.name === s)?.photo : s.photo;
         return (
           <span key={name} className="community-day-speaker">
-            {photo && <img src={asset(photo)} alt="" loading="lazy" />}
+            {photo && <img src={asset(photo)} alt="" />}
             {name}
           </span>
         );
@@ -586,7 +586,7 @@ function WelcomeDetails({ m }: { m: Meetup }) {
           {USER_GROUPS.map((g) => (
             <li key={g.id}>
               <Link to={`/group/${g.id}/`} className="group-tile">
-                <img src={g.logoWide} alt="" loading="lazy" />
+                <img src={g.logoWide} alt="" />
                 <span>
                   <span className="dialog-list-title">{g.name}</span>
                   <span className="text-muted">{g.city}</span>
@@ -617,7 +617,7 @@ function WelcomeDetails({ m }: { m: Meetup }) {
           <ul className="badge-grid">
             {badges.map((b) => (
               <li key={b.name}>
-                {b.image && <img src={b.image} alt="" loading="lazy" />}
+                {b.image && <img src={b.image} alt="" />}
                 <span className="dialog-list-title">{b.name}</span>
                 <span className="badge-grid-title">{b.title}</span>
                 {b.text && <span className="text-muted">{b.text}</span>}
@@ -638,8 +638,8 @@ function WelcomeDetails({ m }: { m: Meetup }) {
                 <a href={c.url} target="_blank" rel="noopener noreferrer" className="dialog-list-button cd-row">
                   {communityDayPictures(c) && (
                     <span className="cd-row-pics">
-                      <img src={communityDayPictures(c)!.screenshot} alt={`The website of ${c.name}`} loading="lazy" className="cd-row-shot" />
-                      <img src={communityDayPictures(c)!.qr} alt={`QR code to ${c.url}`} loading="lazy" className="cd-row-qr" />
+                      <img src={communityDayPictures(c)!.screenshot} alt={`The website of ${c.name}`} className="cd-row-shot" />
+                      <img src={communityDayPictures(c)!.qr} alt={`QR code to ${c.url}`} className="cd-row-qr" />
                     </span>
                   )}
                   <span className="label">{c.date}</span>
