@@ -1,20 +1,11 @@
 {
-  "lastUpdated": "2026-10-19T18:30:31.107Z",
-  "events": [
+  "lastUpdated": "2026-10-21T11:16:30.724Z",
+  "events": [],
+  "last": [
     {
       "title": "AWS Meetup Vienna #53 - hosted by RBI",
       "link": "https://www.meetup.com/amazon-web-services-aws-vienna/events/316893745/",
       "date": "2026-10-20T15:00:00.000Z",
-      "venue": "Mooslackengasse 12, 1190 Wien, Austria",
-      "group": "AWS UG Vienna",
-      "groupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/"
-    }
-  ],
-  "last": [
-    {
-      "title": "AWS Meetup Vienna #52 - hosted by Enspired",
-      "link": "https://www.meetup.com/amazon-web-services-aws-vienna/events/316357405/",
-      "date": "2026-09-28T15:00:00.000Z",
       "group": "AWS UG Vienna",
       "groupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/"
     },
