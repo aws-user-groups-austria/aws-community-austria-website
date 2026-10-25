@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Speaker } from "../data/events";
+import { useLiveEventId } from "../data/liveEvents";
 
 const row = { display: "flex", alignItems: "flex-start", gap: "7px", fontSize: "var(--font-size-sm)", textAlign: "left", lineHeight: 1.4 } as const;
 const icon = { width: 13, height: 13, viewBox: "0 0 24 24", fill: "none", stroke: "var(--color-accent)", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", style: { flexShrink: 0, marginTop: "3px" } } as const;
@@ -35,5 +36,21 @@ export function SponsorWanted({ show }: { show?: boolean }) {
         Looking for a sponsor - <Link to="/sponsors" className="text-link">become one</Link>
       </span>
     </div>
+  );
+}
+
+/**
+ * "Open the live stream" button for events that have a live player: the
+ * event's own liveEventId, or an entry in public/live/events/index.json whose
+ * Meetup link matches the card's link (written by npm run live:sync).
+ * A plain link, not a router Link: /live/ is a static folder (public/live/), not a route of this app.
+ */
+export function LiveStreamButton({ liveEventId, link }: { liveEventId?: string; link?: string }) {
+  const id = useLiveEventId(link, liveEventId);
+  if (!id) return null;
+  return (
+    <a href={`/live/?event=${encodeURIComponent(id)}`} className="event-btn event-btn-filled">
+      Open the live stream
+    </a>
   );
 }

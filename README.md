@@ -39,11 +39,28 @@ Push to `main` — the GitHub Actions workflow builds and deploys automatically.
 
 ## Local Development
 
+Install the dependencies:
+
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # Production build → dist/
-npm run preview  # Preview production build
+```
+
+Start the dev server on http://localhost:5173:
+
+```bash
+npm run dev
+```
+
+Build for production into `dist/`:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
 ```
 
 ## Tech Stack
@@ -60,6 +77,65 @@ npm run preview  # Preview production build
 | `/` | Home — hero, stats, user group cards, Sessionize CTA |
 | `/group/:groupId` | Individual group page — agenda, sessions, host CTA |
 | `/prep-guide` | Speaker prep guide |
+| `/sponsors` | Sponsoring a meetup |
+| `/team` | Organizers |
+| `/live/?event=<id>` | Live stream player for a meetup evening (static files in `public/live/`, not a React route) |
+
+## Live stream
+
+On the evening of a meetup, the room screen runs the meetup web player from
+`/live/`. It follows the agenda by the clock: pre-show while doors are open,
+welcome, sponsor and speaker handovers, the break countdown, closing and the
+last networking.
+
+- An event card gets an "Open the live stream" button (home page and group
+  page), linking to `/live/?event=<id>`, when its Meetup link is listed in
+  `public/live/events/index.json` (written by `npm run live:sync`), so a
+  meetup from `public/data/meetups.json` gets it without a code change. An
+  event in `src/data/events.ts` can also name it with `liveEventId`.
+- `public/live/` holds the built web player, `events/<id>.json` and
+  `events/index.json`. Vite copies
+  it to `dist/live/` unchanged, and GitHub Pages serves it as plain files, so
+  the React router never sees `/live/`.
+- The player and the event files come from the meetup stream workspace
+  (`aws-community-meetup-stream-all`): the web player build in
+  `meetup-stream-templates/web-player/dist/` and each
+  `meetup-event-vienna/events/<id>/event.json`.
+
+Build the web player first, in the `meetup-stream-templates` folder of the
+meetup stream workspace:
+
+```bash
+make player-build
+```
+
+Then copy it and the event files into `public/live/`, from this repo:
+
+```bash
+npm run live:sync
+```
+
+The workspace is expected next to this repo at
+`../aws-community-meetup-stream-all`. Use another location with
+`MEETUP_STREAM_DIR`:
+
+```bash
+MEETUP_STREAM_DIR=/path/to/aws-community-meetup-stream-all npm run live:sync
+```
+
+The script stops with a message, and leaves `public/live/` untouched, when the
+web player build or the event files are missing. Commit `public/live/` after a
+sync so GitHub Pages serves it.
+
+Rehearse the evening locally after a build:
+
+```bash
+npm run preview
+```
+
+Then open `http://localhost:4173/live/?event=2026-10-20-aws-meetup-vienna-53&at=17:55`
+(`at` starts the clock at that local time on the event date, `speed` runs it
+faster).
 
 ## Sessionize Integration
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { USER_GROUPS } from "../data/groups";
 import { UPCOMING_EVENTS } from "../data/events";
-import { SpeakerLine, SponsorWanted } from "../components/EventExtras";
+import { SpeakerLine, SponsorWanted, LiveStreamButton } from "../components/EventExtras";
 
 interface SessionizeSession {
   id: string;
@@ -118,11 +118,12 @@ export function GroupPage() {
                   <SpeakerLine label="With" speakers={nextEvent.speakers} />
                   <SponsorWanted show={nextEvent.sponsorWanted} />
                 </div>
-                <div className="card-footer">
+                <div className="card-footer" style={{ display: "flex", flexDirection: "column", gap: "var(--space-2)" }}>
                   <a href={nextEvent.link} target="_blank" rel="noopener noreferrer"
                     className={`event-btn ${!nextEvent.date ? "event-btn-outline" : nextEvent.saveTheDate ? "event-btn-filled" : "event-btn-outline"}`}>
                     {!nextEvent.date ? "Join our Meetup group" : nextEvent.saveTheDate ? "Coming Soon on Meetup" : "RSVP on Meetup"}
                   </a>
+                  <LiveStreamButton liveEventId={nextEvent.liveEventId} link={nextEvent.link} />
                 </div>
               </div>
             )}

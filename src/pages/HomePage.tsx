@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { USER_GROUPS, ORGANIZERS, CLOUD_CLUBS } from "../data/groups";
 import { SponsorsCarousel } from "../components/SponsorsCarousel";
 import { UPCOMING_EVENTS, COMMUNITY_DAYS, type MeetupEvent } from "../data/events";
-import { SpeakerLine, SponsorWanted } from "../components/EventExtras";
+import { SpeakerLine, SponsorWanted, LiveStreamButton } from "../components/EventExtras";
 
 
 export function HomePage() {
@@ -205,11 +205,12 @@ export function HomePage() {
                       <SponsorWanted show={e.sponsorWanted} />
                     </div>
                     {/* Button */}
-                    <div className="card-footer">
+                    <div className="card-footer" style={{ display: "flex", flexDirection: "column", gap: "var(--space-2)" }}>
                       <a href={e.link} target="_blank" rel="noopener noreferrer"
                         className={`event-btn ${!e.date ? "event-btn-outline" : e.saveTheDate ? "event-btn-filled" : "event-btn-outline"}`}>
                         {!e.date ? "Join our Meetup group" : e.saveTheDate ? "Coming Soon on Meetup" : "RSVP on Meetup"}
                       </a>
+                      <LiveStreamButton liveEventId={e.liveEventId} link={e.link} />
                     </div>
                   </div>
                 ))}
