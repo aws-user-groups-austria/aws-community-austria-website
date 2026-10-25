@@ -25,3 +25,8 @@ npm-debug.log*
 
 # Claude
 .claude
+
+# Local and secret files
+__pycache__/
+.venv/
+*.pem
