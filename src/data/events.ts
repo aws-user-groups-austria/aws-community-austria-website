@@ -23,6 +23,7 @@ export interface MeetupEvent {
   groupUrl: string;
   link: string;
   time?: string;         // shown after the date on the card, e.g. "doors 17:00"
+  dateLabel?: string;    // shown instead of "Coming soon" while there is no exact date yet
   saveTheDate?: boolean;
   hosts?: string[];      // host names, logos from src/data/sponsors.ts (a meetup page's hosts win)
   speakers?: Speaker[];
@@ -50,23 +51,16 @@ export function communityDayPictures(c: CommunityDay): { screenshot: string; qr:
 
 export const UPCOMING_EVENTS: MeetupEvent[] = [
   {
-    title: "AWS Meetup Vienna #53 - hosted by RBI",
-    date: "2026-10-20T15:00:00.000Z",   // doors open 17:00 Vienna, the Meetup start time; talks from 18:00
-    time: "doors 17:00",
-    venue: "Raiffeisen Bank International, Mooslackengasse 12, 1190 Wien",
-    hosts: ["Raiffeisen Bank International"],
+    title: "AWS Meetup Vienna #54",
+    date: "",   // no exact date yet: the week before re:Invent (Nov 30 - Dec 4, Las Vegas); never on a Monday or Friday
+    dateLabel: "Nov 24-26, 2026 (Tue-Thu)",
+    venue: "Vienna",
     group: "AWS UG Vienna",
     groupId: "aws-ug-vienna",
     groupUrl: "https://www.meetup.com/amazon-web-services-aws-vienna/",
-    link: "https://www.meetup.com/amazon-web-services-aws-vienna/events/316893745/",
-    saveTheDate: false,
-    speakers: [
-      { name: "Roman Jokel", url: "https://www.linkedin.com/in/roman-jokel/" },   // as on the team page (groups.ts) and in the Meetup description
-      { name: "Mladen Trampic", url: "https://www.linkedin.com/in/trampic/" },
-      { name: "Darko Mesaroš", url: "https://www.linkedin.com/in/darko-mesaros/" },
-    ],
+    link: "https://www.meetup.com/amazon-web-services-aws-vienna/",
+    saveTheDate: true,
     sponsorWanted: false,
-    meetupId: "2026-10-20-aws-meetup-vienna-53",
   },
   {
     title: "AWS Women's UG Vienna - Next Meetup Coming Soon",
