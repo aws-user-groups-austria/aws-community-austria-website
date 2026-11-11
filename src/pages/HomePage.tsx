@@ -203,7 +203,7 @@ export function HomePage() {
                     <div className="card-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "var(--space-2)" }}>
                       <div>
                         <span className="label">
-                          {e.date ? `${shortDate(e.date)}${e.time ? `, ${e.time}` : ""}` : "Coming soon"}
+                          {e.date ? `${shortDate(e.date)}${e.time ? `, ${e.time}` : ""}` : e.dateLabel ?? "Coming soon"}
                         </span>
                         <div style={{ fontSize: "var(--font-size-base)", fontWeight: 700, color: "var(--color-text)", lineHeight: 1.3 }}>
                           {page ? <Link to={meetupPath(page.id)} className="card-title-link">{e.title}</Link> : e.title}
