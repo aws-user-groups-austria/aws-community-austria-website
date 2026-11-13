@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "present:sync": "node scripts/present-sync.mjs && node scripts/meetups-sync.mjs",
     "meetups:sync": "node scripts/meetups-sync.mjs",
-    "check:site": "node scripts/check-site.mjs"
+    "check:site": "node scripts/check-site.mjs",
+    "commits": "node scripts/commit-count.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -21,7 +22,7 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^5.6.3",
-    "vite": "^6.4.4"
+    "vite": "^6.4.6"
   },
   "license": "CC-BY-NC-SA-4.0"
 }

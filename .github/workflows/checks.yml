@@ -1,0 +1,63 @@
+name: Checks
+
+# Builds the site and walks it in headless Chrome (scripts/check-site.mjs)
+# on every pull request and on every push to main. It only checks: the
+# deploy stays with deploy.yml. The scheduled jobs push with the workflow
+# token and "[skip ci]", so their commits do not start this workflow.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# No rights by default; each job asks for what it needs.
+permissions: {}
+
+# A newer run of the same branch or pull request replaces the older one.
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-site:
+    name: Build and check the site
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # Chrome comes with the runner (/usr/bin/google-chrome). The script
+      # answers every request that is not to the local server itself, so
+      # the checks need no network.
+      - name: Check the built site
+        run: npm run check:site
+        env:
+          OUT_DIR: site-check
+
+      # The screenshots, also when a check failed: they show what went wrong.
+      - name: Upload the screenshots
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: site-check-screenshots
+          path: site-check/
+          if-no-files-found: warn
+          retention-days: 14

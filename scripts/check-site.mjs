@@ -17,6 +17,9 @@
  * server (Meetup header images, Google Fonts) is answered with a local
  * placeholder, so header images show as grey panels in the screenshots.
  *
+ * The pages run with a fixed clock (NOW below, the day before EVENT), so the
+ * result does not depend on the day the check runs.
+ *
  * Screenshots go to OUT_DIR (default ../out/website, the meetup stream
  * workspace's out/ folder). Set CHROME=/path/to/chrome if Chrome is not in
  * the usual place.
@@ -33,6 +36,11 @@ const PORT = 4192;
 const CDP_PORT = 9431;
 const BASE = `http://localhost:${PORT}`;
 const EVENT = "2026-10-20-aws-meetup-vienna-53";
+// The pages' clock during the check: the day before EVENT. What the site shows
+// depends on the date (next or last meetup, community days not over yet, the
+// live header before or after the evening), and the checks below describe it
+// as of this moment, so they give the same result on any day and in CI.
+const NOW = "2026-10-19T12:00:00+02:00";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 if (!fs.existsSync(path.join(ROOT, "dist", "meetups", "index.html"))) {
@@ -158,6 +166,22 @@ await send("Network.enable");
 await send("Log.enable");
 await send("Network.setCacheDisabled", { cacheDisabled: true });
 await send("Fetch.enable", { patterns: [{ urlPattern: "*" }] });
+// Every page and frame gets a Date that starts at NOW and runs on from there.
+await send("Page.addScriptToEvaluateOnNewDocument", {
+  source: `(() => {
+    const Real = Date;
+    const offset = Real.parse(${JSON.stringify(NOW)}) - Real.now();
+    function Shifted(...a) {
+      if (!new.target) return new Shifted().toString();
+      return Reflect.construct(Real, a.length ? a : [Real.now() + offset], new.target);
+    }
+    Shifted.prototype = Real.prototype;
+    Shifted.now = () => Real.now() + offset;
+    Shifted.parse = Real.parse;
+    Shifted.UTC = Real.UTC;
+    globalThis.Date = Shifted;
+  })()`,
+});
 
 const viewport = (width, height, mobile = false) => send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile });
 
@@ -235,7 +259,12 @@ await check("home", async () => {
   ];
 });
 
-for (const [id, want] of [["aws-ug-vienna", "Next meetup"], ["aws-wug-vienna", "Last meetup"], ["aws-ug-linz", "Last meetup"]]) {
+// "Next meetup" when Meetup lists a coming event of the group in data/meetups.json
+// (rewritten every day by the scheduled fetch), "Last meetup" when it lists none.
+// A dated card in UPCOMING_EVENTS (src/data/events.ts) would also count as next; none has a date.
+const liveEvents = JSON.parse(fs.readFileSync(path.join(ROOT, "dist", "data", "meetups.json"), "utf8")).events ?? [];
+for (const [id, slug] of [["aws-ug-vienna", "amazon-web-services-aws-vienna"], ["aws-wug-vienna", "aws-womens-user-group-vienna"], ["aws-ug-linz", "aws-user-group-linz"]]) {
+  const want = liveEvents.some((e) => e.groupUrl.toLowerCase().includes(`/${slug}/`) && Date.parse(e.date) > Date.parse(NOW)) ? "Next meetup" : "Last meetup";
   await check(`group page ${id}`, async () => {
     await open(`/group/${id}/`, 1500);
     const s = await evaluate(`(() => ({

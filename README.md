@@ -268,9 +268,25 @@ Part of the AWS Community Austria project:
 | [`aws-community-austria-meetup`](https://github.com/aws-user-groups-austria/aws-community-austria-meetup) | Per-meetup config + GitHub Actions |
 | The meetup stream workspace (`meetup-sync`, `meetup-event-vienna`, `meetup-stream-templates`, `meetup-deck`; not published yet) | Meetup data, the room screen behind `/present/`, the slide deck |
 
+## Checks, and who commits here
+
+Every pull request and every push to `main` runs the "Checks" workflow
+(`.github/workflows/checks.yml`): it builds the site and runs
+`npm run check:site`, 33 checks that walk the built site in headless Chrome
+with a fixed clock and no network access. The screenshots of each run are kept
+as the workflow artifact `site-check-screenshots` for 14 days.
+
+`npm run commits` (optionally `-- --since 2026-10-01`) counts the commits by
+automation and by people separately, because most commits in this repository
+come from the scheduled jobs.
+
 ## License
 
-CC BY-NC-SA 4.0 - Free to use and adapt with attribution, non-commercial.
+[CC BY-NC-SA 4.0](LICENSE) - Free to use and adapt with attribution, non-commercial.
+
+The licence covers the site's code and texts. Photos of people and the logos of
+hosts, sponsors and other companies are used with their owners' agreement for
+our community only and are not licensed to anyone else: replace them in a fork.
 
 ## Automatic updates, every Monday and Friday
 
