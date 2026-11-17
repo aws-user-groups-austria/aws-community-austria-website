@@ -30,7 +30,7 @@ Push to `main` - the GitHub Actions workflow builds and deploys automatically.
 
 | File | What to change |
 |------|---------------|
-| `src/data/groups.ts` | Your user groups, descriptions, Sessionize API IDs |
+| `src/data/groups.ts` | Your user groups and their descriptions |
 | `src/pages/HomePage.tsx` | Hero text, stats, CTAs |
 | `public/logos/` | Replace logos with your own |
 | `src/components/Layout.tsx` | Nav links, footer |
@@ -75,7 +75,7 @@ npm run check:site
 
 - **Vite** + **React** + **TypeScript**
 - **React Router** for client-side routing
-- **Sessionize API** for pulling speaker/session data
+- **Sessionize** (public call for papers) for talk submissions
 - **GitHub Actions** for automated deploy to GitHub Pages
 
 ## Pages
@@ -236,9 +236,11 @@ leaves the machine. Screenshots go to `../out/website/`; another folder with
 OUT_DIR=/tmp/site-check npm run check:site
 ```
 
-## Sessionize Integration
+## Sessionize
 
-Each user group has a `sessionizeApiId` in `src/data/groups.ts`. When configured, the group page automatically fetches and displays upcoming sessions from the Sessionize API.
+Talks are submitted through the public call for papers at
+https://sessionize.com/aws-community-austria. The site only links there; it does
+not call the Sessionize API.
 
 ## The daily Meetup update (GitHub Actions)
 
