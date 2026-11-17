@@ -51,10 +51,11 @@ export function communityDayPictures(c: CommunityDay): { screenshot: string; qr:
 
 export const UPCOMING_EVENTS: MeetupEvent[] = [
   {
-    title: "AWS Meetup Vienna #54",
-    date: "",   // no exact date yet: the week before re:Invent (Nov 30 - Dec 4, Las Vegas); never on a Monday or Friday
-    dateLabel: "Nov 24-26, 2026 (Tue-Thu)",
-    venue: "Vienna",
+    title: "AWS Meetup Vienna #54 - hosted by Erste Digital",
+    date: "",   // Thursday, Nov 26, the week before re:Invent; no start time yet, so the label carries the day
+    dateLabel: "Thu, Nov 26, 2026",
+    venue: "Zeta Bite room, Canettistraße 5, 1100 Wien",
+    hosts: ["Erste Digital"],
     group: "AWS UG Vienna",
     groupId: "aws-ug-vienna",
     groupUrl: "https://www.meetup.com/amazon-web-services-aws-vienna/",
