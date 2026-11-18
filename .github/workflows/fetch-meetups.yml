@@ -31,6 +31,8 @@ jobs:
 
       - name: Commit updated meetups.json
         id: commit
+        # Only on main: a manual run on another branch only shows what Meetup answers.
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

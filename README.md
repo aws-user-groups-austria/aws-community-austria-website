@@ -249,6 +249,12 @@ demand from the Actions tab). It runs `scripts/fetch-meetups.mjs`, which reads
 the RSS feed of each Austrian group for the event links, then each event page
 for the real date, title and venue (the feed's `pubDate` is when an event was
 announced, not when it happens), and keeps the events that have not started.
+It also reads each group's events page, whose page data lists the upcoming
+events too, so the list survives when Meetup answers the runner with a page
+that has no feed items or no event data. Every page it cannot read shows up as
+a warning on the run, a group that cannot be read at all keeps its events from
+the file, and the run fails when no group can be read. A manual run on a
+branch other than `main` only fetches and logs: it commits and deploys nothing.
 The home page shows them next to the hand-written ones in `src/data/events.ts`.
 
 The bot commits `public/data/meetups.json` only when the events changed, and
