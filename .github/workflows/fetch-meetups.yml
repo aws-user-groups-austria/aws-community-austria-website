@@ -1,12 +1,12 @@
 name: Fetch Meetup Events
 
-# Every morning: read the upcoming events of the Austrian AWS user groups from
+# Every 6 hours: read the upcoming events of the Austrian AWS user groups from
 # Meetup into public/data/meetups.json (scripts/fetch-meetups.mjs). Commits and
 # deploys only when the events changed.
 
 on:
   schedule:
-    - cron: "0 6 * * *"   # daily at 06:00 UTC
+    - cron: "17 */6 * * *"   # every 6 hours (GitHub often starts scheduled runs hours late)
   workflow_dispatch:        # allow manual runs
 
 permissions:

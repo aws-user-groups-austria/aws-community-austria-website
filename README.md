@@ -244,7 +244,7 @@ not call the Sessionize API.
 
 ## The daily Meetup update (GitHub Actions)
 
-`.github/workflows/fetch-meetups.yml` runs every morning at 06:00 UTC (and on
+`.github/workflows/fetch-meetups.yml` runs every 6 hours (and on
 demand from the Actions tab). It runs `scripts/fetch-meetups.mjs`, which reads
 the RSS feed of each Austrian group for the event links, then each event page
 for the real date, title and venue (the feed's `pubDate` is when an event was

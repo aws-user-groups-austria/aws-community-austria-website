@@ -387,6 +387,30 @@
   margin: 0 auto var(--space-9);
 }
 
+.hero-actions { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+
+/* The next meetup, over the hero video: register in one click */
+.hero-next {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  max-width: 600px;
+  margin: var(--space-8) auto 0;
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-5);
+  text-align: left;
+  background: rgba(22, 30, 45, 0.72);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 0 3px var(--color-accent-glow);
+  backdrop-filter: blur(6px);
+}
+.hero-next-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.hero-next-label { font-size: var(--font-size-xs); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--color-accent); }
+.hero-next-title { font-size: var(--font-size-md); font-weight: 700; color: var(--color-text); line-height: 1.3; }
+.hero-next-host { font-weight: 400; color: var(--color-text-secondary); }
+.hero-next-when { font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.hero-next-register { flex-shrink: 0; }
+
 /* ── Stats bar ──────────────────────────────────────────────── */
 
 .stats-bar {
@@ -595,6 +619,10 @@
   .hero-content   { padding: 48px var(--space-5); max-width: 100%; }
   .hero-title     { font-size: var(--font-size-4xl); }
   .hero-subtitle  { font-size: var(--font-size-base); }
+  /* On a phone the next meetup comes right after the subtitle, before the two big buttons */
+  .hero-content   { display: flex; flex-direction: column; }
+  .hero-next      { order: 1; margin: 0 0 var(--space-6); gap: var(--space-3); padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4); }
+  .hero-actions   { order: 2; flex-wrap: nowrap; }
   .section-title  { font-size: var(--font-size-2xl); }
   .page-title     { font-size: var(--font-size-3xl); }
   .stats-grid      { grid-template-columns: repeat(2, 1fr); }
