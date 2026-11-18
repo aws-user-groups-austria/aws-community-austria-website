@@ -51,15 +51,19 @@ export function communityDayPictures(c: CommunityDay): { screenshot: string; qr:
 
 export const UPCOMING_EVENTS: MeetupEvent[] = [
   {
-    title: "AWS Meetup Vienna #54",
-    date: "",   // no exact date yet: the week before re:Invent (Nov 30 - Dec 4, Las Vegas); never on a Monday or Friday
-    dateLabel: "Nov 24-26, 2026 (Tue-Thu)",
-    venue: "Vienna",
+    title: "AWS Meetup Vienna #54 - hosted by Erste Digital",
+    date: "2026-11-26T16:00:00.000Z",   // doors open 17:00 Vienna, the Meetup start time; talks from 18:00
+    time: "doors 17:00",
+    venue: "Zeta Bite room, Canetti Tower, Canettistraße 5, 1100 Wien",
+    hosts: ["Erste Digital"],
     group: "AWS UG Vienna",
     groupId: "aws-ug-vienna",
     groupUrl: "https://www.meetup.com/amazon-web-services-aws-vienna/",
-    link: "https://www.meetup.com/amazon-web-services-aws-vienna/",
-    saveTheDate: true,
+    link: "https://www.meetup.com/amazon-web-services-aws-vienna/events/317483434/",
+    saveTheDate: false,
+    speakers: [
+      { name: "Florian Motlik", url: "https://www.linkedin.com/in/florianmotlik" },
+    ],
     sponsorWanted: false,
   },
   {

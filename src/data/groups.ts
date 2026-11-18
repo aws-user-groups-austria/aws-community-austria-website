@@ -9,7 +9,6 @@ export interface UserGroup {
   city: string;
   description: string;
   meetupUrl: string;
-  sessionizeApiId: string;
   linkedinUrl: string;
   slackChannel: string;
   accentColor: string;
@@ -73,7 +72,6 @@ export const USER_GROUPS: UserGroup[] = [
     description:
       "The AWS User Group Vienna hosts regular meetups with technical talks about AWS services, architecture patterns, and cloud best practices. Open to everyone interested in AWS.",
     meetupUrl: "https://www.meetup.com/amazon-web-services-aws-vienna/",
-    sessionizeApiId: "",
     linkedinUrl: "https://www.linkedin.com/company/aws-user-group-vienna",
     slackChannel: "#aws-ug-vienna",
     accentColor: "#A66FF0",
@@ -89,7 +87,6 @@ export const USER_GROUPS: UserGroup[] = [
     description:
       "The AWS Women's User Group Vienna is a welcoming space for women and allies to learn, share, and connect around AWS cloud technologies. Everyone is welcome.",
     meetupUrl: "https://www.meetup.com/aws-womens-user-group-vienna/",
-    sessionizeApiId: "",
     linkedinUrl: "",
     slackChannel: "#aws-wug-vienna",
     accentColor: "#A66FF0",
@@ -105,7 +102,6 @@ export const USER_GROUPS: UserGroup[] = [
     description:
       "The AWS User Group Linz brings the AWS community to Upper Austria with meetups focused on cloud engineering, DevOps, and serverless architectures.",
     meetupUrl: "https://www.meetup.com/aws-user-group-linz/",
-    sessionizeApiId: "",
     linkedinUrl: "",
     slackChannel: "#aws-ug-linz",
     accentColor: "#A66FF0",
