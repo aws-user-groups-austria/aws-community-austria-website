@@ -2,6 +2,23 @@
   "version": 1,
   "meetups": [
     {
+      "id": "2026-11-26-aws-meetup-vienna-54",
+      "title": "AWS Meetup Vienna #54 - hosted by Erste Digital",
+      "number": 54,
+      "start": "2026-11-26T17:00:00+01:00",
+      "venue": {
+        "name": "Zeta Bite room",
+        "address": "Canettistraße 5, 1100 Wien"
+      },
+      "hosts": [
+        {
+          "name": "Erste Digital",
+          "url": "https://www.erstedigital.com/"
+        }
+      ],
+      "stream": true
+    },
+    {
       "id": "2026-10-20-aws-meetup-vienna-53",
       "title": "AWS Meetup Vienna #53 - hosted by RBI",
       "number": 53,

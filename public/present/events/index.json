@@ -60,6 +60,12 @@
       "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/316893745/",
       "title": "AWS Meetup Vienna #53 - hosted by RBI",
       "doorsOpen": "2026-10-20T17:00:00+02:00"
+    },
+    {
+      "id": "2026-11-26-aws-meetup-vienna-54",
+      "meetupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/events/317483434/",
+      "title": "AWS Meetup Vienna #54 - hosted by Erste Digital",
+      "doorsOpen": "2026-11-26T17:00:00+01:00"
     }
   ]
 }
