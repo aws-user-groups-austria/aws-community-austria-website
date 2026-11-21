@@ -7,7 +7,7 @@ import { UPCOMING_EVENTS, communityDayPictures, upcomingCommunityDays, type Meet
 import { SpeakerLine, SponsorWanted, SpeakerAvatars } from "../components/EventExtras";
 import { HostLine } from "../components/HostLogo";
 import { meetupForEvent } from "../data/meetups";
-import { meetupPath, shortDate } from "../lib/meetupFormat.js";
+import { meetupPath, shortDate, time } from "../lib/meetupFormat.js";
 import type { CommunityDaySpeaker } from "../data/events";
 
 /** An organizer by name (photo and LinkedIn from ORGANIZERS), or a guest as given. */
@@ -17,6 +17,45 @@ function communityDaySpeaker(s: CommunityDaySpeaker): { name: string; photo?: st
   return { name: s, photo: o?.photo ?? undefined, url: o?.linkedin ?? undefined };
 }
 
+/**
+ * The next meetup for the hero, only when it is fully planned: a date still
+ * ahead, a link to the event on Meetup (not just the group) and a real address
+ * (not only a city). The site's own card wins over the fetched one for the
+ * same event, because it knows the doors time.
+ */
+function nextPlannedMeetup(fetched: MeetupEvent[], now = Date.now()): MeetupEvent | undefined {
+  const key = (e: MeetupEvent) => e.link.replace(/\/$/, "");
+  const all = [...UPCOMING_EVENTS, ...fetched.filter((f) => !UPCOMING_EVENTS.some((e) => key(e) === key(f)))];
+  return all
+    .filter((e) => e.date && Date.parse(e.date) > now && /\/events\/\d+\/?$/.test(e.link) && /\d/.test(e.venue ?? ""))
+    .sort((a, b) => Date.parse(a.date) - Date.parse(b.date))[0];
+}
+
+/** "Zeta Bite room, Canetti Tower, Canettistraße 5, 1100 Wien" -> "Zeta Bite room, Canettistraße 5": the room and the street. */
+function shortVenue(venue: string): string {
+  const parts = venue.split(",").map((p) => p.trim()).filter(Boolean);
+  const street = parts.slice(1).find((p) => /\d/.test(p) && !/^\d{4}\b/.test(p));
+  return street ? `${parts[0]}, ${street}` : parts[0] ?? venue;
+}
+
+function HeroNextMeetup({ e }: { e: MeetupEvent }) {
+  const page = meetupForEvent(e.link, e.meetupId);
+  const [name, host] = e.title.split(/\s+-\s+hosted by\s+/i);
+  const when = `${new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Vienna", weekday: "short", day: "numeric", month: "short" }).format(new Date(e.date))}, ${time(e.date)}`;
+  return (
+    <div className="hero-next">
+      <div className="hero-next-info">
+        <span className="hero-next-label">Next meetup</span>
+        <span className="hero-next-title">
+          {page ? <Link to={meetupPath(page.id)} className="card-title-link">{name}</Link> : name}
+          {host && <span className="hero-next-host"> at {host}</span>}
+        </span>
+        <span className="hero-next-when">{when} &middot; {shortVenue(e.venue ?? "")}</span>
+      </div>
+      <a href={e.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-md hero-next-register">Register</a>
+    </div>
+  );
+}
 
 export function HomePage() {
   const [events, setEvents] = useState<MeetupEvent[]>([]);
@@ -44,14 +83,18 @@ export function HomePage() {
           <p className="hero-subtitle">
             Join the largest AWS community in Austria. Three user groups, one mission: learn, share, and build together on AWS.
           </p>
-          <div style={{ display: "flex", gap: "var(--space-4)", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://sessionize.com/aws-community-austria" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-xl">
-              Submit a Talk
+          <div className="hero-actions">
+            <a href="https://sessionize.com/aws-community-austria" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-md">
+              Give a talk
             </a>
-            <a href="https://www.meetup.com/amazon-web-services-aws-vienna/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-xl">
-              Join on Meetup
+            <a href="https://www.meetup.com/amazon-web-services-aws-vienna/" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-md">
+              Join us
             </a>
           </div>
+          {(() => {
+            const next = nextPlannedMeetup(loadingEvents ? [] : events);
+            return next ? <HeroNextMeetup e={next} /> : null;
+          })()}
         </div>
       </section>
 
