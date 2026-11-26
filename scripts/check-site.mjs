@@ -404,7 +404,7 @@ for (const [d, desktop, mobile] of DESIGNS) {
         expect(!s.overflow, "no horizontal scroll"),
         expect(s.photos >= 3, `${s.photos} speaker photos`),
         expect(s.abstracts === 2, `${s.abstracts} abstracts`),
-        ...(d === "a" ? [expect(scene?.source === "tour" && scene.scene === "PreShow" && /^Starts in\d/.test(scene.countdown ?? ""), `live header: ${JSON.stringify(scene)}`)] : []),
+        ...(d === "a" ? [expect(scene?.source === "tour" && scene.scene === "PreShow" && /^Doors open in\d/.test(scene.countdown ?? ""), `live header: ${JSON.stringify(scene)}`)] : []),
         `screenshot ${file}`,
       ];
       if (d === "b") notes.push(expect(s.timeline === 7 && s.details, `timeline ${s.timeline} items, description folded`));
