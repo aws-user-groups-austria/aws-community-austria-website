@@ -127,8 +127,10 @@ function LiveHeader({ m, className }: { m: Meetup; className: string }) {
     }
   };
   return (
-    <div ref={box} className={`${className} live-header${full ? " live-header-full" : ""}`}>
-      <iframe src={headerPath(m.id)} title={`${m.title}: the evening, live`} allow="fullscreen" />
+    <div ref={box} className={`${className} live-header-box${full ? " live-header-full" : ""}`}>
+      <div className="live-header">
+        <iframe src={headerPath(m.id)} title={`${m.title}: the evening, live`} allow="fullscreen" />
+      </div>
       <button type="button" className="live-header-full-button" onClick={toggle} aria-label={full ? "Exit fullscreen" : "Show the loop fullscreen"} title={full ? "Exit fullscreen (Esc)" : "Fullscreen"}>
         {full ? (
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M9 3v6H3M15 3v6h6M9 21v-6H3M15 21v-6h6" /></svg>
