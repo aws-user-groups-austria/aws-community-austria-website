@@ -86,8 +86,9 @@
               "speakers": [
                 {
                   "name": "Florian Motlik",
-                  "role": "is an independent AWS cloud consultant and co-founder of attendit.at",
-                  "company": "with more than 15 years of hands-on cloud experience.",
+                  "role": "Independent AWS Cloud Consultant",
+                  "company": "Co-founder of attendit.at",
+                  "photo": "/present/events/2026-11-26-aws-meetup-vienna-54/assets/florian-motlik.png",
                   "links": [
                     {
                       "title": "LinkedIn",
@@ -113,12 +114,13 @@
             "title": "How Amazon and AWS Build Resilient Services",
             "talk": {
               "title": "How Amazon and AWS Build Resilient Services",
-              "abstract": "This session examines how Amazon and AWS keep services available when dependencies fail or demand spikes. Thursday Night Football shows how teams use operational readiness reviews and deployment safeguards to prepare for live events. Examples from Prime Video and Amazon Music illustrate how cell-based architectures limit the impact of failures, while Route 53 demonstrates customer isolation through shuffle sharding. Attendees will take away approaches they can apply to their own workloads to reduce customer impact and test recovery before an incident.\n\nSponsors:\n\nErste Digital",
+              "abstract": "This session examines how Amazon and AWS keep services available when dependencies fail or demand spikes. Thursday Night Football shows how teams use operational readiness reviews and deployment safeguards to prepare for live events. Examples from Prime Video and Amazon Music illustrate how cell-based architectures limit the impact of failures, while Route 53 demonstrates customer isolation through shuffle sharding. Attendees will take away approaches they can apply to their own workloads to reduce customer impact and test recovery before an incident.",
               "speakers": [
                 {
                   "name": "Tom Reichenbach",
                   "role": "Senior Solutions Architect",
-                  "company": "AWS with 15+ years of experience architecting scalable cloud solutions across industry, banking, and financial sectors.",
+                  "company": "AWS",
+                  "photo": "/present/events/2026-11-26-aws-meetup-vienna-54/assets/tom-reichenbach.png",
                   "links": [
                     {
                       "title": "LinkedIn",
@@ -185,10 +187,13 @@
         "sponsors": [
           {
             "name": "Erste Digital",
-            "url": "https://www.erstedigital.com/"
+            "url": "https://www.erstedigital.com/",
+            "logo": "/present/events/2026-11-26-aws-meetup-vienna-54/assets/erste-digital.svg"
           }
         ]
-      }
+      },
+      "deck": "/decks/2026-11-26-aws-meetup-vienna-54.pdf",
+      "deckCover": "/decks/2026-11-26-aws-meetup-vienna-54.png"
     },
     {
       "version": 1,
