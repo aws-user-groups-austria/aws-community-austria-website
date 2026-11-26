@@ -1,20 +1,11 @@
 {
-  "lastUpdated": "2026-11-18T17:09:23.497Z",
-  "events": [
+  "lastUpdated": "2026-11-26T21:27:04.572Z",
+  "events": [],
+  "last": [
     {
       "title": "AWS Meetup Vienna #54 - hosted by Erste Digital",
       "link": "https://www.meetup.com/amazon-web-services-aws-vienna/events/317483434/",
       "date": "2026-11-26T16:00:00.000Z",
-      "venue": "Zeta Bite room | Canetti Tower, Canettistraße 5 1100 Wien, Vienna",
-      "group": "AWS UG Vienna",
-      "groupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/"
-    }
-  ],
-  "last": [
-    {
-      "title": "AWS Meetup Vienna #53 - hosted by RBI",
-      "link": "https://www.meetup.com/amazon-web-services-aws-vienna/events/316893745/",
-      "date": "2026-10-20T15:00:00.000Z",
       "group": "AWS UG Vienna",
       "groupUrl": "https://www.meetup.com/amazon-web-services-aws-vienna/"
     },
