@@ -72,6 +72,9 @@ export const COMPANIES: Company[] = [
     // enspired-trading.com/about-us; no public AWS relation confirmed (October 2026)
     about: "enspired, founded in 2020 and based in Vienna, runs an algorithmic trading and optimization platform for battery energy storage and other flexible assets across European power markets.",
   },
+  {
+    name: "Erste Digital", logo: "erste_digital.svg", url: "https://www.erstedigital.com", wall: true, dark: true, aliases: ["Erste Digital GmbH", "Erste Group IT"],
+  },
   { name: "APA Tech",                      logo: "apa_tech.png",              url: "https://www.apa.at",                  wall: true, aliases: ["APA-Tech"] },
   { name: "Nordcloud",                     logo: "nordcloud.png",             url: "https://nordcloud.com",               wall: true },
   {
