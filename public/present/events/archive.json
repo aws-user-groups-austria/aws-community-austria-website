@@ -13,7 +13,9 @@
       "hosts": [
         {
           "name": "Erste Digital",
-          "url": "https://www.erstedigital.com/"
+          "url": "https://www.erstedigital.com/",
+          "logo": "events/2026-11-26-aws-meetup-vienna-54/assets/erste-digital.svg",
+          "plateLogo": "logos-light/erste-digital.svg"
         }
       ],
       "stream": true
